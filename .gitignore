@@ -1,0 +1,70 @@
+#----------------------------------------------------------------------------
+# Ignore these files when committing to a git repository
+#----------------------------------------------------------------------------
+
+# bundler state
+# /.bundle
+/vendor/bundle/
+/vendor/ruby
+
+# Ignore Gemfile.lock if installing gems into /vendor/bundle or building a gem.
+# Gemfile.lock
+
+# minimal Rails specific artifacts
+db/*.sqlite3
+/log/*
+tmp/*
+
+# various artifacts
+**.war
+*.rbc
+*.sassc
+.rspec
+.sass-cache
+/config/config.yml
+/config/database.yml
+/coverage.data
+/coverage/
+/db/*.javadb/
+/db/*.sqlite3-journal
+/doc/api/
+/doc/app/
+/doc/features.html
+/doc/specs.html
+/log/*
+/public/cache
+/public/stylesheets/compiled
+/public/system
+
+# carrierwave uploads folder
+public/uploads
+
+/spec/tmp/*
+/tmp/*
+/cache
+/capybara*
+/capybara-*.html
+/gems
+/rerun.txt
+#capistrano on windows artifact
+mkmf.log
+
+# rails 3.1
+#
+# assets should be precompiled on server either with rake or a capistrano task
+/public/assets/*
+
+# scm revert files
+**.orig
+
+# mac finder poop
+.DS_Store
+
+# netbeans project directory
+/nbproject/
+
+# textmate project files
+/*.tmpproj
+
+# vim poop
+**.swp
