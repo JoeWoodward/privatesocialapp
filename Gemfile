@@ -1,7 +1,7 @@
 # Gems host
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1.0'
+gem 'rails', '~> 3.2.0'
 gem 'rake', '~> 0.9.1'
 gem 'sqlite3'
 gem 'hirb'              # Better console formatting. Needs .hirbrc
@@ -11,9 +11,9 @@ gem 'capistrano'        # Deployment manager
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+  gem 'sass-rails', "~> 3.2.3"
+  gem 'coffee-rails', "~> 3.2.1"
+  gem 'uglifier', '>= 1.0.3'
   # HTML/CSS framework and boilerplate
   gem 'compass', '~> 0.12.alpha.0'
   gem 'compass-susy-plugin', '0.9', :require => 'susy'
@@ -37,6 +37,13 @@ gem 'haml-rails', :group => :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.5'
-  gem 'capybara'                # Simulate users
   gem 'guard-rspec'
+end
+
+group :cucumber do
+    gem 'capybara'
+    gem 'database_cleaner'
+    gem 'cucumber-rails'
+    gem 'cucumber'
+    gem 'launchy'
 end
