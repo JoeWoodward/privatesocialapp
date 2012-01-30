@@ -94,6 +94,8 @@ GEM
     hike (1.2.1)
     hirb (0.6.0)
     i18n (0.6.0)
+    innate (2011.12)
+      rack (~> 1.4.0)
     journey (1.0.1)
     jquery-rails (2.0.0)
       railties (>= 3.2.0.beta, < 5.0)
@@ -139,6 +141,8 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2.2)
+    ramaze (2011.12.28)
+      innate (>= 2011.12)
     rdoc (3.12)
       json (~> 1.4)
     rspec (2.8.0)
@@ -203,6 +207,7 @@ DEPENDENCIES
   launchy
   rails (~> 3.2.0)
   rake (~> 0.9.1)
+  ramaze
   rspec-rails (~> 2.5)
   sass-rails (~> 3.2.3)
   sqlite3

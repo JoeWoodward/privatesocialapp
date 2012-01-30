@@ -46,4 +46,5 @@ group :cucumber do
     gem 'cucumber-rails'
     gem 'cucumber'
     gem 'launchy'
+    gem 'ramaze'
 end
