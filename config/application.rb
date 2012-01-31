@@ -12,8 +12,11 @@ end
 module HarleyHealthVip
   class Application < Rails::Application
       config.generators do |generate|
-      generate.test_framework   :rspec, :fixture => true, :views => false
-      generate.integration_tool :rspec, :fixture => true, :views => true
+      generate.test_framework   :rspec
+      generate.fixture_specs = true
+      generate.view_specs = false
+      generate.integration_specs = false
+      generate.helper_specs = false
     end
 
     # Settings in config/environments/* take precedence over those specified here.
