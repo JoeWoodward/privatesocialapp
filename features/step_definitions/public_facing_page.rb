@@ -1,7 +1,8 @@
-When /^I go to the vip info page$/ do
+When /^I go to the VIP website$/ do
   visit('/')
 end
 
-Then /^I should see "([^"]*)"$/ do |text|
-  page.should have_content(text)
+Then /^I should see a "([^"]*)" link/ do |arg1|
+  find_link(arg1).visible?
 end
+

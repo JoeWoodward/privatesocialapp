@@ -4,6 +4,6 @@ Feature: public facing page
   As a member of the public
   I want to see a public facing page
 
-  Scenario: Info page
-    When I go to the vip info page
-    Then I should see "About harley health VIP"
+  Scenario: Prospective user visiting VIP website
+    When I go to the VIP website
+    Then I should see a "Sign Up" link
