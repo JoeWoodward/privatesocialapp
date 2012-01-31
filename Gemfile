@@ -7,6 +7,8 @@ gem 'sqlite3'
 gem 'hirb'              # Better console formatting. Needs .hirbrc
 
 gem 'capistrano'        # Deployment manager
+gem 'sorcery'
+gem 'cancan'
 
 # Gems used only for assets and not required
 # in production environments by default.
