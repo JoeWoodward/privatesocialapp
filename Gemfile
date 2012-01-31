@@ -49,4 +49,5 @@ group :cucumber do
     gem 'cucumber'
     gem 'launchy'
     gem 'ramaze'
+    gem 'factory_girl'
 end
