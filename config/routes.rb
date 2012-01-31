@@ -1,4 +1,12 @@
 HarleyHealthVip::Application.routes.draw do
+  match 'sign-up' => "users#new", :as => 'sign_up'
+
+  get "users/create"
+
+  get "users/update"
+
+  get "users/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
