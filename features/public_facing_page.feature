@@ -3,7 +3,7 @@ Feature: public facing page
   I should be able to access a Public Facing Page
   So that I can learn about and Sign Up to the VIP Scheme
 
-  Scenario: Prospective user visiting VIP website
+  Scenario: Prospective user visiting VIP Website should see a "Sign Up" link
     When I go to the VIP website
     Then I should see a "Sign Up" link
 
@@ -12,14 +12,15 @@ Feature: public facing page
     When I click the "Sign Up" link
     Then I should be taken to "/sign-up"
 
-  Scenario: I've filled in the details correctly on the sign up page and submitted
+  Scenario: Correctly filling in the "Sign Up" form should create an account and log the user in
     Given I am on the "/sign-up" page
     When I fill in my details correctly and submit them
     Then I should have an account
     And I should be logged in
 
-    # Scenario: VIP user visiting VIP website
-    # When I go to the VIP website
-    # Then I should see a login form
-    # And  I should see a "Log In" link
-
+  Scenario: I should be able to Log In from the VIP Websites Info Page (Home)
+    Given I am on the VIP website homepage
+    And I have an account
+    When I fill in the Log In form and submit
+    Then I should be logged in
+    And should be redirected to my Account Details page

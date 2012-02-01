@@ -38,3 +38,18 @@ end
 Then /^I should be logged in$/ do
   cookies[:stub_user_id] == User.find_by_email('some.unknown.email.address@gmail.com')
 end
+
+Given /^I have an account$/ do
+  account = User.new(first_name: 'Joe', last_name: 'Eastliegh', email: 'email@domain.com', password: 'password', password_confirmation: 'password')
+  account.save
+end
+
+When /^I fill in the Log In form and submit$/ do
+  fill_in('Email', with: 'email@domain.com')
+  fill_in('Password', with: 'password')
+  find_button('Log In').click
+end
+
+Then /^should be redirected to my Account Details page$/ do
+  current_path.should == "/account/#{User.find_by_email('email@domain.com').full_name}"
+end
