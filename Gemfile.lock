@@ -185,6 +185,9 @@ GEM
       ffi (~> 1.0.9)
       multi_json (~> 1.0.4)
       rubyzip
+    simple_form (1.5.2)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sorcery (0.7.6)
       bcrypt-ruby (~> 3.0.0)
       oauth (~> 0.4.4)
@@ -235,6 +238,7 @@ DEPENDENCIES
   ramaze
   rspec-rails (~> 2.5)
   sass-rails (~> 3.2.3)
+  simple_form
   sorcery
   sqlite3
   uglifier (>= 1.0.3)
