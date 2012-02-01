@@ -9,6 +9,7 @@ gem 'hirb'              # Better console formatting. Needs .hirbrc
 gem 'capistrano'        # Deployment manager
 gem 'sorcery'
 gem 'cancan'
+gem 'simple_form'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,7 +40,9 @@ gem 'haml-rails', :group => :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.5'
+  gem 'factory_girl'
   gem 'guard-rspec'
+  gem 'factory_girl_rails'
 end
 
 group :cucumber do
@@ -49,5 +52,4 @@ group :cucumber do
     gem 'cucumber'
     gem 'launchy'
     gem 'ramaze'
-    gem 'factory_girl'
 end
