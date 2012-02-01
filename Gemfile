@@ -44,14 +44,11 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails'
   gem 'guard'
-  gem 'rb-fsevent'
   gem 'guard-cucumber'
 end
 
 group :test do
-  gem 'guard-spork'
   gem 'ruby_gntp'
-  gem 'spork'
 end
 
 group :cucumber do
