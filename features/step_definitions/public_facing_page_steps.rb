@@ -36,5 +36,5 @@ Then /^I should have an account$/ do
 end
 
 Then /^I should be logged in$/ do
-  current_user.should_not be_nil
+  cookies[:stub_user_id] == User.find_by_email('some.unknown.email.address@gmail.com')
 end
