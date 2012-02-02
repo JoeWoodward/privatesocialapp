@@ -17,10 +17,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      redirect_to account_path(@user), :notice => "You have successfully updated your personal details"
+    else
+      render :edit
+    end
   end
 
   def show

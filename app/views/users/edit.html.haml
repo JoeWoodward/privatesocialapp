@@ -1,2 +1,8 @@
-%h1 Vipusers#update
-%p Find me in app/views/vipusers/update.html.haml
+= simple_form_for @user, :url => account_path(@user), :method => :put do |f|
+  = f.input :first_name
+  = f.input :last_name, label: 'Surname'
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  .actions
+    = f.button :submit, 'Update'
