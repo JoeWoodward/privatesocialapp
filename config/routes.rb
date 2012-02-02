@@ -7,8 +7,7 @@ HarleyHealthVip::Application.routes.draw do
   # root to the the public info page, also contains a login and sign up form
   root :to => 'static_pages#home'
 
-  # users routes
+  #  users routes
   match 'sign-up' => "users#new", :as => 'sign_up'
-  match 'account/details' => 'users#show'
-  resources :users
+  resources :account, :controller => 'users'
 end

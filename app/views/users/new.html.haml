@@ -1,5 +1,5 @@
 - title 'Harley Health VIP'
-= simple_form_for @user do |f|
+= simple_form_for @user, :url => account_path(@user) do |f|
   = f.input :first_name
   = f.input :last_name, label: 'Surname'
   = f.input :email
