@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 7) do
+ActiveRecord::Schema.define(:version => 8) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 7) do
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
     t.string   "slug"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
