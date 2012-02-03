@@ -31,4 +31,4 @@ Feature: public facing page
     And I have an account
     And I have signed in
     When I click the "Edit My Details" link
-    Then I should be taken to "/account/joe-eastliegh/edit"
+    Then I should be taken to "/accounts/joe-eastliegh/edit"
