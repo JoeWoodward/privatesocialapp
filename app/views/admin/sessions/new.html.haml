@@ -1,0 +1,16 @@
+= form_tag admin_sessions_path, :class => 'simple_form form-horizontal' do
+  .control-group
+    = label_tag :email, 'Email *', :class => 'email required'
+    .controls
+      = text_field_tag :email, params[:email], :class => 'email required string span6'
+  .control-group
+    = label_tag :password, 'Password *', :class => 'password required'
+    .controls
+      = password_field_tag :password, params[:password], :class => 'password required span6'
+  .control-group
+    .controls
+      = check_box_tag :remember_me, 1, params[:remember_me], :class => 'boolean optional'
+      %span Remember me
+  .form-actions
+    = submit_tag "Log in", :class => 'button btn primary'
+.clear

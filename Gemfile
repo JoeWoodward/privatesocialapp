@@ -20,7 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   # HTML/CSS framework and boilerplate
   gem 'compass-susy-plugin', '0.9', :require => 'susy'
-  gem 'compass-rails'
+  gem 'compass-rails', '>= 1.0.0.rc.1'
   gem 'compass_twitter_bootstrap'
 end
 

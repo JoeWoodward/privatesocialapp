@@ -1,0 +1,19 @@
+@import 'compass';
+@import 'compass_twitter_bootstrap';
+
+.topbar {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+table {
+  border: none;
+
+  td {
+    vertical-align: middle;
+  }
+
+  td.center {
+    text-align: center;
+  }
+}

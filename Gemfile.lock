@@ -234,7 +234,7 @@ DEPENDENCIES
   capistrano
   capybara
   coffee-rails (~> 3.2.1)
-  compass-rails
+  compass-rails (>= 1.0.0.rc.1)
   compass-susy-plugin (= 0.9)
   compass_twitter_bootstrap
   cucumber
