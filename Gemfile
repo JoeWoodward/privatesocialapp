@@ -9,9 +9,8 @@ gem 'hirb'              # Better console formatting. Needs .hirbrc
 gem 'capistrano'        # Deployment manager
 gem 'sorcery'
 gem 'cancan'
-gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'
 gem 'friendly_id'
-gem 'rack-pjax'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,8 +19,9 @@ group :assets do
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', '>= 1.0.3'
   # HTML/CSS framework and boilerplate
-  gem 'compass', '~> 0.12.alpha.0'
   gem 'compass-susy-plugin', '0.9', :require => 'susy'
+  gem 'compass-rails', '>= 1.0.0.rc.1'
+  gem 'compass_twitter_bootstrap'
 end
 
 gem 'jquery-rails'

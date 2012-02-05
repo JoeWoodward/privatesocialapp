@@ -9,7 +9,8 @@ HarleyHealthVip::Application.routes.draw do
 
   #  users routes
   match 'sign-up' => "users#new", :as => 'sign_up'
-  resources :accounts, :controller => 'users'
+  resources :account, :controller => 'users'
+
 
   namespace :admin do
     root :to => redirect("/admin/accounts/new")

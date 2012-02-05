@@ -1,11 +1,5 @@
-@import "susy";
-@import "compass";
-@import "compass/css3";
-@import "compass/utilities";
-/*
- *= require bootstrap
- */
-
+@import 'compass';
+@import 'compass_twitter_bootstrap';
 
 .topbar {
   position: relative;
