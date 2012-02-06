@@ -41,6 +41,11 @@ require 'bundler/capistrano'
 
 # tasks
 namespace :deploy do
+  desc "reload the database with seed data"
+  task :seed do
+    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end
+
   task :start, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
   end

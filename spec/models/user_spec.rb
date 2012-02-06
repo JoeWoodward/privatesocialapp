@@ -40,5 +40,8 @@ describe User do
       user = FactoryGirl.create(:user, :first_name => 'First', :last_name => 'Last')
       user.full_name.should == 'First Last'
     end
+    it 'should validate the passwords length' do
+      FactoryGirl.build(:user, :password => '1234', :password_confirmation => '1234').should_not be_valid
+    end
   end
 end

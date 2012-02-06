@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   protect_from_forgery
 
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
@@ -9,5 +8,4 @@ class ApplicationController < ActionController::Base
     render 'static_pages/404', :status => :not_found
     return true
   end
-
 end

@@ -1,17 +1,17 @@
-class User < ActiveRecord::Base
+class Admin < ActiveRecord::Base
   # use sorcery for authentication
   authenticates_with_sorcery!
 
-  # use friendly ids for users
+  # use friendly ids for admins
   extend FriendlyId
   friendly_id :full_name, use: :slugged
 
-  # used to format the attributes of users so any format errors are corrected
+  # used to format the attributes of admins so any format errors are corrected
   before_save :format_attributes
 
-  attr_accessible :first_name, :last_name, :email, :password_confirmation, :password, :full_name, :is_admin
+  attr_accessible :first_name, :last_name, :email, :password_confirmation, :password, :full_name
 
-  # validations for user attributes
+  # validations for admin attributes
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_presence_of :email
@@ -21,8 +21,6 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
 
   validates_uniqueness_of :email
-
-  validates_length_of :password, :minimum => 5
 
   # before filter calls this method before save to check there are no errors in formatting
   def format_attributes
