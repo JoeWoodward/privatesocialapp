@@ -2,6 +2,10 @@ class Admin::AdminsController < Admin::ApplicationController
   before_filter :require_login
   before_filter :is_admin
 
+  def index
+    @admins = User.where(:is_admin => true).page(params[:page]).per(15)
+  end
+
   def new
     @admin = User.new
   end
@@ -34,5 +38,12 @@ class Admin::AdminsController < Admin::ApplicationController
 
   def show
     @admin = User.find(params[:id])
+  end
+
+  def destroy
+    @admin = User.find(params[:id])
+    if @admin.destroy
+      redirect_to admin_accounts_path
+    end
   end
 end

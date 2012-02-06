@@ -12,6 +12,7 @@ gem 'cancan'
 gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'
 gem 'friendly_id'
 gem 'kaminari'
+gem 'selenium'
 
 # Gems used only for assets and not required
 # in production environments by default.
