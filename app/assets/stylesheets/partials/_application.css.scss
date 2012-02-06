@@ -13,8 +13,8 @@ body {
     min-height: 100%;
     margin-bottom: -$footer_height;
 
-    article {
-      background-color: $highlight;
+    .content {
+      @include full;
     }
   }
 
