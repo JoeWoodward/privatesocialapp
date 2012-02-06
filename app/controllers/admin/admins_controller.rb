@@ -14,10 +14,7 @@ class Admin::AdminsController < Admin::ApplicationController
     @admin = User.new(params[:user])
     # this is so that friendly id picks up the slug
     if @admin.save
-      # when the payment system is added this method will need to be changed
-      # to redirect to the hosted page.
-      login(params[:user][:email], params[:user][:password])
-      redirect_to admin_account_path(@admin)
+      redirect_to admin_accounts_path
     else
       render :new
     end

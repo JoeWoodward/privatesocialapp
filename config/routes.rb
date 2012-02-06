@@ -9,7 +9,7 @@ HarleyHealthVip::Application.routes.draw do
 
   #  users routes
   match 'sign-up' => "users#new", :as => 'sign_up'
-  resources :account, :controller => 'users'
+  resources :accounts, :controller => 'users'
 
 
   namespace :admin do
