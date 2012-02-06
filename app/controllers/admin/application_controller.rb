@@ -3,6 +3,11 @@ class Admin::ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
+  def is_admin
+    unless current_user.is_admin?
+      not_authenticated
+    end
+  end
 
   def not_authenticated
     redirect_to admin_login_path, :notice => 'Please log in to access the administration area'
