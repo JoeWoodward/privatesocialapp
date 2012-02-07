@@ -8,6 +8,7 @@ class Admin::NoticesController < Admin::ApplicationController
 
   def show
     @notice = Notice.find(params[:id])
+    @author = User.find(@notice.user_id)
   end
 
   def new
@@ -19,7 +20,7 @@ class Admin::NoticesController < Admin::ApplicationController
   end
 
   def create
-    @notice = Notice.new(params[:notice])
+    @notice = current_user.notices.build(params[:notice])
     if @notice.save
       redirect_to admin_notice_path(@notice), notice: 'Notice was successfully created.'
     else

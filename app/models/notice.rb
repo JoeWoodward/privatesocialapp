@@ -1,4 +1,5 @@
 class Notice < ActiveRecord::Base
+  belongs_to :users
   # image uploader for carrierwave
   mount_uploader :image, NoticeImageUploader
 
