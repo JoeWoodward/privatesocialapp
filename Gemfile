@@ -13,6 +13,8 @@ gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'
 gem 'friendly_id'
 gem 'kaminari'
 gem 'selenium'
+gem 'carrierwave'
+gem 'rmagick'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,14 +35,11 @@ gem 'haml', '~> 3.1'    # Haml (html/erb replacement)
 # Haml generators for Rails 3
 gem 'haml-rails', :group => :development
 
-# gem 'friendly_id', '~> 3.2'         # Human readable URLs
 # gem 'validates_existence', '~> 0.5' # Validation of associations
 
 # Optional gems below:
 
 # gem 'redcarpet'               # To convert Markdown to HTML
-# gem 'kaminari'                # Pagination of long lists
-# gem 'carrierwave'             # Alternative to paperclip
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.5'
