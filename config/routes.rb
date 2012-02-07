@@ -13,7 +13,7 @@ HarleyHealthVip::Application.routes.draw do
 
 
   namespace :admin do
-    root :to => redirect("/admin/accounts/new")
+    root :to => redirect("/admin/accounts")
 
     # session paths for admin
     match 'login' => 'sessions#new', :as => 'login'
