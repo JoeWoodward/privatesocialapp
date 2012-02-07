@@ -20,6 +20,9 @@ HarleyHealthVip::Application.routes.draw do
     get 'logout' => 'sessions#destroy', :as => 'logout'
     resources :sessions
 
+    #resources for admin notices
+    resources :notices
+
     resources :accounts, :controller => 'admins'
   end
 end
