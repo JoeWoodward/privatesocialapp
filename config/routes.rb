@@ -1,5 +1,9 @@
 HarleyHealthVip::Application.routes.draw do
 
+  # events routes
+  get 'events' => 'events#index', :as => 'events'
+  get 'events/:id' => 'events#show', :as => 'event'
+
   # session path for logging out, the login form is within the home page ( static_pages )
   post 'login' => 'sessions#create', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
