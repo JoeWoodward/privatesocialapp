@@ -34,3 +34,8 @@ end
 Then /^I should create a new notice$/ do
   Notice.find_by_title('A Title').should_not be_nil
 end
+
+Then /^the notice should be deleted$/ do
+  Notice.find_by_description('A description of the notice').should be_nil
+end
+

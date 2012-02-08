@@ -29,7 +29,8 @@ Feature: As an admin user I should be able to administer the notices
 
   @javascript
   Scenario: I should be able to delete a notice
-    Given there are admin users in the system
-    And I am on the "/admin/accounts" page
-    When I click another users "delete" link
-    Then the user should be deleted
+    Given there are notices in the system
+    And I am on the "/admin/notices" page
+    When I click the "delete" link
+    And confirm the alert
+    Then the notice should be deleted
