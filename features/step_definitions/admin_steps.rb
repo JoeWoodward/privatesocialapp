@@ -15,7 +15,8 @@ Given /^there are admin users in the system$/ do
 end
 
 Then /^I should see "([^"]*)"$/ do |content|
-  page.has_content?(content)
+  page.should have_content(content)
+  puts content
 end
 
 When /^I fill in the details$/ do

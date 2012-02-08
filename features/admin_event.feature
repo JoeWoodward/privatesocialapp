@@ -12,9 +12,9 @@ Feature: as an admin user I should be able to administer events
   Scenario: I should be able to see a list of events
     Given there are events in the system
     When I am on the "/admin/events" page
-    Then I should see "test1"
-    And I should see "test2"
-    And I should see "test3"
+    Then I should see "Test1"
+    And I should see "Test2"
+    And I should see "Test3"
 
   Scenario: I should be able to edit an events details
     Given there are events in the system

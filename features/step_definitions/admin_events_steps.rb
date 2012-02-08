@@ -1,3 +1,11 @@
+Given /^an admin user has logged in$/ do
+  User.create(:first_name => 'Admin', :last_name => 'User', :email => 'admin@mail.com', :password => 'password', :password_confirmation => 'password', :is_admin => true)
+  visit("/admin/login")
+  fill_in('Email', :with => 'admin@mail.com')
+  fill_in('Password', :with => 'password')
+  find_button('Log in').click
+end
+
 Given /^there are events in the system$/ do
   visit('/admin/events/new')
   fill_in('Title', :with => 'test1')
@@ -9,7 +17,7 @@ Given /^there are events in the system$/ do
   attach_file("Image", path)
   find_button('Create Event').click
   visit('/admin/events/new')
-  fill_in('Title', :with => 'test1')
+  fill_in('Title', :with => 'test2')
   fill_in('Description', :with => 'any info')
   select('10', :from => "event[date(3i)]")
   select('February', :from => "event[date(2i)]")
@@ -18,7 +26,7 @@ Given /^there are events in the system$/ do
   attach_file("Image", path)
   find_button('Create Event').click
   visit('/admin/events/new')
-  fill_in('Title', :with => 'test1')
+  fill_in('Title', :with => 'test3')
   fill_in('Description', :with => 'more info')
   select('10', :from => "event[date(3i)]")
   select('February', :from => "event[date(2i)]")
