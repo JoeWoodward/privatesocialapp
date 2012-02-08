@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :notices
+
   # use sorcery for authentication
   authenticates_with_sorcery!
 

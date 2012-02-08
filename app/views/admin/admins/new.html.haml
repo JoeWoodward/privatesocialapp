@@ -1,4 +1,5 @@
 = simple_form_for(@admin, :html => { :class => 'form-horizontal' }, :url => admin_account_path(@admin)) do |f|
+  = f.error_notification
   = f.input :first_name, :input_html => { :class => "span6" }
   = f.input :last_name, label: 'Surname', :input_html => { :class => "span6" }
   = f.input :email, :input_html => { :class => "span6" }

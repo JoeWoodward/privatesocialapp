@@ -1,0 +1,10 @@
+= simple_form_for(@event, :html => {:multipart => true, :class => 'form-horizontal'}, :url => admin_event_path(@event)) do |f|
+  = f.error_notification
+  = f.input :title, :input_html => { :class => "span6" }
+  = f.input :description, :input_html => { :class => "span6" }
+  = f.input :date, :start_year => Date.today.year, :end_year => Date.today.year + 10,
+            :order => [:day, :month, :year], :input_html => { :class => "span2" }
+  = f.input :image, :input_html => { :class => "span6" }
+  = f.input :image_cache, :as => :hidden
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
