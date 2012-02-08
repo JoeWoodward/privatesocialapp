@@ -9,5 +9,17 @@ HarleyHealthVip::Application.routes.draw do
 
   #  users routes
   match 'sign-up' => "users#new", :as => 'sign_up'
-  resources :account, :controller => 'users'
+  resources :accounts, :controller => 'users'
+
+
+  namespace :admin do
+    root :to => redirect("/admin/accounts/new")
+
+    # session paths for admin
+    match 'login' => 'sessions#new', :as => 'login'
+    get 'logout' => 'sessions#destroy', :as => 'logout'
+    resources :sessions
+
+    resources :accounts, :controller => 'admins'
+  end
 end
