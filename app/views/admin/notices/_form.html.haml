@@ -1,0 +1,10 @@
+= simple_form_for(@notice, :html => {:multipart => true, :class => 'form-horizontal'}, :url => admin_notice_path(@notice)) do |f|
+  = f.error_notification
+  = f.input :title, :input_html => { :class => "span6" }
+  = f.input :description, :input_html => { :class => "span6" }
+  = f.input :image, :input_html => { :class => "span6" }
+  = f.input :contact_phone, :input_html => { :class => "span6" }
+  = f.input :contact_email, :input_html => { :class => "span6" }
+  = f.input :image_cache, :as => :hidden
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'

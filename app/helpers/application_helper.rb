@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  #format dates helper
+  def format_date(date)
+    I18n.l date
+  end
+
   # Use within views to set the page's HTML title
   def title(title = nil)
     default = ""

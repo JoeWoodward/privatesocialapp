@@ -1,4 +1,9 @@
 HarleyHealthVip::Application.routes.draw do
+
+  # events routes
+  get 'events' => 'events#index', :as => 'events'
+  get 'events/:id' => 'events#show', :as => 'event'
+
   # session path for logging out, the login form is within the home page ( static_pages )
   post 'login' => 'sessions#create', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
@@ -9,5 +14,22 @@ HarleyHealthVip::Application.routes.draw do
 
   #  users routes
   match 'sign-up' => "users#new", :as => 'sign_up'
-  resources :account, :controller => 'users'
+  resources :accounts, :controller => 'users'
+
+
+  namespace :admin do
+    root :to => redirect("/admin/accounts")
+
+    # session paths for admin
+    match 'login' => 'sessions#new', :as => 'login'
+    get 'logout' => 'sessions#destroy', :as => 'logout'
+    resources :sessions
+
+    #resources for admin notices
+    resources :notices
+
+    resources :events
+
+    resources :accounts, :controller => 'admins'
+  end
 end

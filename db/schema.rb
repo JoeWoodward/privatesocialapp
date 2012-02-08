@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 6) do
+ActiveRecord::Schema.define(:version => 11) do
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "date"
+    t.string   "image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "slug"
+  end
+
+  add_index "events", ["slug"], :name => "index_events_on_slug"
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -24,10 +36,19 @@ ActiveRecord::Schema.define(:version => 6) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
-  create_table "sessions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "notices", :force => true do |t|
+    t.string   "image"
+    t.string   "title"
+    t.text     "description"
+    t.string   "contact_phone"
+    t.string   "contact_email"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "slug"
+    t.integer  "user_id"
   end
+
+  add_index "notices", ["slug"], :name => "index_notices_on_slug"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
@@ -44,6 +65,7 @@ ActiveRecord::Schema.define(:version => 6) do
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
     t.string   "slug"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
