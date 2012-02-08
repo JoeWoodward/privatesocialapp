@@ -7,21 +7,6 @@ body {
   height: 100%;
   color: $bodycolor;
   font: normal #{$fontsize}/#{$lineheight} $serif;
-
-  #container {
-    @include container;
-    min-height: 100%;
-    margin-bottom: -$footer_height;
-
-    .content {
-      @include full;
-    }
-  }
-
-  #footer-push {
-    height: $footer_height;
-    clear: both;
-  }
 }
 
 /* Text and image selection styling */
