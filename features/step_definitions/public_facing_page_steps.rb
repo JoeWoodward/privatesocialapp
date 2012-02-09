@@ -40,11 +40,17 @@ Then /^I should be logged in$/ do
 end
 
 Given /^I have an account$/ do
-  account = User.new(first_name: 'Joe', last_name: 'Eastliegh', email: 'email@domain.com', password: 'password', password_confirmation: 'password')
-  account.save
+  visit'/sign-up'
+  fill_in('First name', :with => 'New')
+  fill_in('Surname', :with => 'User')
+  fill_in('Email', :with => 'email@domain.com')
+  fill_in('Password', :with => 'password')
+  fill_in('Password confirmation', :with => 'password')
+  find_button('Continue').click
 end
 
 When /^I fill in the Log In form and submit$/ do
+  visit '/'
   fill_in('Email', with: 'email@domain.com')
   fill_in('Password', with: 'password')
   find_button('Log In').click
@@ -59,4 +65,8 @@ Given /^I have signed in$/ do
   fill_in('Email', :with => 'email@domain.com')
   fill_in('Password', :with => 'password')
   find_button('Log In').click
+end
+
+Given /^I am logged out$/ do
+  visit '/logout'
 end

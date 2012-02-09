@@ -1,0 +1,19 @@
+= link_to 'back', accounts_notices_path
+%p
+  %b Title:
+  = @notice.title
+%p
+  %b Description:
+  = @notice.description
+%p
+  %b Image:
+  = image_tag(@notice.image.large.url.to_s)
+%p
+  %b Contact phone:
+  = @notice.contact_phone
+%p
+  %b Contact email:
+  = @notice.contact_email
+
+= link_to 'edit', edit_accounts_notice_path(@notice)
+= link_to 'delete', accounts_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?'

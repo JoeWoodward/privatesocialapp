@@ -1,5 +1,7 @@
 HarleyHealthVip::Application.routes.draw do
 
+  resources :notices, :only => [:index, :show]
+
   # events routes
   get 'events' => 'events#index', :as => 'events'
   get 'events/:id' => 'events#show', :as => 'event'
@@ -13,8 +15,12 @@ HarleyHealthVip::Application.routes.draw do
   root :to => 'static_pages#home'
 
   #  users routes
-  match 'sign-up' => "users#new", :as => 'sign_up'
-  resources :accounts, :controller => 'users'
+  match 'sign-up' => "accounts/users#new", :as => 'sign_up'
+
+  namespace :accounts do
+    resources :notices
+    resources :accounts, :controller => 'users', :path => '', :except => [:index, :destroy]
+  end
 
 
   namespace :admin do
@@ -26,7 +32,7 @@ HarleyHealthVip::Application.routes.draw do
     resources :sessions
 
     #resources for admin notices
-    resources :notices
+    resources :notices, :only => [:show, :index, :destroy]
 
     resources :events
 
