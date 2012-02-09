@@ -1,0 +1,14 @@
+/*  =HEADER
+----------------------------------------------------------------------*/
+
+header {
+  @include full;
+
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+}

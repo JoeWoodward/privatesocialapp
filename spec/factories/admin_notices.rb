@@ -4,7 +4,7 @@ Factory.define :notice do |f|
   include ActionDispatch::TestProcess
 
   f.image fixture_file_upload('public/apple-touch-icon.png', 'image/png')
-  f.title "MyString"
+  f.title "My Notice"
   f.description "MyText"
   f.contact_phone "89080809980"
   f.contact_email "MyString"

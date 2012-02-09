@@ -1,0 +1,17 @@
+%p
+  %b Title:
+  = @notice.title
+%p
+  %b Description:
+  = @notice.description
+%p
+  %b Image:
+  = image_tag(@notice.image.large.url.to_s)
+%p
+  %b Contact phone:
+  = @notice.contact_phone
+%p
+  %b Contact email:
+  = @notice.contact_email
+
+= link_to 'back', notices_path

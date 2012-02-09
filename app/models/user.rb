@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
-  validates_length_of :password, :minimum => 5
+  validates_length_of :password, :minimum => 5, :allow_blank => true
 
   # before filter calls this method before save to check there are no errors in formatting
   def format_attributes

@@ -8,7 +8,6 @@ gem 'hirb'              # Better console formatting. Needs .hirbrc
 
 gem 'capistrano'        # Deployment manager
 gem 'sorcery'
-gem 'cancan'
 gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'
 gem 'friendly_id'
 gem 'kaminari'

@@ -1,4 +1,6 @@
-class UsersController < ApplicationController
+class Accounts::UsersController < ApplicationController
+  before_filter :require_login, :except => [:new, :create]
+
   def new
     @user = User.new
   end
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
       # when the payment system is added this method will need to be changed
       # to redirect to the hosted page.
       login(params[:user][:email], params[:user][:password])
-      redirect_to account_path(@user)
+      redirect_to accounts_account_path(@user)
     else
       render :new
     end
@@ -23,7 +25,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      redirect_to account_path(@user), :notice => "You have successfully updated your personal details"
+      redirect_to accounts_account_path(@user), :notice => "You have successfully updated your personal details"
     else
       render :edit
     end

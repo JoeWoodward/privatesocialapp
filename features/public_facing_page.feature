@@ -18,17 +18,15 @@ Feature: public facing page
     Then I should have an account
     And I should be logged in
 
-
   Scenario: I should be able to Log In from the VIP Websites Info Page (Home)
     Given I am on the VIP website homepage
     And I have an account
+    And I am logged out
     When I fill in the Log In form and submit
     Then I should be logged in
     And should be redirected to my Account Details page
 
   Scenario: I should be able to edit my personal details when I'm logged in
-    Given I am on the VIP website homepage
-    And I have an account
-    And I have signed in
+    Given I have an account
     When I click the "Edit My Details" link
-    Then I should be taken to "/accounts/joe-eastliegh/edit"
+    Then I should be taken to "/accounts/new-user/edit"

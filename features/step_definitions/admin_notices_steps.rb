@@ -1,21 +1,23 @@
 Given /^there are notices in the system$/ do
-  visit('/admin/notices/new')
-  fill_in('Title', :with => 'test1')
-  fill_in('Description', :with => 'test1')
+  visit '/accounts/notices/new'
+  fill_in('Title', :with => 'Test1')
+  fill_in('Description', :with => 'A description of the notice')
   path = File.join(::Rails.root, "public/apple-touch-icon.png")
   attach_file("Image", path)
   fill_in('Contact phone', :with => '89768796789')
   find_button('Create Notice').click
-  visit('/admin/notices/new')
-  fill_in('Title', :with => 'test2')
-  fill_in('Description', :with => 'test2')
+
+  visit '/accounts/notices/new'
+  fill_in('Title', :with => 'Test2')
+  fill_in('Description', :with => 'description of the notice')
   path = File.join(::Rails.root, "public/apple-touch-icon.png")
   attach_file("Image", path)
   fill_in('Contact phone', :with => '89768796789')
   find_button('Create Notice').click
-  visit('/admin/notices/new')
-  fill_in('Title', :with => 'test3')
-  fill_in('Description', :with => 'test3')
+
+  visit '/accounts/notices/new'
+  fill_in('Title', :with => 'Test3')
+  fill_in('Description', :with => 'Another description of the notice')
   path = File.join(::Rails.root, "public/apple-touch-icon.png")
   attach_file("Image", path)
   fill_in('Contact phone', :with => '89768796789')
