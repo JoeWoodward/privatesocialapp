@@ -35,7 +35,7 @@ require 'bundler/capistrano'
 
  set :repository, "ssh://deploy@178.79.159.74/~/harley_health_vip.bare_repo.git/"
 
- set :branch, "deploy"
+ set :branch, "master"
 
  set :git_enable_submodules, 1
 
