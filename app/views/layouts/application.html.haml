@@ -6,6 +6,9 @@
     -# just copy _stylesheets.html.haml, and point to that partial instead.
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   %body{ :class => "#{controller.controller_name}" }
+    %nav.main-nav
+      menu
+    %section#wrapper
     = render "layouts/flashes"
     = yield
 

@@ -7,6 +7,15 @@ body {
   height: 100%;
   color: $bodycolor;
   font: normal #{$fontsize}/#{$lineheight} $serif;
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100%;
+    background-color: red;
+  }
 }
 
 /* Text and image selection styling */
