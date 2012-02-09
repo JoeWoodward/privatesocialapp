@@ -8,9 +8,7 @@
   %body{ :class => "#{controller.controller_name}" }
     %nav.main-nav
       menu
-    %section#wrapper
-      = render "layouts/flashes"
-      = yield
+    = yield
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"
