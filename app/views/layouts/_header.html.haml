@@ -1,2 +1,15 @@
-= link_to 'Go to the admin area >', admin_root_path
-%h1 Header
+.float-left
+  |
+  = link_to 'Account Details', accounts_account_path(current_user)
+  |
+  = link_to 'My Notices', accounts_notices_path
+  |
+  = link_to 'Notice Board', notices_path
+  |
+  = link_to 'Events', events_path
+  |
+.float-right
+  |
+  = link_to 'Go to the admin area >', admin_root_path
+  |
+.clear
