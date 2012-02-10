@@ -6,8 +6,7 @@
     -# just copy _stylesheets.html.haml, and point to that partial instead.
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   %body{ :class => "#{controller.controller_name}" }
-    %nav.main-nav
-      = image_tag 'logo.png'
+    = render 'layouts/main_nav'
     = yield
 
     -# Javascript at the bottom for fast page loading
