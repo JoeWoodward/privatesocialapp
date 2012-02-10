@@ -7,7 +7,9 @@
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   %body{ :class => "#{controller.controller_name}" }
     = render 'layouts/main_nav'
-    = yield
+    %section#horizontal-wrapper
+      = render "layouts/flashes"
+      = yield
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"
