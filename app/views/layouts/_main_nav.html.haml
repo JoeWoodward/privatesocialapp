@@ -1,13 +1,13 @@
 %nav.main-nav
-  = image_tag 'logo.png'
+  = link_to image_tag('logo.png'), root_path
   %ul.menu
     %li
       Account
     %li
       VIP Offers
     %li
-      Events
+      = link_to 'Events', events_path
     %li
       Ask A GP
     %li
-      Notice Board
+      = link_to 'Notice Board', notices_path
