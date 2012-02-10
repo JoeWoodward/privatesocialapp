@@ -1,8 +1,9 @@
-= simple_form_for @user, :url => account_detail_path(@user), :method => :put do |f|
-  = f.input :first_name
-  = f.input :last_name, label: 'Surname'
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  .actions
-    = f.button :submit, 'Update'
+%section#vertical-wrapper
+  = simple_form_for @user, :url => account_detail_path(@user), :method => :put do |f|
+    = f.input :first_name
+    = f.input :last_name, label: 'Surname'
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    .actions
+      = f.button :submit, 'Update'

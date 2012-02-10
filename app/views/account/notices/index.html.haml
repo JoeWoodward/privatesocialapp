@@ -1,19 +1,20 @@
-= link_to 'New notice', new_account_notice_path
-%br
-- @notices.each do |notice|
-  = image_tag(notice.image.thumb.url.to_s)
-  = notice.title
+%section#vertical-wrapper
+  = link_to 'New notice', new_account_notice_path
   %br
-  - if notice.contact_phone.present?
-    = notice.contact_phone
+  - @notices.each do |notice|
+    = image_tag(notice.image.thumb.url.to_s)
+    = notice.title
     %br
-  - if notice.contact_email.present?
-    = notice.contact_email
+    - if notice.contact_phone.present?
+      = notice.contact_phone
+      %br
+    - if notice.contact_email.present?
+      = notice.contact_email
+      %br
+    = notice.description
     %br
-  = notice.description
-  %br
-  = link_to 'view', account_notice_path(notice)
-  = link_to 'edit', edit_account_notice_path(notice)
-  = link_to 'delete', account_notice_path(notice), :method => :delete, :confirm => 'Are you sure?'
-  %br
-  %br
+    = link_to 'view', account_notice_path(notice)
+    = link_to 'edit', edit_account_notice_path(notice)
+    = link_to 'delete', account_notice_path(notice), :method => :delete, :confirm => 'Are you sure?'
+    %br
+    %br

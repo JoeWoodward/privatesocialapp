@@ -15,7 +15,7 @@ HarleyHealthVip::Application.routes.draw do
   root :to => 'static_pages#home'
 
   #  users routes
-  match 'sign-up' => "accounts/users#new", :as => 'sign_up'
+  match 'sign-up' => "account/users#new", :as => 'sign_up'
 
   namespace :account do
     resources :notices

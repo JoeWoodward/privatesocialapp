@@ -1,16 +1,17 @@
-%h1 Listing notices
-%br
-- @notices.each do |notice|
-  = image_tag(notice.image.thumb.url.to_s)
-  = notice.title
+%section#vertical-wrapper
+  %h1 Listing notices
   %br
-  - if notice.contact_phone.present?
-    = notice.contact_phone
+  - @notices.each do |notice|
+    = image_tag(notice.image.thumb.url.to_s)
+    = notice.title
     %br
-  - if notice.contact_email.present?
-    = notice.contact_email
+    - if notice.contact_phone.present?
+      = notice.contact_phone
+      %br
+    - if notice.contact_email.present?
+      = notice.contact_email
+      %br
+    = notice.description
+    = link_to 'more', notice
     %br
-  = notice.description
-  = link_to 'more', notice
-  %br
-  %br
+    %br

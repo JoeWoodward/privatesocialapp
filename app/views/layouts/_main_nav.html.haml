@@ -2,7 +2,7 @@
   = link_to image_tag('logo.png'), root_path
   %ul.menu
     %li
-      Account
+      = link_to 'Account', account_detail_path(current_user)
     %li
       VIP Offers
     %li

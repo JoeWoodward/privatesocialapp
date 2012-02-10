@@ -1,5 +1,5 @@
 Given /^I have created a notice$/ do
-  visit('/accounts/notices/new')
+  visit('/account/notices/new')
   fill_in 'Title', :with => 'My Notice'
   fill_in 'Description', :with => 'A description'
   path = File.join(::Rails.root, "public/apple-touch-icon.png")

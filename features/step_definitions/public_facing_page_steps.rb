@@ -40,7 +40,7 @@ Then /^I should be logged in$/ do
 end
 
 Given /^I have an account$/ do
-  visit'/sign-up'
+  visit('/sign-up')
   fill_in('First name', :with => 'New')
   fill_in('Surname', :with => 'User')
   fill_in('Email', :with => 'email@domain.com')
@@ -57,7 +57,7 @@ When /^I fill in the Log In form and submit$/ do
 end
 
 Then /^should be redirected to my Account Details page$/ do
-  current_path.should == "/accounts/#{User.find_by_email('email@domain.com').full_name.downcase.gsub(' ','-')}"
+  current_path.should == "/account/details/#{User.find_by_email('email@domain.com').full_name.downcase.gsub(' ','-')}"
 end
 
 Given /^I have signed in$/ do
