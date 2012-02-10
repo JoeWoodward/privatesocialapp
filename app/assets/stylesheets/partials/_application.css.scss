@@ -8,12 +8,18 @@ body {
   color: $bodycolor;
   font: normal #{$fontsize}/#{$lineheight} $serif;
 
-  #horizontal-wrapper {
+  #vertical-wrapper, #horizontal-wrapper {
     position: relative;
     float: left;
     margin-left: $main-nav-width;
-    width: 2000px;
     z-index: 2;
+  }
+
+  #vertical-wrapper {
+  }
+
+  #horizontal-wrapper {
+    width: 2000px;
   }
 }
 
