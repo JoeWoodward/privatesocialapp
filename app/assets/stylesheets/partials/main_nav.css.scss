@@ -1,0 +1,29 @@
+body {
+
+  .main-nav {
+    position: fixed;
+    width: $main-nav-width;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $brown;
+    z-index: 3;
+
+    .menu {
+      margin-top: 80px;
+      margin-left: 50px;
+
+      li {
+        display: block;
+        height: 30px;
+        width: 150px;
+        color: #C4BFB8;
+        border-top: 1px solid #C4BFB8;
+
+        a, a:active, a:visited {
+          color: #C4BFB8;
+        }
+      }
+    }
+  }
+}

@@ -6,18 +6,8 @@
     -# just copy _stylesheets.html.haml, and point to that partial instead.
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   %body{ :class => "#{controller.controller_name}" }
-    #container
-      %header
-        = render "layouts/header"
-
-      .content
-        = render "layouts/flashes"
-        = yield
-
-      #footer-push
-    %footer
-      #footer-container
-        = render "layouts/footer"
+    = render 'layouts/main_nav'
+    = yield
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"

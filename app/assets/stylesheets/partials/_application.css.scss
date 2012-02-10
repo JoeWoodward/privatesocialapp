@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
 }
 
 body {
@@ -8,19 +8,18 @@ body {
   color: $bodycolor;
   font: normal #{$fontsize}/#{$lineheight} $serif;
 
-  #container {
-    @include container;
-    min-height: 100%;
-    margin-bottom: -$footer_height;
-
-    .content {
-      @include full;
-    }
+  #vertical-wrapper, #horizontal-wrapper {
+    position: relative;
+    float: left;
+    margin-left: $main-nav-width;
+    z-index: 2;
   }
 
-  #footer-push {
-    height: $footer_height;
-    clear: both;
+  #vertical-wrapper {
+  }
+
+  #horizontal-wrapper {
+    width: 2000px;
   }
 }
 
