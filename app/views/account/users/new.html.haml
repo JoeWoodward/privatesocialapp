@@ -1,8 +1,8 @@
-= simple_form_for @user, :url => accounts_account_path(@user), :method => :put do |f|
+= simple_form_for @user, :url => account_detail_path(@user) do |f|
   = f.input :first_name
   = f.input :last_name, label: 'Surname'
   = f.input :email
   = f.input :password
   = f.input :password_confirmation
   .actions
-    = f.button :submit, 'Update'
+    = f.button :submit, 'Continue'

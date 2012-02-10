@@ -1,4 +1,4 @@
-class Accounts::NoticesController < ApplicationController
+class Account::NoticesController < ApplicationController
   before_filter :require_login
   before_filter :notice_is_users, :only => [:show, :edit, :update, :destroy]
 
@@ -21,7 +21,7 @@ class Accounts::NoticesController < ApplicationController
   def create
     @notice = current_user.notices.build(params[:notice])
     if @notice.save
-      redirect_to accounts_notice_path(@notice), notice: 'Notice was successfully created.'
+      redirect_to account_notice_path(@notice), notice: 'Notice was successfully created.'
     else
       render :new
     end
@@ -30,23 +30,23 @@ class Accounts::NoticesController < ApplicationController
   def update
     @notice = Notice.find(params[:id])
     if @notice.update_attributes(params[:notice])
-      redirect_to accounts_notice_path(@notice), notice: 'Notice was successfully created.'
+      redirect_to account_notice_path(@notice), notice: 'Notice was successfully created.'
     else
-      render edit_accounts_notice_path(@notice)
+      render edit_account_notice_path(@notice)
     end
   end
 
   def destroy
     @notice = Notice.find(params[:id])
     @notice.destroy
-    redirect_to accounts_notices_path
+    redirect_to account_notices_path
   end
 
   private
 
   def notice_is_users
     unless current_user.notices.include?(Notice.find(params[:id]))
-      redirect_to accounts_notices_path
+      redirect_to account_notices_path
     end
   end
 end
