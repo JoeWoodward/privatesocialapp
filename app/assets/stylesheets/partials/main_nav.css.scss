@@ -8,5 +8,18 @@ body {
     left: 0;
     background-color: $brown;
     z-index: 3;
+
+    .menu {
+      margin-top: 80px;
+      margin-left: 50px;
+
+      li {
+        display: block;
+        height: 30px;
+        width: 150px;
+        color: #fff;
+        border-top: 1px solid white;
+      }
+    }
   }
 }
