@@ -1,14 +1,13 @@
-%section#vertical-wrapper
-  %p
-    First Name:
-    = @user.first_name
-  %p
-    Last Name:
-    = @user.last_name
-  %p
-    Full Name:
-    = @user.full_name
-  %p
-    Email:
-    = @user.email
-  = link_to 'Edit My Details', edit_account_detail_path(@user)
+%p
+  First Name:
+  = @user.first_name
+%p
+  Last Name:
+  = @user.last_name
+%p
+  Full Name:
+  = @user.full_name
+%p
+  Email:
+  = @user.email
+= link_to 'Edit My Details', edit_account_detail_path(@user)

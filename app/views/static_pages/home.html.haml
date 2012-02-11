@@ -1,17 +1,16 @@
 - title 'Harley Health VIP'
-%section#vertical-wrapper
-  = render "layouts/flashes"
-  = link_to 'Sign Up', sign_up_path
+= render "layouts/flashes"
+= link_to 'Sign Up', sign_up_path
+%br
+= form_tag login_path do
+  = label_tag :email, 'Email *', :class => 'email required'
+  = text_field_tag :email, params[:email], :class => 'email required string'
   %br
-  = form_tag login_path do
-    = label_tag :email, 'Email *', :class => 'email required'
-    = text_field_tag :email, params[:email], :class => 'email required string'
-    %br
-    = label_tag :password, 'Password *', :class => 'password required'
-    = password_field_tag :password, params[:password], :class => 'password required'
-    %br
-    = check_box_tag :remember_me, 1, params[:remember_me], :class => 'boolean optional'
-    %span Remember me
-    .actions
-      = submit_tag 'Log In', :class => 'button'
-  .clear
+  = label_tag :password, 'Password *', :class => 'password required'
+  = password_field_tag :password, params[:password], :class => 'password required'
+  %br
+  = check_box_tag :remember_me, 1, params[:remember_me], :class => 'boolean optional'
+  %span Remember me
+  .actions
+    = submit_tag 'Log In', :class => 'button'
+.clear
