@@ -1,4 +1,4 @@
-class Account::UsersController < ApplicationController
+class Account::UsersController < Account::AccountController
   before_filter :require_login, :except => [:new, :create]
 
   def new

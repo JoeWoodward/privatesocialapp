@@ -1,4 +1,4 @@
-class Account::NoticesController < ApplicationController
+class Account::NoticesController < Account::AccountController
   before_filter :require_login
   before_filter :notice_is_users, :only => [:show, :edit, :update, :destroy]
 
