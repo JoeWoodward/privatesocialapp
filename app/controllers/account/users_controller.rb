@@ -7,8 +7,10 @@ class Account::UsersController < Account::AccountController
 
   def create
     @user = User.new(params[:user])
+
     # this is so that friendly id picks up the slug
     if @user.save
+
       # when the payment system is added this method will need to be changed
       # to redirect to the hosted page.
       login(params[:user][:email], params[:user][:password])
@@ -32,6 +34,6 @@ class Account::UsersController < Account::AccountController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 end

@@ -12,14 +12,18 @@ HarleyHealthVip::Application.routes.draw do
   resources :sessions
 
   # root to the the public info page, also contains a login and sign up form
-  root :to => 'static_pages#home'
+  root to: 'static_pages#home'
 
   #  users routes
   match 'sign-up' => "account/users#new", :as => 'sign_up'
 
   namespace :account do
+
+    #       account_root        /account(.:format)          account/users#show
+    #    account_notices GET    /account/notices(.:format)  account/notices#index
+    #                    POST   /account/notices(.:format)  account/notices#create
+    root to: 'users#show'
     resources :notices
-    resources :details, :controller => 'users', :except => [:index, :destroy]
   end
 
 
