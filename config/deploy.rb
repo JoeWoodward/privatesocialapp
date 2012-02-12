@@ -1,4 +1,14 @@
 require 'bundler/capistrano'
+require 'capistrano/mountaintop'
+
+ set :campfire_options, {
+  :account => 'lovelycreative',
+  :room => 'Developer Chat',
+  :user => 'lovelybot',
+  :token => 'f939a4dd629c6bbd4cf811f4dd1c8de1d08656ce',
+  :ssl => true
+ }
+
  load 'deploy/assets'
 
  # use this if using rbenv on server, capistrano uses a very basic interactive shell
@@ -19,11 +29,9 @@ require 'bundler/capistrano'
 
  default_run_options[:pty] = true
 
- ssh_options[:forward_agent] = true
+ set :ssh_options, { :forward_agent => true }
 
  set :deploy_to, "/home/deploy/apps/harley_health_vip"
-
- set :deploy_via, :remote_cache
 
  set :user, "deploy"
 
@@ -31,11 +39,18 @@ require 'bundler/capistrano'
 
  set :scm, :git
 
- set :scm_username, "deploy"
+ #set :scm_username, "deploy"
 
- set :repository, "ssh://deploy@178.79.159.74/~/harley_health_vip.bare_repo.git/"
+ #set :repository, "ssh://deploy@178.79.159.74/~/harley_health_vip.bare_repo.git/"
+ set :repository, "git@github.com:benwoodward/harley_health_vip.git"
+
+ ssh_options[:forward_agent] = true
 
  set :branch, "master"
+
+ set :repository_cache, "git_cache"
+
+ set :deploy_via, :remote_cache
 
  set :git_enable_submodules, 1
 
@@ -65,9 +80,9 @@ namespace :deploy do
   end
 end
 
-before 'deploy:update' do
-  system 'git push linode master'
-end
+#before 'deploy:update' do
+  #system 'git push linode master'
+#end
 
 namespace :bundler do
   task :create_symlink, :roles => :app do
@@ -86,3 +101,7 @@ after 'deploy:update_code', 'bundler:bundle_new_release'
 
 # after 'deploy:update_code', 'deploy:symlink_shared'
 before 'deploy:assets:precompile', 'deploy:symlink_shared'
+
+task :ohai do
+  campfire_room.speak 'o hai'
+end
