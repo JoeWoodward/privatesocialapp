@@ -51,9 +51,3 @@ Feature: admin should be able to add FAQ's
     And I have an account
     When I am on the "/faqs" page
     Then I should not see "An inactive FAQ"
-
-  Scenario: as a VIP user I should be able to ask a question
-    Given I am on the VIP website homepage
-    And I have an account
-    When I am on the "/ask-a-question" page
-    Then I should see "Your question"

@@ -1,5 +1,7 @@
 When /^I fill in FAQ details but do not check active$/ do
-  FactoryGirl.create(:faq, :active => false)
+  fill_in('Question', :with => 'An inactive FAQ')
+  fill_in('Answer', :with => 'The answer')
+  find_button('Create Faq').click
 end
 
 Then /^I should see "([^"]*)" within "([^"]*)"$/ do |text, path|
@@ -20,11 +22,17 @@ Given /^there are FAQs in the system$/ do
   visit '/admin/faqs/new'
   fill_in('Question', :with => 'An active FAQ')
   fill_in('Answer', :with => 'The answer')
+  p = page.driver.browser.find_element(:id, 'faq_active').click
   find_button('Create Faq').click
 end
 
 When /^I fill in FAQ details and check active$/ do
-  FactoryGirl.create(:faq, :active => true)
+  fill_in('Question', :with => 'An active FAQ')
+  fill_in('Answer', :with => 'The answer')
+  p = page.driver.browser.find_element(:id, 'faq_active')
+  puts p.attribute('type')
+  p.click
+  find_button('Create Faq').click
 end
 
 Then /^I should not see "([^"]*)"$/ do |content|
