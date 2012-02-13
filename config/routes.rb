@@ -1,5 +1,7 @@
 HarleyHealthVip::Application.routes.draw do
 
+  get 'faqs' => 'faqs#index', :as => 'faqs'
+
   resources :notices, :only => [:index, :show]
 
   # events routes
@@ -41,5 +43,7 @@ HarleyHealthVip::Application.routes.draw do
     resources :events
 
     resources :accounts, :controller => 'admins'
+
+    resources :faqs
   end
 end

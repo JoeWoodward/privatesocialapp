@@ -1,0 +1,22 @@
+%h1 Listing faqs
+
+%table
+  %tr
+    %th Question
+    %th Answer
+    %th Active
+    %th &nbsp
+
+  - @faqs.each do |faq|
+    %tr
+      %td= faq.question
+      %td= faq.answer
+      %td= faq.active
+      %td
+        = link_to 'view', admin_faq_path(faq)
+        = link_to 'edit', edit_admin_faq_path(faq)
+        = link_to 'delete', admin_faq_path(faq), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New FAQ', new_admin_faq_path
