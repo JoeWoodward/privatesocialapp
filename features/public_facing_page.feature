@@ -29,4 +29,4 @@ Feature: public facing page
   Scenario: I should be able to edit my personal details when I'm logged in
     Given I have an account
     When I click the "Edit My Details" link
-    Then I should be taken to "/account/details/new-user/edit"
+    Then I should be taken to "/your/details/edit"

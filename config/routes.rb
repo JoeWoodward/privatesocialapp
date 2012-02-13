@@ -17,16 +17,14 @@ HarleyHealthVip::Application.routes.draw do
   root to: 'static_pages#home'
 
   #  users routes
-  match 'sign-up' => "account/users#new", :as => 'sign_up'
+  match 'sign-up' => "your/users#new", :as => 'sign_up'
+  post 'your/details' => 'your/users#create', :as => 'your_details'
+  get 'your/details/edit' => 'your/users#edit', :as => 'edit_your_details'
+  get 'your/details' => 'your/users#show', :as => 'your_details'
+  put 'your/details' => 'your/users#update'
 
-  namespace :account do
-
-    #       account_path        /account(.:format)          account/users#show
-    #   edit_account_path       /account/edit               account/users#edit
-    #    account_notices GET    /account/notices(.:format)  account/notices#index
-    #                    POST   /account/notices(.:format)  account/notices#create
-    root to: 'users#show', :as => ''
-    get 'edit' => 'users#edit', :as => 'edit'
+  namespace :your do
+    root :to => redirect('/your/details')
     resources :notices
   end
 

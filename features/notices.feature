@@ -17,15 +17,13 @@ Feature: as a VIP user I should be able to
     Then I should be taken to "/notices/test1"
 
   Scenario: I should be able to create a new notice
-    Given I am on the "/account/notices" page
+    Given I am on the "/your/notices" page
     When I click the "New notice" link
-    Then I should be taken to "/account/notices/new"
+    Then I should be taken to "/your/notices/new"
 
 
   Scenario: I should be able to view my notices
     in my account pages
     Given I have created a notice
-    When I am on the "/account/notices" page
+    When I am on the "/your/notices" page
     Then I should see "My Notice"
-
-  Scenario:

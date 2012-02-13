@@ -52,7 +52,9 @@ Then /^I should create a new event$/ do
 end
 
 When /^confirm the alert$/ do
-  page.driver.browser.switch_to.alert.accept
+  alert = page.driver.browser.switch_to.alert
+  puts alert.text
+  alert.accept
 end
 
 Then /^the event should be deleted$/ do

@@ -57,7 +57,7 @@ When /^I fill in the Log In form and submit$/ do
 end
 
 Then /^should be redirected to my Account Details page$/ do
-  current_path.should == "/account/details/#{User.find_by_email('email@domain.com').full_name.downcase.gsub(' ','-')}"
+  current_path.should == "/your/details"
 end
 
 Given /^I have signed in$/ do
