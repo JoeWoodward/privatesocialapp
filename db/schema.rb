@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 11) do
+ActiveRecord::Schema.define(:version => 13) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(:version => 11) do
   end
 
   add_index "events", ["slug"], :name => "index_events_on_slug"
+
+  create_table "faqs", :force => true do |t|
+    t.string   "question"
+    t.text     "answer"
+    t.integer  "viewed",     :default => 0
+    t.boolean  "active"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.string   "slug"
+  end
+
+  add_index "faqs", ["slug"], :name => "index_faqs_on_slug"
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
