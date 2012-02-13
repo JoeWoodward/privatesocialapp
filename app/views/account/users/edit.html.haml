@@ -1,4 +1,4 @@
-= simple_form_for @user, :url => account_detail_path(@user), :method => :put do |f|
+= simple_form_for @user, :url => account_path(@user), :method => :put do |f|
   = f.input :first_name
   = f.input :last_name, label: 'Surname'
   = f.input :email

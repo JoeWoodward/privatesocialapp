@@ -21,10 +21,12 @@ HarleyHealthVip::Application.routes.draw do
 
   namespace :account do
 
-    #       account_root        /account(.:format)          account/users#show
+    #       account_path        /account(.:format)          account/users#show
+    #   edit_account_path       /account/edit               account/users#edit
     #    account_notices GET    /account/notices(.:format)  account/notices#index
     #                    POST   /account/notices(.:format)  account/notices#create
-    root to: 'users#show'
+    root to: 'users#show', :as => ''
+    get 'edit' => 'users#edit', :as => 'edit'
     resources :notices
   end
 

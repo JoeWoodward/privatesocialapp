@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :orientation
+
   def index
     @events = Event.all
   end
