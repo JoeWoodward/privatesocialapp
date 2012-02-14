@@ -26,6 +26,7 @@ Feature: admin should be able to add offers
     Then I should see "an offer"
     And I should see "another offer"
     And I should see "yet another offer"
+    And I should see "true"
 
   Scenario: as an admin user I should be able to edit an offer
     Given there are offers in the system
@@ -46,4 +47,4 @@ Feature: admin should be able to add offers
     And I have an account
     When I am on the "/offers" page
     Then I should see "an offer"
-    And I should see "another offer" 
+    And I should see "another offer"

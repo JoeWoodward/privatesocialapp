@@ -4,5 +4,5 @@ Factory.define :offer do |f|
 
   f.name "My Offer"
   f.image fixture_file_upload('public/apple-touch-icon.png', 'image/png')
-  f.active false
+  f.active true
 end

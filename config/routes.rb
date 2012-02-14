@@ -1,5 +1,7 @@
 HarleyHealthVip::Application.routes.draw do
 
+  get "/offers" => 'offers#index', :as => 'offers'
+
   get 'faqs' => 'faqs#index', :as => 'faqs'
 
   resources :notices, :only => [:index, :show]
