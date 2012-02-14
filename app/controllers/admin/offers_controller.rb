@@ -1,4 +1,7 @@
 class Admin::OffersController < Admin::ApplicationController
+  before_filter :require_login
+  before_filter :is_admin
+
   def index
     @offers = Offer.all
   end
