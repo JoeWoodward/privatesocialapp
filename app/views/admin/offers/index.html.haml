@@ -1,0 +1,21 @@
+%h1 Listing offers
+
+%table
+  %tr
+    %th Name
+    %th Image
+    %th Active
+    %th
+
+  - @offers.each do |offer|
+    %tr
+      %td= offer.name
+      %td= image_tag(offer.image.thumb.url.to_s)
+      %td= offer.active
+      %td
+        = link_to 'view', admin_offer_path(offer)
+        = link_to 'edit', edit_admin_offer_path(offer)
+
+%br
+
+= link_to 'New Offer', new_admin_offer_path

@@ -45,5 +45,7 @@ HarleyHealthVip::Application.routes.draw do
     resources :accounts, :controller => 'admins'
 
     resources :faqs
+
+    resources :offers, :except => :destroy
   end
 end

@@ -1,0 +1,8 @@
+= simple_form_for(@offer, :html => {:multipart => true, :class => 'form-horizontal'}, :url => admin_offer_path(@offer)) do |f|
+  = f.error_notification
+  = f.input :name, :input_html => { :class => 'span6' }
+  = f.input :image
+  = f.input :active, :hint => 'currently active offer?'
+  = f.input :image_cache, :as => :hidden
+  .form-actions
+    = f.button :submit
