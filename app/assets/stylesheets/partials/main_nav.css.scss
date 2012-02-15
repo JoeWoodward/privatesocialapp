@@ -1,29 +1,40 @@
-body {
+.main-nav {
+  position: fixed;
+  width: $main-nav-width - 90px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $purple;
+  z-index: 3;
+  padding: 0 45px;
+  
+  .logo {
+    display: block;
+    margin-top:50px;
+    width: 140px;
+    height: 120px;
+  }
+  .menu {
+    margin: 60px 0 80px;
+    
+    li {
+      display: block;
+      height: 30px;
+      color: #C4BFB8;
+      border-top: 1px solid #C4BFB8;
 
-  .main-nav {
-    position: fixed;
-    width: $main-nav-width;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: $brown;
-    z-index: 3;
-
-    .menu {
-      margin-top: 80px;
-      margin-left: 50px;
-
-      li {
-        display: block;
-        height: 30px;
-        width: 150px;
+      a, a:active, a:visited {
         color: #C4BFB8;
-        border-top: 1px solid #C4BFB8;
-
-        a, a:active, a:visited {
-          color: #C4BFB8;
-        }
+        text-decoration: none;
       }
     }
   }
+  footer{
+    font-size: 10px;
+    line-height: 15px;
+    ul{
+      margin-top: 20px;
+    }
+  }
 }
+

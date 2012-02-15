@@ -6,13 +6,15 @@ html {
 body {
   height: 100%;
   color: $bodycolor;
-  font: normal #{$fontsize}/#{$lineheight} $serif;
+  font: normal #{$fontsize}/#{$lineheight} $sans;
+  background: url('bg01.png') $main-nav-width 0 no-repeat transparent;
 
   .vertical-wrapper, .horizontal-wrapper {
     position: relative;
     float: left;
     margin-left: $main-nav-width;
     z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
   }
 
   .vertical-wrapper {
