@@ -60,3 +60,13 @@ end
 Then /^the event should be deleted$/ do
   Event.find_by_description('different info').should be_nil
 end
+
+Then /^I should see a confirmation box$/ do
+  alert = page.driver.browser.switch_to.alert
+  puts alert.text
+  alert.accept
+end
+
+Given /^I have RSVP'd to an event$/ do
+  visit('/events/test1/rsvp')
+end

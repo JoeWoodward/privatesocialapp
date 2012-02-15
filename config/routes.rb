@@ -12,6 +12,8 @@ HarleyHealthVip::Application.routes.draw do
   # events routes
   get 'events' => 'events#index', :as => 'events'
   get 'events/:id' => 'events#show', :as => 'event'
+  get 'events/:id/rsvp' => 'events#rsvp', :as => 'rsvp_event'
+  get 'events/:id/cancel-rsvp' => 'events#cancel_rsvp', :as => 'cancel_event_rsvp'
 
   # session path for logging out, the login form is within the home page ( static_pages )
   post 'login' => 'sessions#create', :as => 'login'
@@ -27,10 +29,12 @@ HarleyHealthVip::Application.routes.draw do
   get 'your/details/edit' => 'your/users#edit', :as => 'edit_your_details'
   get 'your/details' => 'your/users#show', :as => 'your_details'
   put 'your/details' => 'your/users#update'
+  get 'your/events/:id/cancel-rsvp' => 'your/events#cancel_rsvp', :as => 'cancel_your_event_rsvp'
 
   namespace :your do
     root :to => redirect('/your/details')
     resources :notices
+    resources :events, :only => [:index, :show]
   end
 
 

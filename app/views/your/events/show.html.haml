@@ -1,4 +1,4 @@
-= link_to '< All events', events_path
+= link_to '< All events', your_events_path
 %br
 %p
   %b Title:
@@ -12,4 +12,4 @@
 %p
   %b Image:
   = image_tag @event.image.large.url.to_s if @event.image?
-= rsvp(@event)
+= link_to 'Cancel RSVP', cancel_your_event_rsvp_path(@event)
