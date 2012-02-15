@@ -1,0 +1,6 @@
+= render 'layouts/flashes'
+= form_tag ask_a_question_path do
+  = label_tag :question, 'Question *', :class => 'question required'
+  = text_area_tag :question, params[:question], :class => 'question required string'
+  .actions
+    = submit_tag 'Submit question', :class => 'button'
