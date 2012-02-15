@@ -1,5 +1,5 @@
-%section#vertical-wrapper
-  - @faqs.each do |faq|
-    %p= faq.question
-    %p= faq.answer
-    %br
+= link_to 'Ask A Question', ask_a_question_path
+- @faqs.each do |faq|
+  %p= faq.question
+  %p= faq.answer
+  %br

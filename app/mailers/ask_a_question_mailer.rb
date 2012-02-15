@@ -1,5 +1,5 @@
 class AskAQuestionMailer < ActionMailer::Base
-  default to: "test@mail.com"
+  default to: "facebook.spotify@gmail.com"
   def the_users_question(user_full_name, user_email, question)
     @name = user_full_name
     @question = question
