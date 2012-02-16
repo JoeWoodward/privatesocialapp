@@ -1,5 +1,7 @@
 HarleyHealthVip::Application.routes.draw do
 
+  resources :user_password_resets, :path => 'password-reset'
+
   get 'ask-a-question' => 'ask_a_question#new', :as => 'ask_a_question'
   post 'ask-a-question' => 'ask_a_question#create'
 
