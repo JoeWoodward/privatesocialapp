@@ -37,3 +37,11 @@ Feature: as a VIP user I should be able to view events
     Given I have RSVP'd to an event
     When I am on the "/your/events" page
     Then I should see "test1"
+
+  @javascript
+  Scenario: as a VIP user I should be able to cancel an
+    event from my accout area
+    Given I have RSVP'd to an event
+    When I am on the "/your/events/test1" page
+    And I click the "Cancel RSVP" link
+    Then I should be taken to "/your/events"
