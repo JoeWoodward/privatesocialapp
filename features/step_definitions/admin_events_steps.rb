@@ -52,9 +52,21 @@ Then /^I should create a new event$/ do
 end
 
 When /^confirm the alert$/ do
-  page.driver.browser.switch_to.alert.accept
+  alert = page.driver.browser.switch_to.alert
+  puts alert.text
+  alert.accept
 end
 
 Then /^the event should be deleted$/ do
   Event.find_by_description('different info').should be_nil
+end
+
+Then /^I should see a confirmation box$/ do
+  alert = page.driver.browser.switch_to.alert
+  puts alert.text
+  alert.accept
+end
+
+Given /^I have RSVP'd to an event$/ do
+  visit('/events/test1/rsvp')
 end

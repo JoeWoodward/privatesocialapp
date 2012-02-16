@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  make_flagger
+
   has_many :notices
 
   # use sorcery for authentication

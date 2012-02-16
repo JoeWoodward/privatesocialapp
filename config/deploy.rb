@@ -44,8 +44,6 @@ require 'capistrano/mountaintop'
  #set :repository, "ssh://deploy@178.79.159.74/~/harley_health_vip.bare_repo.git/"
  set :repository, "git@github.com:benwoodward/harley_health_vip.git"
 
- ssh_options[:forward_agent] = true
-
  set :branch, "master"
 
  set :repository_cache, "git_cache"

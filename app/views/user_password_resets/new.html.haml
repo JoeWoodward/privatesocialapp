@@ -1,0 +1,8 @@
+= form_tag user_password_resets_path, :method => :post do
+  .control-group.string.required
+    = label_tag :email, 'Email', :class => 'string required'
+    .controls
+      = text_field_tag :email, nil, :class => 'string required'
+  .form-actions
+    = submit_tag 'Reset'
+= link_to 'Back', root_path

@@ -1,0 +1,7 @@
+= simple_form_for(@faq, :html => {:multipart => true, :class => 'form-horizontal'}, :url => admin_faq_path(@faq)) do |f|
+  = f.error_notification
+  = f.input :question, :input_html => { :class => "span6" }
+  = f.input :answer, :input_html => { :class => "span6" }
+  = f.input :active, :hint => "&nbsp;  display this question in the VIP area?".html_safe
+  .form-actions
+    = f.button :submit

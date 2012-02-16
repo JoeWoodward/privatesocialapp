@@ -16,3 +16,32 @@ Feature: as a VIP user I should be able to view events
     Given I am on the "/events" page
     When I click the "more" link
     Then I should be taken to "/events/test1"
+
+  @javascript
+  Scenario: as a VIP user I should be able to RSVP an event
+    Given I am on the "/events/test1" page
+    When I click the "RSVP" link
+    Then I should see a confirmation box
+    And I should be taken to "/events"
+
+  @javascript
+  Scenario: I should be able to cancel the RSVP
+    Given I have RSVP'd to an event
+    And I am on the "/events/test1" page
+    When I click the "Cancel RSVP" link
+    Then I should be taken to "/events"
+
+  @javascript
+  Scenario: as a VIP user I should be able to see
+    my events within my account page
+    Given I have RSVP'd to an event
+    When I am on the "/your/events" page
+    Then I should see "test1"
+
+  @javascript
+  Scenario: as a VIP user I should be able to cancel an
+    event from my accout area
+    Given I have RSVP'd to an event
+    When I am on the "/your/events/test1" page
+    And I click the "Cancel RSVP" link
+    Then I should be taken to "/your/events"

@@ -64,4 +64,18 @@ HarleyHealthVip::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+
+  ActionMailer::Base.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => 'smtp.gmail.com',
+    :port => 587,
+    :domain => "178.79.159.74",
+    :user_name => '48harleystreet.notifier@gmail.com',
+    :password => '678iuy678iuy',
+    :authentication => 'plain',
+  }
+
 end
