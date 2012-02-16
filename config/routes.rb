@@ -48,6 +48,8 @@ HarleyHealthVip::Application.routes.draw do
     get 'logout' => 'sessions#destroy', :as => 'logout'
     resources :sessions
 
+    resources :admin_password_resets, :path => 'password-reset', :as => 'password_resets'
+
     #resources for admin notices
     resources :notices, :only => [:show, :index, :destroy]
 
