@@ -1,3 +1,8 @@
 = "#{@name} asked,"
 %br
 = @question
+%br
+Click
+= mail_to " #{@name} ", @email
+to reply
+
