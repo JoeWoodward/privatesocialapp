@@ -7,7 +7,6 @@
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   %body{ :class => "#{controller.controller_name}" }
     = render 'layouts/main_nav'
-    - title 'Harley Health VIP'
     %div{class: "#{@orientation}-wrapper"}
       = yield
 
