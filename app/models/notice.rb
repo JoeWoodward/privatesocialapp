@@ -12,7 +12,6 @@ class Notice < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :description
-  validates_presence_of :image
 
   validates_uniqueness_of :description
 
