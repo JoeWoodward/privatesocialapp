@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  make_flaggable :rsvp
+  has_many :users, :through => :rsvps
 
   extend FriendlyId
   friendly_id :title, use: :slugged
