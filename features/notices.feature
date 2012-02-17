@@ -7,14 +7,14 @@ Feature: as a VIP user I should be able to
     And there are notices in the system
 
   Scenario: I should be able to view a list of notices
-    When I am on the "/notices" page
+    When I am on the "/noticeboard" page
     Then I should see "Test1"
     And I should see "Test2"
 
   Scenario: I should be able to view a single notice
-    Given I am on the "/notices" page
+    Given I am on the "/noticeboard" page
     When I click the "more" link
-    Then I should be taken to "/notices/test1"
+    Then I should be taken to "/noticeboard/test1"
 
   Scenario: I should be able to create a new notice
     Given I am on the "/your/notices" page

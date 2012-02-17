@@ -9,7 +9,7 @@ HarleyHealthVip::Application.routes.draw do
 
   get 'faqs' => 'faqs#index', :as => 'faqs'
 
-  resources :notices, :only => [:index, :show]
+  resources :notices, :only => [:index, :show], :path => 'noticeboard'
 
   # events routes
   get 'events' => 'events#index', :as => 'events'
