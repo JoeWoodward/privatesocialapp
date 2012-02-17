@@ -1,2 +1,30 @@
 /*	=STATIC PAGES / HOME STYLES
 ----------------------------------------------------------------------*/
+.home{
+  ul{
+    margin: 30px 0;
+  }
+  a[href*='sign-up']{
+    margin-bottom: 30px;
+  }
+  form{
+    label{
+      width: 75px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    
+    p{
+      float: right;
+      margin-right: 30px;
+    }
+    .actions{
+      clear: both;
+      margin: 20px 0  15px 78px;
+      }
+  }
+  a[href*='password-reset']{
+    display: block;
+    text-align: right;
+  }
+}

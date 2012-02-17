@@ -1,6 +1,6 @@
 // Dimensions
 
-$main-nav-width: 250px;
+$main-nav-width: 220px;
 
 // Colors
 
@@ -10,7 +10,7 @@ $highlight:   #30a9ac;          // For callouts, for example
 $bodycolor:   #C4BFB8;
 
 $brown: #1A0711;
-
+$purple: #170911;
 // Typography
 
 $serif:     Georgia, "Times New Roman", serif;
@@ -29,9 +29,9 @@ $lineheight:    24px;
 // $side-gutter-width: $gutter-width*2;
 
 $total-cols: 12;
-$col-width: 60px;
-$gutter-width: 20px;
-$side-gutter-width: $gutter-width*2;
+$col-width: 4em;
+$gutter-width: 1em;
+$side-gutter-width: $gutter-width;
 
 // Used by Hashgrid
 $gutter: 20px;

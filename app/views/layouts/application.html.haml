@@ -6,8 +6,9 @@
     -# just copy _stylesheets.html.haml, and point to that partial instead.
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   %body{ :class => "#{controller.controller_name}" }
-    = render 'layouts/main_nav'
-    %div{class: "#{@orientation}-wrapper"}
+    
+    #page
+      = render 'layouts/main_nav'
       = yield
 
     -# Javascript at the bottom for fast page loading
