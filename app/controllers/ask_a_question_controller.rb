@@ -7,8 +7,7 @@ class AskAQuestionController < ApplicationController
 
   def create
     AskAQuestionMailer.the_users_question(current_user.full_name, current_user.email, params[:question]).deliver
-    flash[:success] = 'Your question has been submitted, we will answer as soon as possible'
-    redirect_to faqs_path
+    redirect_to faqs_path, :notice => 'Your question has been submitted, we will answer as soon as possible'
   end
 
   protected
