@@ -30,7 +30,7 @@ class Admin::AdminPasswordResetsController < Admin::ApplicationController
     # the next line clears the temporary token and updates the password
     if @user.change_password!(params[:user][:password])
       login(@user.email, params[:user][:password])
-      redirect_to(admin_path(@user), :notice => 'Password was successfully updated.')
+      redirect_to(admin_account_path(@user), :notice => 'Password was successfully updated.')
     else
       render :action => "edit"
     end
