@@ -1,6 +1,6 @@
-class CreateRsvps < ActiveRecord::Migration
+class CreateBookmarks < ActiveRecord::Migration
   def change
-    create_table :rsvps do |t|
+    create_table :bookmarks do |t|
       t.integer :user_id
       t.integer :event_id
 

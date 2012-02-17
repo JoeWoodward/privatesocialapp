@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  make_flagger
+  has_many :rsvps
+  has_many :events, :through => :rsvps
 
   has_many :notices
 
