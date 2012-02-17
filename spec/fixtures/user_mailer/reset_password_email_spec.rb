@@ -23,7 +23,7 @@ describe UserMailer do
     end
 
     it 'should include @url' do
-      mail.body.encoded.should match('http://178.79.159.74/password_resets')
+      mail.body.encoded.should match('http://178.79.159.74/password_reset')
     end
   end
 end

@@ -36,7 +36,7 @@ Feature: as a VIP user I should be able to view events
     my events within my account page
     Given I have RSVP'd to an event
     When I am on the "/your/events" page
-    Then I should see "test1"
+    Then I should see "Test1"
 
   @javascript
   Scenario: as a VIP user I should be able to cancel an
