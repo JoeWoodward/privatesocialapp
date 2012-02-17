@@ -4,7 +4,6 @@ FactoryGirl.define do
   factory :faq do
     question "MyString"
     answer "MyText"
-    viewed 1
     active false
   end
 end
