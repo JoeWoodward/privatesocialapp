@@ -4,14 +4,14 @@ class EventsController < ApplicationController
 
   def rsvp
     @event = Event.find(params[:id])
-    current_user.flag(@event, :rsvp)
-    redirect_to events_path, :notice => "You can now view '#{@event.title.downcase}' within "#{link_to 'your events', your_events_path}
+    current_user.events << @event
+    redirect_to events_path, :notice => "You can now view '#{@event.title}' event within your events"
   end
 
   def cancel_rsvp
     @event = Event.find(params[:id])
-    current_user.unflag(@event, :rsvp)
-    redirect_to events_path, :notice => "You have successfully cancelled your RSVP for '#{@event.title.downcase}'"
+    current_user.events.delete(@event)
+    redirect_to events_path, :notice => "You have cancelled your RSVP for '#{@event.title}'"
   end
 
   def index

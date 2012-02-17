@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :rsvps
-  has_many :events, :through => :rsvps
+  has_many :bookmarks
+  has_many :events, :through => :bookmarks
 
   has_many :notices
 

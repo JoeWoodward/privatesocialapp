@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
-  has_many :rsvps
-  has_many :users, :through => :rsvps
+  has_many :bookmarks
+  has_many :users, :through => :bookmarks
 
   extend FriendlyId
   friendly_id :title, use: :slugged

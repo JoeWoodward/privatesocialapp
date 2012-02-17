@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(:version => 16) do
 
+  create_table "bookmarks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "events", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -86,13 +93,6 @@ ActiveRecord::Schema.define(:version => 16) do
   end
 
   add_index "offers", ["slug"], :name => "index_offers_on_slug"
-
-  create_table "rsvps", :force => true do |t|
-    t.integer  "users_id"
-    t.integer  "events_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
