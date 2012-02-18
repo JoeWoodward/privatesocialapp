@@ -1,0 +1,17 @@
+.offer-menu{
+  overflow: hidden;
+  a{
+    display: block;
+    float: left;
+    background: #a49452;
+    padding: 5px 8px;
+    &:last-child{
+      background-color: black;
+    }
+  }
+}
+.slider-offer{
+  ul{
+    list-style: none;
+  }
+}

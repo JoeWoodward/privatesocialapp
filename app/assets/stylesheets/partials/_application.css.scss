@@ -10,31 +10,28 @@ body {
 
   background: url('bg01.png') right 0 no-repeat $purple;
 
-  // .vertical-wrapper, .horizontal-wrapper {
-  //   position: relative;
-  //   float: left;
-  //   margin-left: $main-nav-width;
-  //   z-index: 2;
-  //   background: rgba(0, 0, 0, 0.8);
-  // }
+  .vertical-wrapper, .horizontal-wrapper {
+    position: relative;
+    float: left;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+  }
 
-  // .vertical-wrapper {
-  // }
+  .vertical-wrapper {
+  }
 
-  // .horizontal-wrapper {
-  //   width: 2000px;
-  // }
+  .horizontal-wrapper {
+    width: 2000px;
+  }
 }
 
 #page{
-  @include container;
-  @include susy-grid-background;
+
 }
 
 #main{
-  @include columns(9);
-  @include omega;
   padding-top: 55px;
+  margin-left: $main-nav-width;
 }
 /* Text and image selection styling */
 
@@ -61,7 +58,8 @@ img::-moz-selection {
 
 a {
   -webkit-tap-highlight-color: $highlight;
-  color: $accent;
+  color: white;
+  text-decoration: none;
 }
 
 a:hover, a:focus {

@@ -32,6 +32,7 @@ $DEBUG: true;
 // Views
 
 @import "views/static_pages/home";
+@import "views/offers/offers";
 
 // Needs to come last so that .column gets higher specificity
 @import "responsive";

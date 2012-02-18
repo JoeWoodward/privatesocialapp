@@ -1,8 +1,9 @@
-%h1 Current Offers
+.offer-menu
+  %a{:href => "/offers"} Current Offers
+  %a{:href => "#"} Our Partners
+.slider-offer
+  %ul
+    - @offers.each do |offer|
+      %li
+        = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
 
-- @offers.each do |offer|
-  = offer.name
-  %br
-  = image_tag(offer.image.large.url.to_s)
-  %br
-  %br
