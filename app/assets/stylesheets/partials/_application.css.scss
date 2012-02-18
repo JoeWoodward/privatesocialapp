@@ -1,20 +1,18 @@
 html {
   height: 100%;
-  background-color: #000;
+  
 }
 
 body {
   height: 100%;
   color: $bodycolor;
   font: normal #{$fontsize}/#{$lineheight} $sans;
-
-  background: url('bg01.png') right 0 no-repeat $purple;
+  background-color: $purple;
 
   .vertical-wrapper, .horizontal-wrapper {
     position: relative;
     float: left;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.8);
   }
 
   .vertical-wrapper {
@@ -25,8 +23,10 @@ body {
   }
 }
 
-#page{
-
+//Some pages have image background, some not, here are the ones that do
+.static-pages{
+  background: url('bg01.png') no-repeat center center fixed;
+  @include background-size(cover);
 }
 
 #main{

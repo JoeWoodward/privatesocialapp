@@ -3,15 +3,56 @@
   a{
     display: block;
     float: left;
-    background: #a49452;
+    background: $golden;
     padding: 5px 8px;
     &:last-child{
       background-color: black;
+      &:hover{
+        background-color: #333;
+      }
+    }
+    &:hover{
+      color: white;
+      background-color: darken($golden, 20%);
     }
   }
 }
 .slider-offer{
+  height: 500px;
+  width: 720px;
+  overflow: hidden;
+  position: relative;
   ul{
+    width: 1200%;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    li{
+      display: inline-block;
+      margin-left: -4px;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
   }
+}
+.prev, .next{
+  font-size: 130px;
+  height: 80px;
+  line-height: 60px;
+  display: block;
+  background: rgba(black, 0.6);
+  position: absolute;
+  top: 230px;
+  &:active{
+    top: 231px;
+  }
+}
+.prev{
+  left: 0;
+}
+.next{
+  right: 0;
 }
