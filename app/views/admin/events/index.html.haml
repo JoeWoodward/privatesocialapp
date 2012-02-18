@@ -1,4 +1,4 @@
-%h1 Listing events
+%h1 Listing Events
 
 %table.table.table-bordered.table-striped
   %tr
@@ -20,4 +20,4 @@
         = link_to 'delete', admin_event_path(event), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
 %br
 
-= link_to 'New Event', new_admin_event_path
+= link_to 'New Event', new_admin_event_path, :class => 'btn-primary btn-large'

@@ -6,6 +6,10 @@
   margin-bottom: 40px;
 }
 
+h1{
+  margin-bottom: 30px;
+}
+
 table {
   border: none;
 
@@ -16,4 +20,13 @@ table {
   td.center {
     text-align: center;
   }
+}
+
+.help-block{
+  text-indent: 15px;
+  color: darken(#8bb863, 20%);
+}
+
+.go-back::before{
+  content: "↩  ";
 }

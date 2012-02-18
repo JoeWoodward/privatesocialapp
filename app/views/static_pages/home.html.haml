@@ -1,26 +1,25 @@
-#main{:class => 'home'}  
-  = render "layouts/flashes"
-  #intro 
-    %p Alice felt that this could not be denied, so she tried another question.  'What sort of people live about here?' 'In THAT direction,' the Cat said, waving its right paw round, 'lives  a Hatter: and in THAT direction,' waving the other paw, 'lives a March  Hare. Visit either you like: they're both mad.' 'But I don't want to go among mad people,' Alice remarked. 'Oh, you can't help that,' said the Cat: 'we're all mad here. I'm mad.  You're mad.' 'How do you know I'm mad?' said Alice. 'You must be,' said the Cat, 'or you wouldn't have come here.' 
-    %ul
-      %li Is a great service!
-      %li Lots of offers!
-      %li We kid you not!
+= render "layouts/flashes"
+#intro 
+  %p Alice felt that this could not be denied, so she tried another question.  'What sort of people live about here?' 'In THAT direction,' the Cat said, waving its right paw round, 'lives  a Hatter: and in THAT direction,' waving the other paw, 'lives a March  Hare. Visit either you like: they're both mad.' 'But I don't want to go among mad people,' Alice remarked. 'Oh, you can't help that,' said the Cat: 'we're all mad here. I'm mad.  You're mad.' 'How do you know I'm mad?' said Alice. 'You must be,' said the Cat, 'or you wouldn't have come here.' 
+  %ul
+    %li Is a great service!
+    %li Lots of offers!
+    %li We kid you not!
 
-    = link_to 'Click here to join', sign_up_path, :class => "button"
-    %h2 Sign in below
+  = link_to 'Click here to join', sign_up_path, :class => "button"
+  %h2 Sign in below
 
-    = form_tag login_path do
-      = label_tag :email, 'Email *', :class => 'email required'
-      = text_field_tag :email, params[:email], :class => 'email required string'
-      %br
-      = label_tag :password, 'Password *', :class => 'password required'
-      = password_field_tag :password, params[:password], :class => 'password required'
-      %br
-      %p
-        = check_box_tag :remember_me, 1, params[:remember_me], :class => 'boolean optional'
-        %span Remember me
-      .actions
-        = submit_tag 'Log In', :class => 'button'
+  = form_tag login_path do
+    = label_tag :email, 'Email *', :class => 'email required'
+    = text_field_tag :email, params[:email], :class => 'email required string'
+    %br
+    = label_tag :password, 'Password *', :class => 'password required'
+    = password_field_tag :password, params[:password], :class => 'password required'
+    %br
+    %p
+      = check_box_tag :remember_me, 1, params[:remember_me], :class => 'boolean optional'
+      %span Remember me
+    .actions
+      = submit_tag 'Log In', :class => 'button'
 
-    = link_to 'Forgot your password?', new_user_password_reset_path
+  = link_to 'Forgot your password?', new_user_password_reset_path

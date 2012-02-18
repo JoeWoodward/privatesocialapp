@@ -26,6 +26,16 @@ body {
   // }
 }
 
+#page{
+  @include container;
+  @include susy-grid-background;
+}
+
+#main{
+  @include columns(9);
+  @include omega;
+  padding-top: 55px;
+}
 /* Text and image selection styling */
 
 ::selection {

@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(:version => 16) do
   create_table "faqs", :force => true do |t|
     t.string   "question"
     t.text     "answer"
+    t.integer  "viewed",     :default => 0
     t.boolean  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "slug"
   end
 
