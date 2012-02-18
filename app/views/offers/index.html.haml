@@ -1,12 +1,10 @@
 .offer-menu
-  %a{:href => "/offers"} Current Offers
-  %a{:href => "#"} Our Partners
+  = link_to 'Current Offers', '/offers'
+  = link_to 'Our Partners', '#'
 .slider-offer
   %ul.slides-container
     - @offers.each do |offer|
       %li.slide
         = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
-      %li.slide
-        = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
-  %a{:href => "#", :class => "prev"} ‹
-  %a{:href => "#", :class => "next"} ›
+  = link_to '‹', '#', class: 'prev'
+  = link_to '›', '#', class: 'next'
