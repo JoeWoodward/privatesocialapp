@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 16) do
+ActiveRecord::Schema.define(:version => 17) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -110,6 +110,9 @@ ActiveRecord::Schema.define(:version => 16) do
     t.datetime "reset_password_email_sent_at"
     t.string   "slug"
     t.boolean  "is_admin"
+    t.string   "token"
+    t.string   "state"
+    t.string   "chargify_subscription_id"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
