@@ -1,15 +1,10 @@
 = link_to '< All events', events_path
-%br
-%p
-  %b Title:
-  = @event.title
-%p
-  %b Description:
-  = @event.description
-%p
-  %b Date:
-  = format_date(@event.date)
-%p
-  %b Image:
-  = image_tag @event.image.large.url.to_s if @event.image?
-= rsvp(@event)
+.event
+  = image_tag @event.image.large.url.to_s if @event.image
+  %span.date
+    = @event.date.strftime("%d/%y")
+  %h2
+    = @event.title
+  %p
+    = @event.description
+  = rsvp(@event)
