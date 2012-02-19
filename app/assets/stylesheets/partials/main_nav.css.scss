@@ -37,6 +37,26 @@
     }
   }
 
+  .logout {
+    margin: 0;
+    padding: 0 21%;
+
+    li {
+      display: block;
+      height: auto;
+
+      a, a:active, a:visited {
+        display: block;
+        color: $bodycolor;
+        text-decoration: none;
+        font-size: 11px;
+        &:hover{
+          color: white;
+        }
+      }
+    }
+  }
+
   footer{
     margin: 0 21%;
     line-height: 15px;
