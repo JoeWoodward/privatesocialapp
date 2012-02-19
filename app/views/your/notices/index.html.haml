@@ -10,6 +10,6 @@
       %span.title
         = notice.title
       %br
-      = link_to 'view', your_notice_path(notice)
-      = link_to 'edit', edit_your_notice_path(notice)
-      = link_to 'delete', your_notice_path(notice), :method => :delete, :confirm => 'Are you sure?'
+      = link_to 'view', your_notice_path(notice), class: 'button'
+      = link_to 'edit', edit_your_notice_path(notice), class: 'button'
+      = link_to 'delete', your_notice_path(notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
