@@ -15,22 +15,20 @@
 //= require bootstrap-dropdown
 //= require_tree .
 
-//$(document).ready(function() {
-  //var width = $('#offer-image').width();
-  //alert(width);
-  //$('#offer-image').parent().css({
-    //'width': width + 'px'
-  //});
-//});
-
 $(document).ready(function() {
   addWidths();
   function addWidths() {
+    var total_width = 0
+
     $('.offer-image').each( function() {
       var width = $(this).width();
       $(this).parent().css({
         'width': width + 'px'
       });
+      total_width += width;
+    });
+    $('.offers').css({
+      'width': total_width + 30 + 'px'
     });
   }
 });
