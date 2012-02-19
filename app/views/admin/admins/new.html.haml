@@ -1,3 +1,4 @@
+%h1 New User
 = simple_form_for(@admin, :html => { :class => 'form-horizontal' }, :url => admin_account_path(@admin)) do |f|
   = f.error_notification
   = f.input :first_name, :input_html => { :class => "span6" }
@@ -7,4 +8,4 @@
   = f.input :password_confirmation, :input_html => { :class => "span6" }
   = f.input :is_admin, :input_html => { :value => true }, :as => :hidden
   .form-actions
-    = f.button :submit, 'Create'
+    = f.button :submit, 'Create User', :class => 'btn-primary btn-large'

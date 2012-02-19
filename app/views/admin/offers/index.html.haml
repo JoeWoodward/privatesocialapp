@@ -1,5 +1,7 @@
 %h1 Listing Offers
 
+= link_to 'New Offer', new_admin_offer_path, {:class=>"btn btn-primary btn-large"}
+
 %table.table.table-bordered.table-striped
   %tr
     %th Name
@@ -18,5 +20,3 @@
         = link_to 'delete', admin_offer_path(offer), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger btn-mini'
 
 %br
-
-= link_to 'New Offer', new_admin_offer_path, {:class=>"btn btn-primary btn-large"}
