@@ -3,6 +3,9 @@ window.onload = (->
     addWidths = ->
       total_width = 0
       $(".offer-image").each ->
+        height = $(this).height()
+        ratio = height * 0.72
+        $(this).width(ratio)
         width = $(this).width()
         $(this).parent().css width: width + "px"
         total_width += width

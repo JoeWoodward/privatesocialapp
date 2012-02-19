@@ -1,11 +1,18 @@
+#flash{
+  height: auto;
+  width: 68%;
+  overflow: hidden;
+  position: absolute;
+}
+
 .notice {
   width: 267px;
-  float: left;
-  margin-bottom: 7px;
+  margin: 0 auto;
   padding: 10px;
-  background-color: white;
+  background-color: #ffedad;
   word-break: break-word;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #c46003;
+  color: #c46003;
 
   a, a:active, a:focus, a:visited {
     display: block;
@@ -13,7 +20,17 @@
   }
 
   p {
-    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+    &::before{
+      content: "!";
+      position: absolute;
+      display: block;
+      padding: 0 5px;
+      font-weight: bold;
+      font-size: 1.5em;
+      background-color: #FFF;
+      @include border-radius;
+    }
   }
 }
-

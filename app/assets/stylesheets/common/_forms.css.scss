@@ -8,8 +8,16 @@ input[type="url"],
 input[type="email"],
 input[type="password"],
 input[type="tel"] {
-	font-size: 99%;
+	font-size: 97%;
 	@include box-sizing("border-box");
+  background-color: black;
+  border: 1px solid $dimmed-white;
+  color: $dimmed-white;
+  padding: 2px 4px;
+  &:focus{
+    background-color: lighten($purple, 5%);
+    border-color: $golden;
+  }
 }
 
 textarea {

@@ -21,13 +21,18 @@
     li {
       display: block;
       height: auto;
-      color: #C4BFB8;
-      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      
 
       a, a:active, a:visited {
-        color: #C4BFB8;
+        border-top: 1px solid $bodycolor;
+        display: block;
+        color: $bodycolor;
         text-decoration: none;
         font-size: 11px;
+        &:hover{
+          color: white;
+          border-top: 1px solid white;
+        }
       }
     }
   }
