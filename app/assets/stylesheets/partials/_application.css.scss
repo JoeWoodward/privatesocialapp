@@ -68,7 +68,7 @@ body {
 }
 
 //Some pages have image background, some not, here are the ones that do
-.static-pages{
+.static_pages{
   background: url('bg01.png') no-repeat center center fixed;
   @include background-size(cover);
 }
@@ -110,7 +110,7 @@ a:hover, a:focus {
 ----------------------------------------------------------------------*/
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: $serif;
+  font-family: $sans;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
 }

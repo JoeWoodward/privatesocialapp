@@ -1,30 +1,36 @@
 /*	=STATIC PAGES / HOME STYLES
 ----------------------------------------------------------------------*/
-.static_pages #main{
+.static_pages #intro{
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 50%;
+  min-width: 330px;
+  padding: 55px 70px 30px;
   ul{
     margin: 30px 0;
+    padding: 0;
+    list-style-position: inside;
   }
   a[href*='sign-up']{
     margin-bottom: 30px;
   }
   form{
     label{
-      width: 75px;
+      width: 90px;
       display: inline-block;
       margin-bottom: 10px;
     }
     
     p{
-      float: right;
-      margin-right: 30px;
+      font-size: 0.9em;
+      text-indent: 93px;
     }
     .actions{
       clear: both;
-      margin: 20px 0  15px 78px;
+      margin: 20px 0  15px 93px;
       }
   }
   a[href*='password-reset']{
-    display: block;
-    text-align: right;
+    font-size: 0.9em;
   }
 }
