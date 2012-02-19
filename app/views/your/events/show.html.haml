@@ -1,15 +1,11 @@
-= link_to '< All events', your_events_path
+= link_to 'Back', your_events_path
 %br
-%p
-  %b Title:
-  = @event.title
-%p
-  %b Description:
-  = @event.description
-%p
-  %b Date:
-  = format_date(@event.date)
-%p
-  %b Image:
+%div
   = image_tag @event.image.large.url.to_s if @event.image?
-= link_to 'Cancel RSVP', cancel_your_event_rsvp_path(@event)
+  %p
+    = @event.title
+  %p
+    = format_date(@event.date)
+  %p
+    = @event.description
+= link_to 'Cancel RSVP', cancel_your_event_rsvp_path(@event), class: 'button'
