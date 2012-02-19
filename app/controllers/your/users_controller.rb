@@ -50,4 +50,8 @@ class Your::UsersController < ApplicationController
       end
     end
   end
+
+  def register_now
+    redirect_to PaymentProcessor.hosted_signup_page_for(current_user)
+  end
 end

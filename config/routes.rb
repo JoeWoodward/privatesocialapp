@@ -2,6 +2,7 @@ HarleyHealthVip::Application.routes.draw do
 
   match 'update_billing_detail/:id' => 'your/users#update_billing_detail', :as => 'update_billing_detail'
   match "complete-registration" => 'your/users#complete_registration', :as => 'complete_registration'
+  match "register-now" => 'your/users#register_now', :as => 'register_now'
 
   resources :user_password_resets, :path => 'password-reset'
 
