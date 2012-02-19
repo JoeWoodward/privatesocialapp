@@ -1,0 +1,19 @@
+.notice {
+  width: 267px;
+  float: left;
+  margin-bottom: 7px;
+  padding: 10px;
+  background-color: white;
+  word-break: break-word;
+  border: 1px solid #f0f0f0;
+
+  a, a:active, a:focus, a:visited {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+}
+

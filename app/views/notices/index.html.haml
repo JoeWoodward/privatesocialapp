@@ -1,14 +1,28 @@
-- if @notices.present?
-  - @notices.each do |notice|
-    - if notice.landscape?
-      = image_tag notice.image.landscape.url
-    - else
-      = image_tag notice.image.portrait.url
-    = notice.description
-    - if notice.contact_phone.present?
-      = notice.contact_phone
-      %br
-    - if notice.contact_email.present?
-      = notice.contact_email
-      %br
-    = link_to 'more', notice
+.noticeboard
+  - if @notices.present?
+    - @notices.each do |notice|
+      .notice
+        - if notice.landscape?
+          = image_tag notice.image.landscape.url
+        - else
+          = image_tag notice.image.portrait.url
+        = notice.description
+        - if notice.contact_phone.present?
+          = notice.contact_phone
+          %br
+        - if notice.contact_email.present?
+          = notice.contact_email
+          %br
+        = link_to 'more', notice
+- content_for :javascripts do
+  :javascript
+    var $container = $('.noticeboard');
+
+    $container.imagesLoaded( function(){
+      $container.masonry({
+        itemSelector : '.notice',
+        isResizable: true,
+        gutterWidth: 7
+      });
+    });
+
