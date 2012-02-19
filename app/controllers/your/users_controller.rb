@@ -1,6 +1,7 @@
 class Your::UsersController < ApplicationController
   before_filter :require_login, :except => [:new, :create]
   before_filter :orientation
+  skip_before_filter :is_user_authorised
 
   def new
     @user = User.new

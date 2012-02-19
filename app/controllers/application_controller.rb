@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :is_user_authorised
 
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
@@ -11,6 +12,11 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def is_user_authorised
+    unless current_user.is_admin? || current_user.active?
+      redirect_to your_details_path
+    end
+  end
   #override this variable inside controllers or actions
   #change @orientation to 'horizontal' .. obviously!
 
