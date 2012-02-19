@@ -6,6 +6,7 @@ HarleyHealthVip::Application.routes.draw do
   post 'ask-a-question' => 'ask_a_question#create'
 
   get "/offers" => 'offers#index', :as => 'offers'
+  get "/offers/images" => 'offers#images', :as => 'offer_images'
 
   get 'faqs' => 'faqs#index', :as => 'faqs'
 

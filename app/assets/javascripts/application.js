@@ -16,6 +16,24 @@
 //= require_tree .
 
 $(document).ready(function() {
+  $('.offers').hide();
+
+  $.ajax({
+    url: "/offers/images",
+    cache: false,
+    success: function(html){
+      $('.offers').append(html);
+      $('.offer-image').hide();
+      $('.offers').show();
+      addWidths();
+
+      var elems = $('.offer-image'), i = 0;
+      (function fadePlz(){
+        $(elems[i++]).fadeIn(750 - (i * 20), fadePlz);
+      })();
+    }
+  });
+
   function addWidths() {
     var total_width = 0
 
@@ -33,7 +51,7 @@ $(document).ready(function() {
       'width': total_width + 30 + 'px'
     });
   }
-  addWidths();
+
   $(window).resize(function(){
     addWidths();
   })

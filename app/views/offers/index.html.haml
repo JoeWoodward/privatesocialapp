@@ -5,12 +5,3 @@
       %a{:href => "#"} Our Partners
   .clear
 %ul.offers
-  - @offers.each do |offer|
-    %li
-      = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}", class: 'offer-image')
-    %li
-      = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}", class: 'offer-image')
-    %li
-      = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}", class: 'offer-image')
--#%a{:href => "#", :class => "prev"} ‹
--#%a{:href => "#", :class => "next"} ›
