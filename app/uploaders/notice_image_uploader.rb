@@ -13,11 +13,30 @@ class NoticeImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process :resize_to_limit => [50, 50]
+  version :landscape, :if => :landscape? do
+    process :resize_to_fit => [430, 2000]
   end
 
-  version :large do
-    process :resize_to_limit => [600, 600]
+  version :landscape_tiny, :if => :landscape? do
+    process :resize_to_fit => [100, 200]
+  end
+
+  version :portrait, :if => :portrait? do
+    process :resize_to_fit => [320, 2000]
+  end
+
+  version :portrait_tiny, :if => :portrait? do
+    process :resize_to_fit => [60, 200]
+  end
+
+  protected
+
+  def landscape? img
+    pic = Magick::Image.read(img.path).first
+    model.landscape = pic.columns >= pic.rows
+  end
+
+  def portrait? img
+    return ! landscape?(img)
   end
 end
