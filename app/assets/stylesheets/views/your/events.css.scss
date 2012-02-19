@@ -1,0 +1,11 @@
+.your-event {
+  width: 250px;
+  margin-left: $default-left-spacing;
+  margin-bottom: 30px;
+  border-top: 1px solid $golden;
+
+  .title {
+    text-transform: uppercase;
+  }
+}
+
