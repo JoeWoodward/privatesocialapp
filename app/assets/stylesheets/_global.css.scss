@@ -4,15 +4,15 @@ $main-nav-width: 220px;
 
 // Colors
 
-$accent:    darken(#298FE3, 10%);   // Blue
-$comp:      lighten(yellow, 30%);   // Dark blue
-$highlight:   #30a9ac;          // For callouts, for example
-
 $bodycolor:   #C4BFB8;
 $dimmed-white: #B2ADB0;
 $golden: #a49452;
 $purple: #170911;
 $slate-grey: #1E1E1D;
+
+$accent:    darken($golden, 10%);   // Blue
+$comp:      lighten(yellow, 30%);   // Dark blue
+$highlight:   lighten($golden, 20%);          // For callouts, for example
 
 // Typography
 
