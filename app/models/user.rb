@@ -40,4 +40,33 @@ class User < ActiveRecord::Base
   def full_name
     [first_name, last_name].join(' ')
   end
+
+  # these states are those that Chargify considers to be safe, meaning
+  # your users should still be able to login to your application
+  ACTIVE_STATES = ['pending', 'trialing', 'assessing', 'active', 'soft_failure', 'past_due']
+  # this method will almost always be unique to the application itself,
+  # but I wanted to show an example implementation just in case it's useful
+  def self.init!(user_token, subscription_id, account_state = 'pending')
+    if user_token
+      user = User.find_by_token(user_token)
+      unless user.active?
+        user.state = account_state
+        user.chargify_subscription_id = subscription_id
+      end
+    end
+    return user
+  end
+
+  # a series of example convenience methods.....
+  def chargify_subscriber_id
+    @subscriber_id ||= Chargify::Subscription.find_by_customer_reference(self.user.token).id
+  end
+
+  def active?
+    ACTIVE_STATES.include?(self.state)
+  end
+
+  def inactive?
+    !self.active?
+  end
 end

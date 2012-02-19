@@ -1,0 +1,6 @@
+On initial upload run $ bundle exec rake seed
+This will give you an initial user by the email 'admin@mail.com' and password 'password'
+
+The email settings need to be changed to reflect the host
+
+The Chargify settings also need to be configured for a new domain

@@ -15,6 +15,7 @@ gem 'selenium'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'capistrano-mountaintop'
+gem 'chargify_api_ares'
 
 # Gems used only for assets and not required
 # in production environments by default.
