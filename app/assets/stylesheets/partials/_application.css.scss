@@ -9,8 +9,8 @@ body {
   background-color: $purple;
 
   .heading {
-    margin-top: 80px;
-    margin-left: 50px;
+    margin-top: $default-inner-spacing;
+    margin-left: $default-left-spacing;
   }
 
   .vertical-wrapper, .horizontal-wrapper {

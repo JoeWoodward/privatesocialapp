@@ -1,6 +1,9 @@
 // Dimensions
 
 $main-nav-width: 220px;
+$default-inner-spacing: 80px;
+$default-left-spacing: 50px;
+$gutter: 20px;
 
 // Colors
 
@@ -22,22 +25,6 @@ $monospaced:  Monaco, "Courier New", Courier, monospace;
 
 $fontsize:      15px;
 $lineheight:    24px;
-
-// Susy Variables
-
-// 16 cols
-// $total-cols: 16;
-// $col-width: 40px;
-// $gutter-width: 20px;
-// $side-gutter-width: $gutter-width*2;
-
-$total-cols: 12;
-$col-width: 4em;
-$gutter-width: 1em;
-$side-gutter-width: $gutter-width;
-
-// Used by Hashgrid
-$gutter: 20px;
 
 // Imports
 
