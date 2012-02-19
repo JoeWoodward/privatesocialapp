@@ -15,11 +15,7 @@
       %td= event.title
       %td= event.description
       %td= format_date(event.date)
-      - unless event.image.blank?
-        - if event.landscape?
-          %td= image_tag event.image.landscape_tiny.url
-        - else
-          %td= image_tag event.image.portrait_tiny.url
+      %td= image_tag(event.image.thumb.url.to_s)
       %td
         = link_to 'view', admin_event_path(event), :class => 'btn'
         = link_to 'edit', edit_admin_event_path(event), :class => 'btn btn-primary'
