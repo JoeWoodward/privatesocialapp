@@ -1,8 +1,11 @@
 = render "layouts/flashes"
-%p
-  = @user.full_name
-%p
-  = @user.email
-= link_to 'Edit Your Details', edit_your_details_path
-%br
-= payment_link
+.heading
+  %h2 YOUR ACCOUNT
+.message
+  %p
+    = @user.full_name
+  %p
+    = @user.email
+  = link_to 'Edit Your Details', edit_your_details_path
+  %br
+  = payment_link

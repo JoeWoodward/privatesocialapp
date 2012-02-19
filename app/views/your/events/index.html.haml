@@ -1,7 +1,8 @@
 .heading
   %h2 YOUR EVENTS
 - if @events.blank?
-  You have not RSVP'd to any Events yet
+  .message
+    You have not RSVP'd to any Events yet
 - else
   - @events.each do |event|
     .your-event
