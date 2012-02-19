@@ -1,5 +1,6 @@
 class UserPasswordResetsController < ApplicationController
   before_filter :orientation
+  skip_before_filter :is_user_authorised
 
   # request password reset.
   # you get here when the user entered his email in the reset password form and submitted it.
