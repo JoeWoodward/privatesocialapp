@@ -112,6 +112,9 @@ ActiveRecord::Schema.define(:version => 17) do
     t.datetime "reset_password_email_sent_at"
     t.string   "slug"
     t.boolean  "is_admin"
+    t.string   "token"
+    t.string   "state"
+    t.string   "chargify_subscription_id"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
