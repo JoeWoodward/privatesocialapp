@@ -1,9 +1,10 @@
 = render "layouts/flashes"
-= simple_form_for @user, :url => your_details_path do |f|
-  = f.input :first_name
-  = f.input :last_name, label: 'Surname'
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  .actions
-    = f.button :submit, 'Continue'
+.content
+  = simple_form_for @user, :url => your_details_path do |f|
+    = f.input :first_name
+    = f.input :last_name, label: 'Surname'
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    .actions
+      = f.button :submit, 'Continue'

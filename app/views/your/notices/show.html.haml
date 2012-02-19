@@ -1,22 +1,23 @@
 = link_to 'back', your_notices_path
-%p
-  %b Title:
-  = @notice.title
-%p
-  %b Description:
-  = @notice.description
-%p
-  %b Image:
-  - if @notice.landscape?
-    = image_tag @notice.image.landscape.url
-  - else
-    = image_tag @notice.image.portrait.url
-%p
-  %b Contact phone:
-  = @notice.contact_phone
-%p
-  %b Contact email:
-  = @notice.contact_email
+.content
+  %p
+    %b Title:
+    = @notice.title
+  %p
+    %b Description:
+    = @notice.description
+  %p
+    %b Image:
+    - if @notice.landscape?
+      = image_tag @notice.image.landscape.url
+    - else
+      = image_tag @notice.image.portrait.url
+  %p
+    %b Contact phone:
+    = @notice.contact_phone
+  %p
+    %b Contact email:
+    = @notice.contact_email
 
-= link_to 'edit', edit_your_notice_path(@notice)
-= link_to 'delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?'
+  = link_to 'edit', edit_your_notice_path(@notice)
+  = link_to 'delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?'

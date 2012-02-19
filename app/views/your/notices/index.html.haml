@@ -3,7 +3,7 @@
   = link_to 'New notice', new_your_notice_path, :class => 'button'
 %br
 - if @notices.blank?
-  .message
+  .content
     You have not created any Notices yet.
 - else
   - @notices.each do |notice|

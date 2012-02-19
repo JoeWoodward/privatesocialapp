@@ -70,6 +70,10 @@ body {
       }
     }
   }
+
+  .content {
+    margin-left: $default-left-spacing;
+  }
 }
 
 //Some pages have image background, some not, here are the ones that do
