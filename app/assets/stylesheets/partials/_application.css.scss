@@ -8,6 +8,11 @@ body {
   font: normal #{$fontsize}/#{$lineheight} $sans;
   background-color: $purple;
 
+  .heading {
+    margin-top: 80px;
+    margin-left: 50px;
+  }
+
   .vertical-wrapper, .horizontal-wrapper {
     float: left;
     margin-left: $main-nav-width;
