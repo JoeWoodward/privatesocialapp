@@ -15,7 +15,7 @@
 //= require bootstrap-dropdown
 //= require_tree .
 
-$(document).ready(function() {
+window.onload = (function() {
   $('.offers').hide();
 
   $.ajax({
