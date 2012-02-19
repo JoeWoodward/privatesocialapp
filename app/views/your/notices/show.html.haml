@@ -7,7 +7,10 @@
   = @notice.description
 %p
   %b Image:
-  = image_tag(@notice.image.large.url.to_s)
+  - if @notice.landscape?
+    = image_tag @notice.image.landscape.url
+  - else
+    = image_tag @notice.image.portrait.url
 %p
   %b Contact phone:
   = @notice.contact_phone
