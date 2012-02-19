@@ -16,6 +16,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @orientation = 'horizontal'
   end
 
   def show
