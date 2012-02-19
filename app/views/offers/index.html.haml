@@ -1,12 +1,16 @@
-.offer-menu
-  %a{:href => "/offers"} Current Offers
-  %a{:href => "#"} Our Partners
-.slider-offer
-  %ul.slides-container
-    - @offers.each do |offer|
-      %li.slide
-        = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
-      %li.slide
-        = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
-  %a{:href => "#", :class => "prev"} ‹
-  %a{:href => "#", :class => "next"} ›
+- content_for :tabs do
+  .sub-menu
+    .tabs
+      %a{:href => "/offers"} Current Offers
+      %a{:href => "#"} Our Partners
+  .clear
+%ul.offers
+  - @offers.each do |offer|
+    %li
+      = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
+    %li
+      = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
+    %li
+      = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
+-#%a{:href => "#", :class => "prev"} ‹
+-#%a{:href => "#", :class => "next"} ›

@@ -6,15 +6,18 @@
   background-color: $purple;
   left: 0;
   top: 0;
-  
+  z-index: 3;
+
   .logo {
     display: block;
     margin: 55px 0;
     text-align: center;
   }
+
   .menu {
     margin: 0 0 75px;
     padding: 0 21%;
+
     li {
       display: block;
       height: auto;
@@ -28,14 +31,17 @@
       }
     }
   }
+
   footer{
     margin: 0 21%;
     line-height: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding-top: 15px;
+
     p, ul{
       font-size: 9px;
     }
+
     ul{
       margin-top: 10px;
     }

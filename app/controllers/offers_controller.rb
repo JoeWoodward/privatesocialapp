@@ -4,5 +4,6 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.where(:active => true)
+    @orientation = 'horizontal'
   end
 end
