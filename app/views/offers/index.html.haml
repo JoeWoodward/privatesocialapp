@@ -1,10 +1,11 @@
-.offer-menu
-  = link_to 'Current Offers', '/offers'
-  = link_to 'Our Partners', '#'
-.slider-offer
-  %ul.slides-container
-    - @offers.each do |offer|
-      %li.slide
-        = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}")
-  = link_to '‹', '#', class: 'prev'
-  = link_to '›', '#', class: 'next'
+- content_for :tabs do
+  .sub-menu
+    %ul.tabs
+      %li
+        = link_to_unless_current 'Current Offers', offers_path do
+          %span.current Current Offers
+      %li
+        = link_to_unless_current 'Our Partners', '#' do
+          %span.current Our Partners
+  .clear
+%ul.offers-list

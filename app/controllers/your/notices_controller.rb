@@ -1,4 +1,4 @@
-class Your::NoticesController < ApplicationController
+class Your::NoticesController < Your::YourController
   before_filter :require_login
   before_filter :notice_is_users, :only => [:show, :edit, :update, :destroy]
   before_filter :orientation

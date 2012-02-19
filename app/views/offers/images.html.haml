@@ -1,0 +1,3 @@
+- @offers.each do |offer|
+  %li
+    = image_tag(offer.image.large.url.to_s, :alt => "#{offer.name}", :title => "#{offer.name}", class: 'offer-image')

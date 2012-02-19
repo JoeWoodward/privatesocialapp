@@ -1,6 +1,5 @@
 html {
   height: 100%;
-  
 }
 
 body {
@@ -10,16 +9,61 @@ body {
   background-color: $purple;
 
   .vertical-wrapper, .horizontal-wrapper {
-    position: relative;
     float: left;
+    margin-left: $main-nav-width;
     z-index: 2;
   }
 
   .vertical-wrapper {
+    position: absolute;
+    height: 90%;
+    left: 0;
+    right: 0;
   }
 
   .horizontal-wrapper {
+    position: absolute;
+    height: 90%;
     width: 2000px;
+    bottom: 0;
+    overflow-y: hidden;
+  }
+
+  .sub-menu {
+    position: relative;
+    height: 70px;
+
+    .tabs {
+      @include horizontal-list;
+      position: fixed;
+      margin-left: $main-nav-width;
+      z-index: 4;
+      top: 0;
+
+      li {
+        padding: 0;
+
+        a, .current {
+          padding: 5px 8px;
+        }
+
+        a, a:active, a:visited, a:focus {
+          display: block;
+          background-color: black;
+
+          &:hover{
+            color: white;
+            background-color: #333;
+          }
+        }
+
+        .current {
+          display: block;
+          background-color: $golden;
+          color: white;
+        }
+      }
+    }
   }
 }
 
@@ -29,10 +73,6 @@ body {
   @include background-size(cover);
 }
 
-#main{
-  padding-top: 55px;
-  margin-left: $main-nav-width;
-}
 /* Text and image selection styling */
 
 ::selection {

@@ -1,4 +1,4 @@
-class Your::UsersController < ApplicationController
+class Your::UsersController < Your::YourController
   before_filter :require_login, :except => [:new, :create]
   before_filter :orientation
 
