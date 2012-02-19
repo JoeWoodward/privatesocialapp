@@ -1,7 +1,6 @@
 // the UL of offers
 .offers {
   @include no-bullets;
-  width: 3000px;
 
   li {
     display: inline-block;

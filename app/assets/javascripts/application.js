@@ -16,7 +16,6 @@
 //= require_tree .
 
 $(document).ready(function() {
-  addWidths();
   function addWidths() {
     var total_width = 0
 
@@ -31,4 +30,8 @@ $(document).ready(function() {
       'width': total_width + 30 + 'px'
     });
   }
+  addWidths();
+  $(window).resize(function(){
+    addWidths();
+  })
 });
