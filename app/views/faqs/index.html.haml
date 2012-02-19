@@ -1,6 +1,9 @@
 = render 'layouts/flashes'
-= link_to 'Ask A Question', ask_a_question_path
+= link_to 'Ask A Question', ask_a_question_path, class: 'button'
 - @faqs.each do |faq|
   %p= faq.question
   %p= faq.answer
   %br
+- content_for :javascripts do
+  :javascript
+    $.backstretch("/assets/background_with_chair.jpg");

@@ -21,17 +21,37 @@
     li {
       display: block;
       height: auto;
-      
 
       a, a:active, a:visited {
+        display: block;
+        padding-bottom: 1px;
+        color: $bodycolor;
+        font-size: 13px;
         border-top: 1px solid $bodycolor;
+        text-decoration: none;
+
+        &:hover{
+          color: $golden;
+        }
+      }
+    }
+  }
+
+  .logout {
+    margin: 0;
+    padding: 0 21%;
+
+    li {
+      display: block;
+      height: auto;
+
+      a, a:active, a:visited {
         display: block;
         color: $bodycolor;
         text-decoration: none;
         font-size: 11px;
         &:hover{
           color: white;
-          border-top: 1px solid white;
         }
       }
     }

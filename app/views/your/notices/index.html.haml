@@ -1,22 +1,15 @@
-= link_to 'New notice', new_your_notice_path
+.heading
+  %h2 YOUR NOTICES
+  = link_to 'New notice', new_your_notice_path, class: 'button', class: 'button'
 %br
-- @notices.each do |notice|
-  - if notice.landscape?
-    = image_tag notice.image.landscape.url
-  - else
-    = image_tag notice.image.portrait.url
-  = notice.title
-  %br
-  - if notice.contact_phone.present?
-    = notice.contact_phone
-    %br
-  - if notice.contact_email.present?
-    = notice.contact_email
-    %br
-  = notice.description
-  %br
-  = link_to 'view', your_notice_path(notice)
-  = link_to 'edit', edit_your_notice_path(notice)
-  = link_to 'delete', your_notice_path(notice), :method => :delete, :confirm => 'Are you sure?'
-  %br
-  %br
+- if @notices.blank?
+  You have not created any Notices yet.
+- else
+  - @notices.each do |notice|
+    .your-notice
+      %span.title
+        = notice.title
+      %br
+      = link_to 'view', your_notice_path(notice), class: 'button'
+      = link_to 'edit', edit_your_notice_path(notice), class: 'button'
+      = link_to 'delete', your_notice_path(notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'

@@ -1,11 +1,14 @@
 = render 'layouts/flashes'
-- @events.each do |event|
-  = image_tag event.image.large.url.to_s if event.image
-  = format_date(event.date)
-  %br
-  = event.title
-  %br
-  = event.description
-  = link_to 'more', event_path(event)
-  %br
-  %br
+- unless @events.blank?
+  %ul.events-list
+    - @events.each do |event|
+      %li
+        .event
+          = image_tag event.image.large.url.to_s if event.image
+          %span.date
+            = event.date.strftime("%d/%y")
+          %br
+          %p
+            = event.description
+          = link_to 'more', event_path(event), class: 'button'
+          %br

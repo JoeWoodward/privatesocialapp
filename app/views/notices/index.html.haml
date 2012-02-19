@@ -1,7 +1,11 @@
+.heading
+  %h2 NOTICEBOARD
+  = link_to 'Post a Notice', new_your_notice_path, class: 'button'
+.clear
 .noticeboard
   - if @notices.present?
     - @notices.each do |notice|
-      .notice
+      .notice-panel
         - if notice.landscape?
           = image_tag notice.image.landscape.url
         - else
@@ -20,7 +24,7 @@
 
     $container.imagesLoaded( function(){
       $container.masonry({
-        itemSelector : '.notice',
+        itemSelector : '.notice-panel',
         isResizable: true,
         gutterWidth: 7
       });

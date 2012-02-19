@@ -34,7 +34,10 @@ $DEBUG: false;
 @import "views/static_pages/home";
 @import "views/offers/offers";
 @import "views/your/your";
+@import "views/your/notices";
+@import "views/your/events";
 @import "views/notices/notices";
+@import "views/events/events";
 
 // Needs to come last so that .column gets higher specificity
 @import "responsive";

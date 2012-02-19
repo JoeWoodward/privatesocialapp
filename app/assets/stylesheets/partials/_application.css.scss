@@ -8,6 +8,11 @@ body {
   font: normal #{$fontsize}/#{$lineheight} $sans;
   background-color: $purple;
 
+  .heading {
+    margin-top: $default-inner-spacing;
+    margin-left: $default-left-spacing;
+  }
+
   .vertical-wrapper, .horizontal-wrapper {
     float: left;
     margin-left: $main-nav-width;

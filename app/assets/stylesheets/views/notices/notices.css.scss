@@ -1,36 +1,33 @@
-#flash{
-  height: auto;
-  width: 68%;
-  overflow: hidden;
-  position: absolute;
-}
+.noticeboard {
+  margin-top: 20px;
+  margin-left: 50px;
 
-.notice {
-  width: 267px;
-  margin: 0 auto;
-  padding: 10px;
-  background-color: #ffedad;
-  word-break: break-word;
-  border: 1px solid #c46003;
-  color: #c46003;
+  .notice-panel {
+    width: 267px;
+    margin-right: 10px;
+    padding: 10px 0 20px 0;
+    word-break: break-word;
+    color: white;
+    border-bottom: 1px solid $golden;
 
-  a, a:active, a:focus, a:visited {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  p {
-    position: relative;
-    text-align: center;
-    &::before{
-      content: "!";
-      position: absolute;
+    a, a:active, a:focus, a:visited {
       display: block;
-      padding: 0 5px;
-      font-weight: bold;
-      font-size: 1.5em;
-      background-color: #FFF;
-      @include border-radius;
+      margin-bottom: 10px;
+    }
+
+    p {
+      position: relative;
+      text-align: center;
+      &::before{
+        content: "!";
+        position: absolute;
+        display: block;
+        padding: 0 5px;
+        font-weight: bold;
+        font-size: 1.5em;
+        background-color: #FFF;
+        @include border-radius;
+      }
     }
   }
 }
