@@ -30,26 +30,34 @@ body {
     position: relative;
     height: 50px;
 
-    .tabs{
+    .tabs {
+      @include horizontal-list;
       position: fixed;
       margin-left: $main-nav-width;
       z-index: 4;
       top: 0;
 
-      a{
-        display: block;
-        float: left;
-        background: $golden;
-        padding: 5px 8px;
-        &:last-child{
+      li {
+        padding: 0;
+
+        a, .current {
+          padding: 5px 8px;
+        }
+
+        a, a:active, a:visited, a:focus {
+          display: block;
           background-color: black;
+
           &:hover{
+            color: white;
             background-color: #333;
           }
         }
-        &:hover{
+
+        .current {
+          display: block;
+          background-color: $golden;
           color: white;
-          background-color: darken($golden, 20%);
         }
       }
     }

@@ -1,7 +1,11 @@
 - content_for :tabs do
   .sub-menu
-    .tabs
-      = link_to 'Current Offers', offers_path
-      = link_to 'Our Partners', '#'
+    %ul.tabs
+      %li
+        = link_to_unless_current 'Current Offers', offers_path do
+          %span.current Current Offers
+      %li
+        = link_to_unless_current 'Our Partners', '#' do
+          %span.current Our Partners
   .clear
 %ul.offers-list
