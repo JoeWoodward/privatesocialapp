@@ -56,4 +56,8 @@ class Your::UsersController < Your::YourController
   def register_now
     redirect_to PaymentProcessor.hosted_signup_page_for(current_user)
   end
+
+  def updated_billing_info
+    redirect_to your_details_path, :notice => 'You have successfully updated your billing information'
+  end
 end
