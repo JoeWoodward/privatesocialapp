@@ -16,7 +16,7 @@ body {
 
   .vertical-wrapper {
     position: absolute;
-    height: 100%;
+    height: 90%;
     left: 0;
     right: 0;
   }
@@ -31,7 +31,7 @@ body {
 
   .sub-menu {
     position: relative;
-    height: 50px;
+    height: 70px;
 
     .tabs {
       @include horizontal-list;
