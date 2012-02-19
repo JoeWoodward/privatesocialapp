@@ -35,6 +35,7 @@ $DEBUG: false;
 @import "views/offers/offers";
 @import "views/your/your";
 @import "views/notices/notices";
+@import "views/events/events";
 
 // Needs to come last so that .column gets higher specificity
 @import "responsive";

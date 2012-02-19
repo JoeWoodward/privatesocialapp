@@ -1,0 +1,23 @@
+.events-list {
+  @include horizontal-list;
+  margin-top: 90px;
+  margin-left: 90px;
+
+  li {
+    width: 220px;
+    margin-right: 90px;
+
+    .event {
+      position: relative;
+
+      .date {
+        position: absolute;
+        bottom: 60px;
+        left: 10px;
+        font-size: 5em;
+        color: white;
+      }
+    }
+  }
+}
+
