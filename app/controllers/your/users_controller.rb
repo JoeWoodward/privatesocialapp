@@ -19,21 +19,6 @@ class Your::UsersController < ApplicationController
     end
   end
 
-  # def create
-  #   @user = User.new(params[:user])
-
-  #   # this is so that friendly id picks up the slug
-  #   if @user.save
-
-  #     # when the payment system is added this method will need to be changed
-  #     # to redirect to the hosted page.
-  #     login(params[:user][:email], params[:user][:password])
-  #     redirect_to your_details_path
-  #   else
-  #     render :new
-  #   end
-  # end
-
   def edit
     @user = current_user
   end
@@ -61,7 +46,7 @@ class Your::UsersController < ApplicationController
       user.save
       @user = User.find_by_token(params[:customer_reference])
       if user
-        redirect_to your_details_path(@user)
+        redirect_to your_details_path
       end
     end
   end
