@@ -29,6 +29,9 @@ $(document).ready(function() {
     $('.offers').css({
       'width': total_width + 30 + 'px'
     });
+    $('.horizontal-wrapper').css({
+      'width': total_width + 30 + 'px'
+    });
   }
   addWidths();
   $(window).resize(function(){
