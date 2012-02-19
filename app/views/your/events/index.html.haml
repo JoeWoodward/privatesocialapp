@@ -1,11 +1,13 @@
-= render 'layouts/flashes'
-- @events.each do |event|
-  = image_tag event.image.thumb.url.to_s if event.image
-  = format_date(event.date)
-  %br
-  = event.title
-  %br
-  = event.description
-  = link_to 'more', your_event_path(event)
-  %br
-  %br
+.heading
+  %h2 YOUR EVENTS
+- if @events.blank?
+  You have not RSVP'd to any Events yet
+- else
+  - @events.each do |event|
+    .your-event
+      %span.title
+        = event.title
+      %br
+      = event.description
+      %br
+      = event.date.strftime("%d/%m/%Y")
