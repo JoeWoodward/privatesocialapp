@@ -15,3 +15,10 @@
 //= require bootstrap-dropdown
 //= require_tree .
 
+$(document).ready(function() {
+  var width = $('#offer-image').width();
+  alert(width);
+  $('#offer-image').parent().css({
+    'width': width + 'px'
+  });
+});

@@ -1,10 +1,10 @@
 // the UL of offers
 .offers {
   @include no-bullets;
-  @include horizontal-list;
   width: 3000px;
 
   li {
+    display: inline-block;
     img {
       position: absolute;
       height: 100%;
