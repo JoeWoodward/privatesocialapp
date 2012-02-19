@@ -5,14 +5,12 @@
   position: absolute;
 }
 
-.notice {
+.notice-panel {
   width: 267px;
   margin: 0 auto;
-  padding: 10px;
-  background-color: #ffedad;
+  padding: 10px 0;
   word-break: break-word;
-  border: 1px solid #c46003;
-  color: #c46003;
+  color: white;
 
   a, a:active, a:focus, a:visited {
     display: block;

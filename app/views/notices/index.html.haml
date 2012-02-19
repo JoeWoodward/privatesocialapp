@@ -1,7 +1,7 @@
 .noticeboard
   - if @notices.present?
     - @notices.each do |notice|
-      .notice
+      .notice-panel
         - if notice.landscape?
           = image_tag notice.image.landscape.url
         - else
@@ -20,7 +20,7 @@
 
     $container.imagesLoaded( function(){
       $container.masonry({
-        itemSelector : '.notice',
+        itemSelector : '.notice-panel',
         isResizable: true,
         gutterWidth: 7
       });
