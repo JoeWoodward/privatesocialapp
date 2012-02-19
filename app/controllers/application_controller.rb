@@ -12,9 +12,13 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def not_authenticated
+    redirect_to root_path
+  end
+
   def is_user_authorised
     unless current_user.is_admin? || current_user.active?
-      redirect_to your_details_path
+      redirect_to your_details_path, "Please register to gain access to all the great features of 48 Harley Street VIP"
     end
   end
   #override this variable inside controllers or actions

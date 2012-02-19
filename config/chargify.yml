@@ -1,8 +1,8 @@
 development:
   subdomain: harley-health
   api_key: kezN-AjboUDrQb9uTKIB
-  site_key: sZQJtf9-kTnxN__X4aO
+  site_key: sZQJtf9-kTnxN__X4aOR
 production:
   subdomain: harley-health
   api_key: kezN-AjboUDrQb9uTKIB
-  site_key: sZQJtf9-kTnxN__X4aO
+  site_key: sZQJtf9-kTnxN__X4aOR

@@ -37,7 +37,8 @@ class Your::UsersController < ApplicationController
   end
 
   def update_billing_detail
-    redirect_to PaymentProcessor.update_payment_url_for(current_user)
+    @user = current_user
+    redirect_to PaymentProcessor.update_payment_url_for(@user)
   end
 
   def complete_registration
