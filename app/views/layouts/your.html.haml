@@ -19,8 +19,9 @@
           = link_to_unless_current "Your Notices", your_notices_path do
             %span.current Your Notices
     .clear
-    #main{class: "#{@orientation}-wrapper"}
-      = yield
+    %div{class: "#{@orientation}-wrapper"}
+      .grey-slate
+        = yield
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"
