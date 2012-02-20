@@ -33,10 +33,12 @@ HarleyHealthVip::Application.routes.draw do
 
   # users routes
   match 'sign-up' => "your/users#new", :as => 'sign_up'
-  post 'your/details' => 'your/users#create', :as => 'your_details'
+  match '/your/details/new' => redirect('/sign-up')
+  # your_detailss for the plural as it's only used in a form (create and update)
+  post 'your/details' => 'your/users#create', :as => 'your_detailss'
   get 'your/details/edit' => 'your/users#edit', :as => 'edit_your_details'
   get 'your/details' => 'your/users#show', :as => 'your_details'
-  put 'your/details' => 'your/users#update'
+  put 'your/details/:id' => 'your/users#update', :as => 'your_detailss'
   get 'your/events/:id/cancel-rsvp' => 'your/events#cancel_rsvp', :as => 'cancel_your_event_rsvp'
 
   namespace :your do

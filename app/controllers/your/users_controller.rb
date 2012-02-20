@@ -5,7 +5,6 @@ class Your::UsersController < Your::YourController
 
   def new
     @user = User.new
-    logout
   end
 
   def create
@@ -15,13 +14,13 @@ class Your::UsersController < Your::YourController
       login(@user.email, params[:user][:password])
       # redirect to chargify
       redirect_to PaymentProcessor.hosted_signup_page_for(@user)
-    else
-      render :new
     end
+
+  rescue ActiveRecord::RecordInvalid
+    render :new
   end
 
   def edit
-    @user = current_user
   end
 
   def update

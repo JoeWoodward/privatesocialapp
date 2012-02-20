@@ -1,6 +1,6 @@
 = render "layouts/flashes"
 .content
-  = simple_form_for @user, :url => your_details_path do |f|
+  = simple_form_for @user, :url => your_detailss_path(@user), method: :post do |f|
     = f.input :first_name
     = f.input :last_name, label: 'Surname'
     = f.input :email
