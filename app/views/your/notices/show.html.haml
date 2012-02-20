@@ -1,23 +1,22 @@
-= link_to 'back', your_notices_path
 .content
-  %p
-    %b Title:
-    = @notice.title
-  %p
-    %b Description:
-    = @notice.description
-  %p
-    %b Image:
+  = link_to 'back', your_notices_path, class: 'button'
+  %br
+  %br
+  %div
     - if @notice.landscape?
       = image_tag @notice.image.landscape.url
     - else
       = image_tag @notice.image.portrait.url
   %p
-    %b Contact phone:
-    = @notice.contact_phone
+    = @notice.title
   %p
-    %b Contact email:
-    = @notice.contact_email
+    = @notice.description
+  - if @notice.contact_phone.present?
+    %p
+      = @notice.contact_phone
+  -if @notice.contact_email
+    %p
+      = @notice.contact_email
 
-  = link_to 'edit', edit_your_notice_path(@notice)
-  = link_to 'delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?'
+  = link_to 'edit', edit_your_notice_path(@notice), class: 'button'
+  = link_to 'delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
