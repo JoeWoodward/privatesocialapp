@@ -10,7 +10,7 @@
           = image_tag notice.image.landscape.url
         - else
           = image_tag notice.image.portrait.url
-        = notice.description
+        = notice.description.truncate(250)
         - if notice.contact_phone.present?
           = notice.contact_phone
           %br
