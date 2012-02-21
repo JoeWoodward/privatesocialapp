@@ -1,4 +1,5 @@
 class AskAQuestionController < ApplicationController
+  skip_before_filter :require_login
   before_filter :orientation
   before_filter :check_message, :only => :create
 
