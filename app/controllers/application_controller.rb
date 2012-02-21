@@ -19,8 +19,12 @@ class ApplicationController < ActionController::Base
   end
 
   def is_user_authorised
-    unless current_user.is_admin? || current_user.active?
-      redirect_to your_details_path, "Please register to gain access to all the great features of 48 Harley Street VIP"
+    if current_user.present?
+      unless current_user.is_admin? || current_user.active?
+        redirect_to your_details_path, "Please register to gain access to all the great features of 48 Harley Street VIP"
+      end
+    else
+      not_authenticated
     end
   end
 end
