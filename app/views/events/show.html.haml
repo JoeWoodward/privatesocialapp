@@ -1,10 +1,13 @@
-= link_to 'All events', events_path, class: 'button'
 .event
-  = image_tag @event.image.large.url.to_s if @event.image
-  %span.date
-    = @event.date.strftime("%d/%y")
-  %h2
-    = @event.title
-  %p
-    = @event.description
-  = rsvp(@event)
+  = link_to 'All events', events_path, class: 'button margin-below'
+  %br
+  = image_tag @event.image.large.url.to_s, class: 'image' if @event.image
+  .details
+    %span.date
+      = @event.date.strftime("%d/%y")
+    %h2
+      = @event.title
+    %p
+      = @event.description
+    = rsvp(@event)
+  .clear

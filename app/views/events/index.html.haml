@@ -9,6 +9,5 @@
             = event.date.strftime("%d/%y")
           %br
           %p
-            = event.description
-          = link_to 'more', event_path(event), class: 'button'
-          %br
+            = event.description.truncate(250)
+            = link_to 'more', event_path(event)
