@@ -1,24 +1,25 @@
 = link_to '< All notices', admin_notices_path
 %br
 %br
+- if @notice.image.present?
+  %p
+    - if @notice.landscape?
+      %td= image_tag @notice.image.landscape.url
+    - else
+      %td= image_tag @notice.image.portrait.url
 %p
-  %b Title:
   = @notice.title
 %p
-  %b Description:
   = @notice.description
-%p
-  %b Image:
-  = image_tag @notice.image.large.url.to_s if @notice.image?
-%p
-  %b Contact phone:
-  = @notice.contact_phone
-%p
-  %b Contact email:
-  = @notice.contact_email
+- if @notice.contact_phone.present?
+  %p
+    = @notice.contact_phone
+-if @notice.contact_email.present?
+  %p
+    %b Contact email:
+    = @notice.contact_email
 - if @author.present?
   %p
-    %b Author:
     = @author.full_name
 
 = link_to 'delete', admin_notice_path(@notice), :class => 'btn btn-danger', :method => :delete, :confirm => 'Are you sure?'
