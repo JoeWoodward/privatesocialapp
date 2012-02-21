@@ -19,8 +19,12 @@ class ApplicationController < ActionController::Base
   end
 
   def is_user_authorised
+    # check there is a user in session
     if current_user.present?
-      unless current_user.is_admin? || current_user.active?
+      #check the user is activated (has paid at least once)
+      if current_user.state == nil && !current_user.is_admin?
+        redirect_to your_details_path
+      elsif !current_user.is_admin? || !current_user.active?
         redirect_to your_details_path, "Please register to gain access to all the great features of 48 Harley Street VIP"
       end
     else
