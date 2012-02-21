@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include Orientation
+  before_filter :require_login
   before_filter :is_user_authorised
 
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404

@@ -1,5 +1,4 @@
 class Your::EventsController < Your::YourController
-  before_filter :require_login
   before_filter :orientation
 
   def index

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_filter :require_login
   skip_before_filter :is_user_authorised
 
   def create

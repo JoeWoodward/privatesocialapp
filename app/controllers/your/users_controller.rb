@@ -1,5 +1,5 @@
 class Your::UsersController < Your::YourController
-  before_filter :require_login, :except => [:new, :create]
+  skip_before_filter :require_login, :only => [:new, :create]
   before_filter :orientation
   skip_before_filter :is_user_authorised
 
