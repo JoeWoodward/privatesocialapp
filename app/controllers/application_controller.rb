@@ -22,9 +22,9 @@ class ApplicationController < ActionController::Base
     # check there is a user in session
     if current_user.present?
       #check the user is activated (has paid at least once)
-      if current_user.state == nil && !current_user.is_admin?
+      if current_user.state == nil && current_user.is_admin != true
         redirect_to your_details_path
-      elsif !current_user.is_admin? || !current_user.active?
+      elsif current_user.inactive? && current_user.is_admin != true
         redirect_to your_details_path, "Please register to gain access to all the great features of 48 Harley Street VIP"
       end
     else
