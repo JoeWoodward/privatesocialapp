@@ -11,9 +11,10 @@
       = link_to 'Ask The Doctor', faqs_path
     %li
       = link_to 'Notice Board', notices_path
-  %ul.logout
-    %li
-      = link_to 'Log Out', logout_path
+  - if current_user
+    %ul.logout
+      %li
+        = link_to 'Log Out', logout_path
   %footer
     .v-card
       %p.org The Harley Street Skin Clinic
