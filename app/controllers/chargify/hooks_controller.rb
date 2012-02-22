@@ -1,13 +1,14 @@
 require 'digest/md5'
+
 class Chargify::HooksController < ApplicationController
   skip_before_filter :require_login
   skip_before_filter :is_user_authorised
-  protect_from_forgery :except => :dispatch
-  before_filter :verify, :only => :dispatch
+  protect_from_forgery :except => :dispatch_handler
+  before_filter :verify, :only => :dispatch_handler
 
-  EVENTS = %w[ test billing_date_change subscription_state_change ].freeze
+  EVENTS = %w[ test signup_success signup_failure renewal_success renewal_failure payment_success payment_failure billing_date_change subscription_state_change subscription_product_change ].freeze
 
-  def dispatch
+  def dispatch_handler
     event = params[:event]
 
     unless EVENTS.include? event
@@ -24,35 +25,43 @@ class Chargify::HooksController < ApplicationController
 
   def test
     Rails.logger.debug "Chargify Webhook test!"
-    render :nothing => true, :status => 200
+      render :nothing => true, :status => 200
+  end
+
+  def signup_success
+      render :nothing => true, :status => 200
+  end
+
+  def signup_failure
+      render :nothing => true, :status => 200
+  end
+
+  def renewal_success
+      render :nothing => true, :status => 200
+  end
+
+  def renewal_failure
+      render :nothing => true, :status => 200
+  end
+
+  def payment_success
+      render :nothing => true, :status => 200
+  end
+
+  def payment_failure
+      render :nothing => true, :status => 200
   end
 
   def billing_date_change
-    begin
-      @user = User.find_by_token(@subscription.customer.reference)
-      @user.state = @subscription.state
-      @user.subscription_billing_date = @subscription.current_period_ends_at
-      @user.save(:validate => false)
       render :nothing => true, :status => 200
-    rescue Exception => e
-      render :nothing => true, :status => 422 and return
-    end
   end
 
   def subscription_state_change
-    begin
-      puts @subscription.customer.email
-      @user = User.find_by_email(@subscription.customer.email)
-      puts @user.full_name
-      @user.state = @subscription.state
-      puts @user.state
-      @user.subscription_billing_date = @subscription.current_period_ends_at
-      @user.save
       render :nothing => true, :status => 200
-    rescue Exception => e
-      puts e
-      render :nothing => true, :status => 422 and return
-    end
+  end
+
+  def subscription_product_change
+      render :nothing => true, :status => 200
   end
 
   protected
@@ -64,7 +73,7 @@ class Chargify::HooksController < ApplicationController
 
     unless MD5::hexdigest(self.site_key + request.raw_post) == params[:signature]
       render :nothing => true, :status => :forbidden
-    end
+     end
   end
 
   def convert_payload
@@ -73,12 +82,11 @@ class Chargify::HooksController < ApplicationController
     end
 
     if params[:payload].has_key? :subscription
-      @subscription = Chargify::Subscription.find(params[:payload][:subscription])
+      @subscription = Chargify::Subscription.new params[:payload][:subscription]
     end
   end
 
-private
-
+  private
   def self.chargify_config
     YAML::load_file(File.join(Rails.root, 'config', 'chargify.yml'))
   end
