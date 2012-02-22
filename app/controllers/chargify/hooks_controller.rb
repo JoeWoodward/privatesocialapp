@@ -28,7 +28,15 @@ class Chargify::HooksController < ApplicationController
   end
 
   def signup_success
+    begin
+      @user = User.find_by_token(@subscription.customer.reference)
+      @user.state = @subscription.state
+      @user.subscription_billing_date = @subscription.current_period_ends_at
+      @user.save(:validate => false)
       render :nothing => true, :status => 200
+    rescue Exception => e
+      render :nothing => true, :status => 422 and return
+    end
   end
 
   def signup_failure
