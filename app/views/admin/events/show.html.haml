@@ -1,16 +1,12 @@
 = link_to '< All events', admin_events_path
 %br
 %p
-  %b Title:
   = @event.title
 %p
-  %b Description:
   = @event.description
 %p
-  %b Date:
   = format_date(@event.date)
 %p
-  %b Image:
   = image_tag @event.image.large.url.to_s if @event.image?
 
 = link_to 'edit', edit_admin_event_path(@event), :class => 'btn btn-primary'
