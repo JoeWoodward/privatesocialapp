@@ -5,7 +5,7 @@ class Chargify::HooksController < ApplicationController
   protect_from_forgery :except => :dispatch
   before_filter :verify, :only => :dispatch
 
-  EVENTS = %w[ test signup_success signup_failure renewal_success renewal_failure payment_success payment_failure billing_date_change subscription_state_change subscription_product_change ].freeze
+  EVENTS = %w[ test billing_date_change subscription_state_change ].freeze
 
   def dispatch_handler
     event = params[:event]
@@ -28,31 +28,12 @@ class Chargify::HooksController < ApplicationController
   end
 
   def billing_date_change
-    begin
-      @user = User.find_by_token(@subscription.customer.reference)
-      @user.state = @subscription.state
-      @user.subscription_billing_date = @subscription.current_period_ends_at
-      @user.save(:validate => false)
-      render :nothing => true, :status => 200
-    rescue Exception => e
-      render :nothing => true, :status => 422 and return
-    end
+    render :nothing => true, :status => 200
   end
 
   def subscription_state_change
-    begin
-      puts @subscription.customer.email
-      @user = User.find_by_email(@subscription.customer.email)
-      puts @user.full_name
-      @user.state = @subscription.state
-      puts @user.state
-      @user.subscription_billing_date = @subscription.current_period_ends_at
-      @user.save
+      puts 'sub changed'
       render :nothing => true, :status => 200
-    rescue Exception => e
-      puts e
-      render :nothing => true, :status => 422 and return
-    end
   end
 
   protected
