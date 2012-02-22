@@ -41,7 +41,7 @@ class Chargify::HooksController < ApplicationController
 
   def subscription_state_change
     begin
-      puts @subcription.customer.email
+      puts @subscription.customer.email
       @user = User.find_by_email(@subscription.customer.email)
       puts @user.full_name
       @user.state = @subscription.state
@@ -73,7 +73,7 @@ class Chargify::HooksController < ApplicationController
     end
 
     if params[:payload].has_key? :subscription
-      @subscription = Chargify::Subscription.new params[:payload][:subscription]
+      @subscription = Chargify::Subscription.find(params[:payload][:subscription])
     end
   end
 
