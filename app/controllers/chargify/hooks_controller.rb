@@ -40,23 +40,63 @@ class Chargify::HooksController < ApplicationController
   end
 
   def signup_failure
+    begin
+      @user = User.find_by_token(@subscription.customer.reference)
+      @user.state = @subscription.state
+      @user.subscription_billing_date = @subscription.current_period_ends_at
+      @user.save(:validate => false)
       render :nothing => true, :status => 200
+    rescue Exception => e
+      render :nothing => true, :status => 422 and return
+    end
   end
 
   def renewal_success
+    begin
+      @user = User.find_by_token(@subscription.customer.reference)
+      @user.state = @subscription.state
+      @user.subscription_billing_date = @subscription.current_period_ends_at
+      @user.save(:validate => false)
       render :nothing => true, :status => 200
+    rescue Exception => e
+      render :nothing => true, :status => 422 and return
+    end
   end
 
   def renewal_failure
+    begin
+      @user = User.find_by_token(@subscription.customer.reference)
+      @user.state = @subscription.state
+      @user.subscription_billing_date = @subscription.current_period_ends_at
+      @user.save(:validate => false)
       render :nothing => true, :status => 200
+    rescue Exception => e
+      render :nothing => true, :status => 422 and return
+    end
   end
 
   def payment_success
+    begin
+      @user = User.find_by_token(@subscription.customer.reference)
+      @user.state = @subscription.state
+      @user.subscription_billing_date = @subscription.current_period_ends_at
+      @user.save(:validate => false)
       render :nothing => true, :status => 200
+    rescue Exception => e
+      render :nothing => true, :status => 422 and return
+    end
   end
 
   def payment_failure
+    begin
+      @user = User.find_by_token(@subscription.customer.reference)
+      @user.state = @subscription.state
+      @user.subscription_billing_date = @subscription.current_period_ends_at
+      @user.save(:validate => false)
       render :nothing => true, :status => 200
+    rescue Exception => e
+      render :nothing => true, :status => 422 and return
+    end
   end
 
   def billing_date_change
@@ -73,16 +113,12 @@ class Chargify::HooksController < ApplicationController
 
   def subscription_state_change
     begin
-      puts @subscription.customer.email
       @user = User.find_by_email(@subscription.customer.email)
-      puts @user.full_name
       @user.state = @subscription.state
-      puts @user.state
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save
       render :nothing => true, :status => 200
     rescue Exception => e
-      puts e
       render :nothing => true, :status => 422 and return
     end
   end
