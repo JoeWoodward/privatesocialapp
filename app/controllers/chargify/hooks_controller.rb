@@ -1,5 +1,7 @@
 require 'digest/md5'
 class Chargify::HooksController < ApplicationController
+  skip_before_filter :require_login
+  skip_before_filter :is_user_authorised
   protect_from_forgery :except => :dispatch
   before_filter :verify, :only => :dispatch
 
