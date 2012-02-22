@@ -13,8 +13,10 @@ class Your::UsersController < Your::YourController
     @user.token = Digest::SHA1.hexdigest([Time.now, params[:user][:email]].join)
     if @user.save!
       login(@user.email, params[:user][:password])
+      payment_page = PaymentProcessor.hosted_signup_page_for(@user)
+      UserMailer.successful_registration(@user, payment_page).deliver
       # redirect to chargify
-      redirect_to PaymentProcessor.hosted_signup_page_for(@user)
+      redirect_to payment_page
     end
 
   rescue ActiveRecord::RecordInvalid
