@@ -117,7 +117,7 @@ class Chargify::HooksController < ApplicationController
     end
 
 
-    unless MD5::hexdigest(ENV['CHARGIFY_SUBDOMAIN_SHARED_KEY'] + request.raw_post) == params[:signature]
+    unless MD5::hexdigest(self.site_key + request.raw_post) == params[:signature]
       render :nothing => true, :status => :forbidden
     end
   end
@@ -130,5 +130,15 @@ class Chargify::HooksController < ApplicationController
     if params[:payload].has_key? :subscription
       @subscription = Chargify::Subscription.new params[:payload][:subscription]
     end
+  end
+
+private
+
+  def self.chargify_config
+    YAML::load_file(File.join(Rails.root, 'config', 'chargify.yml'))
+  end
+
+  def self.site_key
+    self.chargify_config[Rails.env]['site_key']
   end
 end
