@@ -2,12 +2,13 @@
   = link_to 'All Notices', notices_path, class: 'button'
   %br
   %br
-  - if @notice.landscape?
-    = image_tag @notice.image.landscape.url
-    %br
-  - else
-    = image_tag @notice.image.portrait.url
-    %br
+  - if @notice.image
+    - if @notice.landscape?
+      = image_tag @notice.image.landscape.url
+      %br
+    - else
+      = image_tag @notice.image.portrait.url
+      %br
   = @notice.description
   - if @notice.contact_phone.present?
     = @notice.contact_phone

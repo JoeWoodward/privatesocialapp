@@ -11,10 +11,11 @@
     %tr
       %td= notice.title
       %td= notice.description
-      - if notice.landscape?
-        %td= image_tag notice.image.landscape_tiny.url
-      - else
-        %td= image_tag notice.image.portrait_tiny.url
+      - if notice.image.present?
+        - if notice.landscape?
+          %td= image_tag notice.image.landscape_tiny.url
+        - else
+          %td= image_tag notice.image.portrait_tiny.url
       %td= notice.contact_phone
       %td= notice.contact_email
       %td

@@ -3,10 +3,11 @@
   %br
   %br
   %div
-    - if @notice.landscape?
-      = image_tag @notice.image.landscape.url
-    - else
-      = image_tag @notice.image.portrait.url
+    - if @notice.image.present?
+      - if @notice.landscape?
+        = image_tag @notice.image.landscape.url
+      - else
+        = image_tag @notice.image.portrait.url
   %p
     = @notice.title
   %p
