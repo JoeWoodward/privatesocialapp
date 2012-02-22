@@ -69,4 +69,8 @@ HarleyHealthVip::Application.routes.draw do
 
     resources :offers, :except => :destroy
   end
+
+  namespace 'chargify' do
+    match '/hooks' => "hooks#dispatch_handler", :via => "post"
+  end
 end

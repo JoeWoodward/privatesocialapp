@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 18) do
+ActiveRecord::Schema.define(:version => 19) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 18) do
     t.string   "token"
     t.string   "state"
     t.string   "chargify_subscription_id"
+    t.string   "subscription_billing_date"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
