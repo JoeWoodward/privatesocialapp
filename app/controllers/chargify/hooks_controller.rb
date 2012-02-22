@@ -1,5 +1,4 @@
 require 'digest/md5'
-
 class Chargify::HooksController < ApplicationController
   skip_before_filter :require_login
   skip_before_filter :is_user_authorised
@@ -71,7 +70,7 @@ class Chargify::HooksController < ApplicationController
     end
 
 
-    unless MD5::hexdigest(self.site_key + request.raw_post) == params[:signature]
+    unless Digest::MD5.hexdigest(self.site_key + request.raw_post) == params[:signature]
       render :nothing => true, :status => :forbidden
      end
   end
