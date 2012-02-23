@@ -1,7 +1,7 @@
 // the UL of offers
 .offers-list {
   @include no-bullets;
-  margin: 0;
+  margin: -18px 0 0 0;
   padding: 0;
 
   li {
