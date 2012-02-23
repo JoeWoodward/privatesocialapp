@@ -90,6 +90,11 @@ body {
 }
 
 .faqs{
+  background: url('faqs.png') no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+.ask_a_question{
   background: url('ask_a_doctor.png') no-repeat center center fixed;
   @include background-size(cover);
 }
