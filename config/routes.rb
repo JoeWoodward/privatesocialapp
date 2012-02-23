@@ -9,6 +9,9 @@ HarleyHealthVip::Application.routes.draw do
 
   resources :user_password_resets, :path => 'password-reset'
 
+  match 'terms-and-conditions' => 'static_pages#terms', :as => 'terms_and_conditions'
+  match 'privacy-policy' => 'static_pages#privacy', :as => 'privacy_policy'
+
   get 'ask-a-question' => 'ask_a_question#new', :as => 'ask_a_question'
   post 'ask-a-question' => 'ask_a_question#create'
 
