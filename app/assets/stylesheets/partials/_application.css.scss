@@ -37,6 +37,7 @@ body {
   .sub-menu {
     position: relative;
     height: 34px;
+    margin-bottom: -34px;
 
     .tabs {
       @include horizontal-list;
@@ -79,7 +80,17 @@ body {
 
 //Some pages have image background, some not, here are the ones that do
 .static_pages{
-  background: url('bg01.png') no-repeat center center fixed;
+  background: url('home.png') no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+.users{
+  background: url('personal_details.png') no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+.faqs{
+  background: url('ask_a_doctor.png') no-repeat center center fixed;
   @include background-size(cover);
 }
 
