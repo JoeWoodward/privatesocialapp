@@ -2,10 +2,19 @@
 .heading
   %h2 YOUR ACCOUNT
 .content
+  %p= "#{@user.title} #{@user.full_name}"
+  %p= format_date @user.date_of_birth
   %p
-    = @user.full_name
-  %p
-    = @user.email
+    = @user.house
+    %br
+    = @user.town
+    %br
+    = @user.post_code
+  - if @user.telephone
+    %p= @user.telephone
+  - if @user.mobile
+    %p= @user.mobile
+  %p= @user.email
   = link_to 'Edit Your Details', edit_your_details_path, class: 'button'
   %br
   %br

@@ -7,17 +7,18 @@
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   %body{class: controller.controller_name}
     = render 'layouts/main_nav'
-    .sub-menu
-      %ul.tabs
-        %li
-          = link_to_unless_current "Your Account", your_details_path do
-            %span.current Your Account
-        %li
-          = link_to_unless_current "Your Events", your_events_path do
-            %span.current Your Events
-        %li
-          = link_to_unless_current "Your Notices", your_notices_path do
-            %span.current Your Notices
+    - if current_user
+      .sub-menu
+        %ul.tabs
+          %li
+            = link_to_unless_current "Your Account", your_details_path do
+              %span.current Your Account
+          %li
+            = link_to_unless_current "Your Events", your_events_path do
+              %span.current Your Events
+          %li
+            = link_to_unless_current "Your Notices", your_notices_path do
+              %span.current Your Notices
     .clear
     %div{class: "#{@orientation}-wrapper"}
       .grey-slate

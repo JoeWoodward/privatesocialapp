@@ -44,10 +44,12 @@ class Your::UsersController < Your::YourController
   end
 
   def complete_registration
+    user = User.find_by_token(params[:customer_reference])
+    user.chargify_subscription_id ||= params[:subscription_id].to_i
     subscription = Chargify::Subscription.find(params[:subscription_id].to_i) rescue nil
     if subscription.customer.reference == params[:customer_reference]
-      user = User.init!(params[:customer_reference], params[:subscription_id])
-      user.save
+      initialised_user = User.init!(params[:customer_reference], params[:subscription_id])
+      initialised_user.save
       @user = User.find_by_token(params[:customer_reference])
       if user
         redirect_to your_details_path

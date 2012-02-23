@@ -14,10 +14,15 @@ class User < ActiveRecord::Base
   # used to format the attributes of users so any format errors are corrected
   before_save :format_attributes
 
-  attr_accessible :first_name, :last_name, :email, :password_confirmation, :password, :full_name, :is_admin, :subscription_billing_date
+  attr_accessible :first_name, :last_name, :email, :password_confirmation, :password, :full_name, :is_admin, :subscription_billing_date, :title, :date_of_birth, :house, :town, :post_code, :telephone, :mobile
 
   # validations for user attributes
   validates_presence_of :first_name
+  validates_presence_of :title
+  validates_presence_of :date_of_birth
+  validates_presence_of :house
+  validates_presence_of :town
+  validates_presence_of :post_code
   validates_presence_of :last_name
   validates_presence_of :email
   validates_presence_of :password, :on => :create
@@ -28,6 +33,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   validates_length_of :password, :minimum => 5, :allow_blank => true
+
+  validates_format_of :telephone, :with => /[[\s]-[\d]]/x, :allow_blank => true
+  validates_format_of :mobile, :with => /[[\s]-[\d]]/x, :allow_blank => true
 
   # before filter calls this method before save to check there are no errors in formatting
   def format_attributes
