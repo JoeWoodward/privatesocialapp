@@ -62,4 +62,22 @@ class Your::UsersController < Your::YourController
   def updated_billing_info
     redirect_to your_details_path, :notice => 'You have successfully updated your billing information'
   end
+
+  def cancel_subscription
+    subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i) rescue nil
+    subscription.cancel
+    subscription.reload
+    current_user.state = "cancelled"
+    current_user.save
+    redirect_to your_details_path
+  end
+
+  def resubscribe
+    subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i) rescue nil
+    subscription.reactivate
+    subscription.reload
+    current_user.state = "pending"
+    current_user.save
+    redirect_to your_details_path
+  end
 end

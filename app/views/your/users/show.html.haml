@@ -6,6 +6,8 @@
     = @user.full_name
   %p
     = @user.email
-  = link_to 'Edit Your Details', edit_your_details_path
+  = link_to 'Edit Your Details', edit_your_details_path, class: 'button'
+  %br
   %br
   = payment_link
+  = toggle_activation_link

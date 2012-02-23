@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
     if current_user.present?
       #check the user is activated (has paid at least once)
       if current_user.state == nil && current_user.is_admin != true
-        redirect_to your_details_path
+        redirect_to your_details_path, :notice => "Please register to gain access to all the great features of 48 Harley Street VIP"
       elsif current_user.inactive? && current_user.is_admin != true
-        redirect_to your_details_path, "Please register to gain access to all the great features of 48 Harley Street VIP"
+        redirect_to your_details_path, :notice => "Your account is currently inactive, please re-subscribe to gain access again"
       end
     else
       not_authenticated
