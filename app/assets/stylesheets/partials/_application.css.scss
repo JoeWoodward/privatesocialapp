@@ -31,13 +31,12 @@ body {
     height: 100%;
     width: 2000px;
     bottom: 0;
-    overflow-y: scroll;
   }
 
   .sub-menu {
     position: relative;
     height: 34px;
-    margin-bottom: -34px;
+    margin-bottom: -35px;
 
     .tabs {
       @include horizontal-list;
