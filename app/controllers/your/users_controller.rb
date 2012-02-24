@@ -61,20 +61,26 @@ class Your::UsersController < Your::YourController
   end
 
   def cancel_subscription
-    subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i) rescue nil
-    subscription.cancel
-    subscription.reload
-    current_user.state = "cancelled"
-    current_user.save
-    redirect_to your_details_path
+    if subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i)
+      subscription.cancel
+      subscription.reload
+      current_user.state = "cancelled"
+      current_user.save
+      redirect_to your_details_path
+    else
+      redirect_to your_details_path, :notice => 'Sorry but something went wrong, please contact 48 Harley Street to resolve the issue'
+    end
   end
 
   def resubscribe
-    subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i) rescue nil
-    subscription.reactivate
-    subscription.reload
-    current_user.state = "pending"
-    current_user.save
-    redirect_to your_details_path
+    if subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i)
+      subscription.reactivate
+      subscription.reload
+      current_user.state = "pending"
+      current_user.save
+      redirect_to your_details_path
+    else
+      redirect_to your_details_path, :notice => 'Sorry but something went wrong, please contact 48 Harley Street to resolve the issue'
+    end
   end
 end
