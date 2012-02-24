@@ -1,17 +1,19 @@
-- if @events.blank?
-  .content
+%br
+%br
+.content
+  - if @events.blank?
     You have not RSVP'd to any Events yet
-- else
-  - @events.each do |event|
-    .your-event
-      %span.title
-        = event.title
-      %br
-      = event.description.truncate(250)
-      = link_to 'more', your_event_path(event)
-      %br
-      = event.date.strftime("%d/%m/%Y")
-      = link_to 'Cancel RSVP', cancel_your_event_rsvp_path(event), class: 'button'
+  - else
+    - @events.each do |event|
+      .your-event
+        %span.title
+          = event.title
+        %br
+        = event.description.truncate(250)
+        = link_to 'more', your_event_path(event)
+        %br
+        = event.date.strftime("%d/%m/%Y")
+        = link_to 'Cancel RSVP', cancel_your_event_rsvp_path(event), class: 'button'
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/account.png");
