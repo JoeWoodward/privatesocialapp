@@ -2,3 +2,6 @@
   %h2 NEW NOTICE
 .content
   = render 'form'
+- content_for :javascripts do
+  :javascript
+    $.backstretch("/assets/account.png");

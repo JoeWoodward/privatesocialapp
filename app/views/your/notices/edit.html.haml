@@ -3,3 +3,6 @@
   %h2 Editing notice
 .content
   = render 'form'
+- content_for :javascripts do
+  :javascript
+    $.backstretch("/assets/account.png");
