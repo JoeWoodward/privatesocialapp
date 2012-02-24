@@ -1,1 +1,1 @@
-User.create(:first_name => 'Admin', :last_name => 'User', :email => 'admin@mail.com', :password => 'password', :password_confirmation => 'password', :is_admin => true)
+User.create(:first_name => 'Admin', :last_name => 'User', :title => 'Mr', :house => '123', :town => 'sdjflk', post_code: 'jas', date_of_birth: '23/23/2002', :telephone => '03409234', :mobile => '02349', :email => 'admin@mail.com', :password => 'password', :password_confirmation => 'password', :is_admin => true)
