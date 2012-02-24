@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :date_of_birth
   validates_presence_of :house
+  validates_presence_of :telephone
+  validates_presence_of :mobile
   validates_presence_of :town
   validates_presence_of :post_code
   validates_presence_of :last_name
