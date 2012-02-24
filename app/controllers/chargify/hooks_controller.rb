@@ -113,7 +113,7 @@ class Chargify::HooksController < ApplicationController
 
   def subscription_state_change
     begin
-      @user = User.find_by_email(@subscription.customer.email)
+      @user = User.find_by_token(@subscription.customer.reference)
       @user.state = @subscription.state
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save
