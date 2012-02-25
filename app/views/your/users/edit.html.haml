@@ -1,27 +1,26 @@
-.content
-  = simple_form_for current_user, :url => your_detailss_path(current_user), :method => :put do |f|
-    %br
-    %br
-    = f.input :title
-    = f.input :first_name
-    = f.input :last_name, label: 'Surname'
-    = f.input :date_of_birth,:start_year => Date.today.year - 18, :end_year => Date.today.year - 100, :order => [:day, :month, :year]
-    = f.input :telephone
-    = f.input :mobile
-    %br
-    %br
-    = f.input :house, label: 'Street address'
-    = f.input :town, label: 'Town / City'
-    = f.input :post_code
-    %br
-    %br
-    = f.input :email, label: 'Email (used to log in)'
-    = f.input :password
-    = f.input :password_confirmation
-    %br
-    .actions
-      = f.button :submit, 'Update'
-    %br
+= simple_form_for current_user, :url => your_detailss_path(current_user), :method => :put do |f|
+  %br
+  %br
+  = f.input :title
+  = f.input :first_name
+  = f.input :last_name, label: 'Surname'
+  = f.input :date_of_birth,:start_year => Date.today.year - 18, :end_year => Date.today.year - 100, :order => [:day, :month, :year]
+  = f.input :telephone
+  = f.input :mobile
+  %br
+  %br
+  = f.input :house, label: 'Street address'
+  = f.input :town, label: 'Town / City'
+  = f.input :post_code
+  %br
+  %br
+  = f.input :email, label: 'Email (used to log in)'
+  = f.input :password
+  = f.input :password_confirmation
+  %br
+  .actions
+    = f.button :submit, 'Update'
+  %br
 - content_for :javascripts do
-  :javascript
-    $.backstretch("/assets/account.png");
+:javascript
+  $.backstretch("/assets/account.png");

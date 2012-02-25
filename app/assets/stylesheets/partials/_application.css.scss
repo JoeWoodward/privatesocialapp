@@ -17,11 +17,17 @@ body {
     float: left;
     margin-left: $main-nav-width;
     z-index: 2;
+
+    .main-content {
+      padding-left: 70px;
+    }
+
   }
 
   .vertical-wrapper {
     position: absolute;
-    height: 100%;
+    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
   }
@@ -31,6 +37,10 @@ body {
     height: 100%;
     width: 2000px;
     bottom: 0;
+  }
+
+  .your-stuff {
+    margin-top: 90px;
   }
 
   .sub-menu {

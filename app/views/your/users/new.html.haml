@@ -1,28 +1,27 @@
 = render "layouts/flashes"
-.content
-  %p
-    £150 one-off joining fee
-  %p
-    £300 annual fee
-  = simple_form_for @user, :url => your_detailss_path(@user), method: :post do |f|
-    = f.input :title
-    = f.input :first_name
-    = f.input :last_name, label: 'Surname'
-    = f.input :date_of_birth,:start_year => Date.today.year - 18, :end_year => Date.today.year - 100, :order => [:day, :month, :year]
-    = f.input :telephone
-    = f.input :mobile
-    = f.label :Address
-    = f.input :house, label: 'Street address'
-    = f.input :town, label: 'Town / City'
-    = f.input :post_code
-    %br
-    = f.input :email, label: 'Email (used to log in)'
-    = f.input :password
-    = f.input :password_confirmation
-    %br
-    .actions
-      = f.button :submit, 'Continue'
-    %br
+%p
+  £150 one-off joining fee
+%p
+  £300 annual fee
+= simple_form_for @user, :url => your_detailss_path(@user), method: :post do |f|
+  = f.input :title
+  = f.input :first_name
+  = f.input :last_name, label: 'Surname'
+  = f.input :date_of_birth,:start_year => Date.today.year - 18, :end_year => Date.today.year - 100, :order => [:day, :month, :year]
+  = f.input :telephone
+  = f.input :mobile
+  = f.label :Address
+  = f.input :house, label: 'Street address'
+  = f.input :town, label: 'Town / City'
+  = f.input :post_code
+  %br
+  = f.input :email, label: 'Email (used to log in)'
+  = f.input :password
+  = f.input :password_confirmation
+  %br
+  .actions
+    = f.button :submit, 'Continue'
+  %br
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/account.png");
