@@ -29,18 +29,24 @@ body {
     bottom: 0;
   }
 
-  .your-stuff {
+  .your-stuff, .full-translucent {
     position: fixed;
+  }
+
+  .your-stuff {
     margin-top: 90px;
     background-color: $slate-grey;
     padding-top: 40px;
     z-index: 0;
+
+  }
+
+  .full-translucent {
   }
 
   .main-content {
     margin-left: $main-nav-width;
     margin-top: 90px;
-    background-color: $slate-grey;
     z-index: 1;
 
     .content-holder {
