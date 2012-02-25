@@ -12,6 +12,6 @@ class OffersController < ApplicationController
   end
 
   def partners
-    @partners = Partners.all
+    @partners = Partner.all
   end
 end
