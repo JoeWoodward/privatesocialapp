@@ -1,24 +1,23 @@
-.content-holder
-  = link_to 'back', your_notices_path, class: 'button'
-  %div
-    - if @notice.image.present?
-      - if @notice.landscape?
-        = image_tag @notice.image.landscape.url
-      - else
-        = image_tag @notice.image.portrait.url
+= link_to 'back', your_notices_path, class: 'button'
+%div
+  - if @notice.image.present?
+    - if @notice.landscape?
+      = image_tag @notice.image.landscape.url
+    - else
+      = image_tag @notice.image.portrait.url
+%p
+  = @notice.title
+%p
+  = @notice.description
+- if @notice.contact_phone.present?
   %p
-    = @notice.title
+    = @notice.contact_phone
+- if @notice.contact_email
   %p
-    = @notice.description
-  - if @notice.contact_phone.present?
-    %p
-      = @notice.contact_phone
-  - if @notice.contact_email
-    %p
-      = @notice.contact_email
+    = @notice.contact_email
 
-  = link_to 'edit', edit_your_notice_path(@notice), class: 'button'
-  = link_to 'delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
+= link_to 'edit', edit_your_notice_path(@notice), class: 'button'
+= link_to 'delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/events.png");
