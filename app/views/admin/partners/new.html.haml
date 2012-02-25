@@ -1,2 +1,8 @@
-%h1 Admin::Partners#new
-%p Find me in app/views/admin/partners/new.html.haml
+%h1 New Partner
+= simple_form_for(@partner, :html => { :class => 'form-horizontal' }, :url => admin_partner_path(@partner)) do |f|
+  = f.error_notification
+  = f.input :name, :input_html => { :class => "span6" }
+  = f.input :description, :input_html => { :class => "span6" }
+  = f.input :logo
+  .form-actions
+    = f.button :submit, 'Create Partner', :class => 'btn-primary btn-large'
