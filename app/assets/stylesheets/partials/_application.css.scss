@@ -8,20 +8,10 @@ body {
   font: normal #{$fontsize}/#{$lineheight} $sans;
   background-color: $purple;
 
-  .heading {
-    padding-top: $default-inner-spacing;
-    margin-left: $default-left-spacing;
-  }
-
   .vertical-wrapper, .horizontal-wrapper {
     float: left;
     margin-left: $main-nav-width;
     z-index: 2;
-
-    .main-content {
-      padding-left: 70px;
-    }
-
   }
 
   .vertical-wrapper {
@@ -40,8 +30,26 @@ body {
   }
 
   .your-stuff {
+    position: fixed;
     margin-top: 90px;
+    background-color: $slate-grey;
+    padding-top: 40px;
+    z-index: 0;
   }
+
+  .main-content {
+    margin-left: $main-nav-width;
+    margin-top: 90px;
+    background-color: $slate-grey;
+    z-index: 3;
+
+    .content-holder {
+      position: relative;
+      padding-left: 70px;
+      background-color: $slate-grey;
+    }
+  }
+
 
   .sub-menu {
     position: relative;
@@ -79,12 +87,6 @@ body {
         }
       }
     }
-  }
-
-  .content {
-    margin-top: 34px;
-    margin-left: $default-left-spacing;
-    margin-right: $default-left-spacing;
   }
 }
 

@@ -21,8 +21,8 @@
               %span.current Your Notices
     .clear
     %div{class: "#{@orientation}-wrapper your-stuff"}
-      .main-content
-        = yield
+    .main-content
+      = yield
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"
