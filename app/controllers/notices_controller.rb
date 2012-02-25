@@ -1,6 +1,4 @@
 class NoticesController < ApplicationController
-  before_filter :orientation
-
   def index
     @notices = Notice.all
   end

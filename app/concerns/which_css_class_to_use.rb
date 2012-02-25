@@ -1,4 +1,4 @@
-module Orientation
+module WhichCssClassToUse
 
   #override this variable inside controllers or actions
   #change @orientation to 'horizontal' .. obviously!
@@ -11,5 +11,9 @@ module Orientation
     # @orientation is used in the layout..
     # HAML: %div{class: "#{@orientation}-wrapper"}
     @orientation = 'vertical'
+  end
+
+  def section_style
+    @section_style = ''
   end
 end

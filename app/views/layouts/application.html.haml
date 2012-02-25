@@ -8,7 +8,7 @@
   %body{class: controller.controller_name}
     = render 'layouts/main_nav'
     = yield :tabs
-    %div{class: "#{@orientation}-wrapper"}
+    %div{class: "#{@orientation}-wrapper #{@section_style}"}
       = yield
 
     -# Javascript at the bottom for fast page loading

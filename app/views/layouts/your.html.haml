@@ -22,7 +22,8 @@
     .clear
     %div{class: "#{@orientation}-wrapper your-stuff"}
     .main-content
-      = yield
+      .content-holder
+        = yield
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"

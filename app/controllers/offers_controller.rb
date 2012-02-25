@@ -1,6 +1,5 @@
 class OffersController < ApplicationController
   layout 'offers'
-  before_filter :orientation
 
   def index
     @offers = Offer.where(:active => true)
