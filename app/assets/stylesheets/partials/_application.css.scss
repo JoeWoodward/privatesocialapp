@@ -30,8 +30,13 @@ body {
   }
 
   .main-content {
-    padding-top: 40px;
+    padding-top: $main-top-spacing;
     padding-left: $main-inner-spacing;
+    width: 500px;
+  }
+
+  .offers-content {
+    padding-top: $main-top-spacing;
     width: 500px;
   }
 
