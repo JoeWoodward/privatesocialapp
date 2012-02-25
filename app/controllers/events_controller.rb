@@ -1,6 +1,4 @@
 class EventsController < ApplicationController
-  before_filter :orientation
-
   def rsvp
     @event = Event.find(params[:id])
     current_user.events << @event
