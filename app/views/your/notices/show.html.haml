@@ -1,9 +1,5 @@
-%br
-%br
-.content
+.content-holder
   = link_to 'back', your_notices_path, class: 'button'
-  %br
-  %br
   %div
     - if @notice.image.present?
       - if @notice.landscape?
@@ -17,7 +13,7 @@
   - if @notice.contact_phone.present?
     %p
       = @notice.contact_phone
-  -if @notice.contact_email
+  - if @notice.contact_email
     %p
       = @notice.contact_email
 

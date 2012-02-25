@@ -1,21 +1,16 @@
-%br
-.content
+= link_to 'New notice', new_your_notice_path, :class => 'button'
+.your-notice
   %br
-  = link_to 'New notice', new_your_notice_path, :class => 'button'
-  %br
-  %br
-  .your-notice
-    %br
-    - if @notices.blank?
-      You have not created any Notices yet.
-    - else
-      - @notices.each do |notice|
-        %span.title
-          = notice.title
-        %br
-        = link_to 'view', your_notice_path(notice), class: 'button'
-        = link_to 'edit', edit_your_notice_path(notice), class: 'button'
-        = link_to 'delete', your_notice_path(notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
+  - if @notices.blank?
+    You have not created any Notices yet.
+  - else
+    - @notices.each do |notice|
+      %span.title
+        = notice.title
+      %br
+      = link_to 'view', your_notice_path(notice), class: 'button'
+      = link_to 'edit', edit_your_notice_path(notice), class: 'button'
+      = link_to 'delete', your_notice_path(notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/events.png");
