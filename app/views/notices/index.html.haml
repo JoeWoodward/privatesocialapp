@@ -1,7 +1,5 @@
-.heading
-  %h2 NOTICEBOARD
-  = link_to 'Post a Notice', new_your_notice_path, class: 'button'
-.clear
+%h4 noticeboard
+= link_to 'Post a Notice', new_your_notice_path, class: 'button'
 .noticeboard
   - if @notices.present?
     - @notices.each do |notice|

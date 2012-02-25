@@ -142,6 +142,7 @@ h1,h2,h3,h4,h5,h6 {
   font-family: $sans;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
 }
 
 /* Grouped headings */
@@ -173,7 +174,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.05em;
+  font-size: 1.984em;
   line-height: $lineheight*2;
   margin-bottom: ceil($lineheight / 2);
 }
