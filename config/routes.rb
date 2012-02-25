@@ -1,5 +1,11 @@
 HarleyHealthVip::Application.routes.draw do
 
+  get "vip_users/g"
+
+  get "vip_users/index"
+
+  get "vip_users/show"
+
   match 'update-billing-detail' => 'your/users#update_billing_detail', :as => 'update_billing_details'
   match "complete-registration" => 'your/users#complete_registration', :as => 'complete_registration'
   match "register-now" => 'your/users#register_now', :as => 'register_now'
