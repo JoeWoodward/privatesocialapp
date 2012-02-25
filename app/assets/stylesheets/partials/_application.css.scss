@@ -78,27 +78,6 @@ body {
   }
 }
 
-//Some pages have image background, some not, here are the ones that do
-.static_pages{
-  background: url('home.png') no-repeat center center fixed;
-  @include background-size(cover);
-}
-
-.users{
-  background: url('personal_details.png') no-repeat center center fixed;
-  @include background-size(cover);
-}
-
-.faqs{
-  background: url('faqs.png') no-repeat center center fixed;
-  @include background-size(cover);
-}
-
-.ask_a_question{
-  background: url('ask_a_doctor.png') no-repeat center center fixed;
-  @include background-size(cover);
-}
-
 /* Text and image selection styling */
 
 ::selection {

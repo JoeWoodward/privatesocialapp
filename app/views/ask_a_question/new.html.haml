@@ -9,3 +9,6 @@
       .actions
         = submit_tag 'Submit question', :class => 'button'
     = link_to 'Back', faqs_path, class: 'button'
+- content_for :javascripts do
+  :javascript
+    $.backstretch("/assets/ask_a_doctor.png");
