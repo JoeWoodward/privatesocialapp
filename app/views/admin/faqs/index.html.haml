@@ -1,6 +1,9 @@
 %h1 Listing FAQ's
 
-= link_to 'New FAQ', new_admin_faq_path, {:class=>"btn btn-primary btn-large"}
+= link_to 'New FAQ', new_admin_faq_path, :class=>"btn btn-primary pull-right"
+
+%br
+%br
 
 = paginate @faqs
 
@@ -20,7 +23,5 @@
         = link_to 'view', admin_faq_path(faq)
         = link_to 'edit', edit_admin_faq_path(faq)
         = link_to 'delete', admin_faq_path(faq), :confirm => 'Are you sure?', :method => :delete
-
-%br
 
 = paginate @faqs

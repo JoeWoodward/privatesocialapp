@@ -1,4 +1,10 @@
+%h1 Listing VIP Members
+
+%br
+%br
+
 = paginate @vip_users
+
 %table.table.table-bordered.table-striped
   %thead
     %tr
@@ -13,9 +19,10 @@
         %td= vip_user.email
         %td
           - if vip_user.active?
-            Yes
+            %span.label.label-success Yes
           - else
-            No
+            %span.label No
         %td
           = link_to 'view', admin_vip_user_path(vip_user), class: 'btn'
+
 = paginate @vip_users

@@ -1,6 +1,9 @@
 %h1 Listing Staff Members
 
-= link_to 'New Staff Member', new_admin_account_path, {:class=>"btn btn-primary btn-large"}
+= link_to 'New Staff Member', new_admin_account_path, :class=>"btn btn-primary pull-right"
+
+%br
+%br
 
 = paginate @admins
 
@@ -27,7 +30,5 @@
             = link_to 'view', admin_account_path(admin), class: 'btn'
             = link_to 'edit', edit_admin_account_path(admin), class: 'btn btn-primary'
             = link_to 'delete', admin_account_path(admin), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger'
-
-%br
 
 = paginate @admins

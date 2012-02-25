@@ -1,6 +1,9 @@
 %h1 Listing Offers
 
-= link_to 'New Offer', new_admin_offer_path, {:class=>"btn btn-primary btn-large"}
+= link_to 'New Offer', new_admin_offer_path, :class=>"btn btn-primary pull-right"
+
+%br
+%br
 
 = paginate @offers
 
@@ -17,10 +20,8 @@
       %td= image_tag(offer.image.thumb.url.to_s)
       %td= offer.active
       %td
-        = link_to 'view', admin_offer_path(offer), {:class=>"btn btn-info btn-mini"}
-        = link_to 'edit', edit_admin_offer_path(offer), {:class=>"btn btn-warning btn-mini"}
-        = link_to 'delete', admin_offer_path(offer), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger btn-mini'
-
-%br
+        = link_to 'view', admin_offer_path(offer), :class=>"btn"
+        = link_to 'edit', edit_admin_offer_path(offer), {:class=>"btn btn-primary"}
+        = link_to 'delete', admin_offer_path(offer), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
 
 = paginate @offers

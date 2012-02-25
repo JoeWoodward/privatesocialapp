@@ -1,35 +1,36 @@
 %h1 Listing Notices
+%p (created by VIP members)
 
-= link_to 'New Notice', new_admin_notice_path, {:class=>"btn btn-primary btn-large"}
+%br
 
 = paginate @notices
 
 %table.table.table-bordered.table-striped
-  %tr
-    %th Title
-    %th Description
-    %th Image
-    %th Contact phone
-    %th Contact email
-    %th &nbsp
-
-  - @notices.each do |notice|
+  %thead
     %tr
-      %td= notice.title
-      %td= notice.description
-      - if notice.image.present?
-        - if notice.landscape?
-          %td= image_tag notice.image.landscape_tiny.url
-        - else
-          %td= image_tag notice.image.portrait_tiny.url
-      - else
-        %td
-      %td= notice.contact_phone
-      %td= notice.contact_email
-      %td
-        = link_to 'view', admin_notice_path(notice), :class => 'btn'
-        = link_to 'delete', admin_notice_path(notice), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+      %th Title
+      %th Description
+      %th Image
+      %th Contact phone
+      %th Contact email
+      %th &nbsp
 
-%br
+  %tbody
+    - @notices.each do |notice|
+      %tr
+        %td= notice.title
+        %td= notice.description
+        - if notice.image.present?
+          - if notice.landscape?
+            %td= image_tag notice.image.landscape_tiny.url
+          - else
+            %td= image_tag notice.image.portrait_tiny.url
+        - else
+          %td
+        %td= notice.contact_phone
+        %td= notice.contact_email
+        %td
+          = link_to 'view', admin_notice_path(notice), :class => 'btn'
+          = link_to 'delete', admin_notice_path(notice), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
 
 = paginate @notices
