@@ -1,0 +1,12 @@
+= link_to '< Show All', admin_partners_path
+%br
+%br
+= @partner.name
+%br
+= @partner.description
+%br
+= image_tag @partner.logo.logo.url
+%br
+%br
+= link_to 'Edit details', edit_admin_partner_path(@partner), :class => 'btn btn-primary'
+= link_to 'Delete partner', admin_partner_path(@partner), :method => :delete, :class => 'btn btn-danger', confirm: "Are you sure?"

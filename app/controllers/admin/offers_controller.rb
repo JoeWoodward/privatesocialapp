@@ -3,7 +3,7 @@ class Admin::OffersController < Admin::ApplicationController
   before_filter :is_admin
 
   def index
-    @offers = Offer.all
+    @offers = Offer.page(params[:page]).per(15)
   end
 
   def show

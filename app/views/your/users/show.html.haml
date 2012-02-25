@@ -1,23 +1,28 @@
 = render "layouts/flashes"
-%p= "#{@user.title} #{@user.full_name}"
-%p= format_date @user.date_of_birth
-%p
-  = @user.house
+- if current_user.is_admin?
+  %p= @user.full_name
+  %p= @user.email
   %br
-  = @user.town
+- else
+  %p= "#{@user.title} #{@user.full_name}"
+  %p= format_date @user.date_of_birth
+  %p
+    = @user.house
+    %br
+    = @user.town
+    %br
+    = @user.post_code
+  - if @user.telephone
+    %p= @user.telephone
+  - if @user.mobile
+    %p= @user.mobile
+  %p= @user.email
+  = link_to 'Edit Your Details', edit_your_details_path, class: 'button'
   %br
-  = @user.post_code
-- if @user.telephone
-  %p= @user.telephone
-- if @user.mobile
-  %p= @user.mobile
-%p= @user.email
-= link_to 'Edit Your Details', edit_your_details_path, class: 'button'
-%br
-%br
-= payment_link
-/they don't want a cancel link so I've commented out for now until the decision is made.
-/= toggle_activation_link
+  %br
+  = payment_link
+  /they don't want a cancel link so I've commented out for now until the decision is made.
+  /= toggle_activation_link
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/account.png");

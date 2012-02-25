@@ -1,0 +1,7 @@
+%h1 Edit Partners Details
+= simple_form_for(@partner, :html => { :class => 'form-horizontal' }, :url => admin_partner_path(@partner)) do |f|
+  = f.input :name, :input_html => { :class => "span6" }
+  = f.input :description, :input_html => { :class => "span6" }
+  = f.input :logo
+  .form-actions
+    = f.button :submit, 'Update', :class => 'btn-primary'

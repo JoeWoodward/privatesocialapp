@@ -76,6 +76,8 @@ HarleyHealthVip::Application.routes.draw do
     resources :offers, :except => :destroy
 
     resources :vip_users, :path => 'vip-users', :only => [:index, :show]
+
+    resources :partners
   end
 
   namespace 'chargify' do
