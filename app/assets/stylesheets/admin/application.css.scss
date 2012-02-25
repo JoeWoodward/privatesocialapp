@@ -1,5 +1,4 @@
 @import 'compass';
-@import 'compass_twitter_bootstrap';
 
 .topbar {
   position: relative;
@@ -38,3 +37,5 @@ h1{
 .go-back::before{
   content: "↩  ";
 }
+
+@import 'compass_twitter_bootstrap';
