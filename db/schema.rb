@@ -96,9 +96,15 @@ ActiveRecord::Schema.define(:version => 21) do
   add_index "offers", ["slug"], :name => "index_offers_on_slug"
 
   create_table "partners", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.text     "description"
+    t.string   "logo"
+    t.string   "slug"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
+
+  add_index "partners", ["slug"], :name => "index_partners_on_slug"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
