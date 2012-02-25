@@ -18,13 +18,13 @@ class User < ActiveRecord::Base
 
   # validations for user attributes
   validates_presence_of :first_name
-  validates_presence_of :title
-  validates_presence_of :date_of_birth
-  validates_presence_of :house
-  validates_presence_of :telephone
-  validates_presence_of :mobile
-  validates_presence_of :town
-  validates_presence_of :post_code
+  validates_presence_of :title, :if => :vip_member
+  validates_presence_of :date_of_birth, :if => :vip_member
+  validates_presence_of :house, :if => :vip_member
+  validates_presence_of :telephone, :if => :vip_member
+  validates_presence_of :mobile, :if => :vip_member
+  validates_presence_of :town, :if => :vip_member
+  validates_presence_of :post_code, :if => :vip_member
   validates_presence_of :last_name
   validates_presence_of :email
   validates_presence_of :password, :on => :create
@@ -49,6 +49,10 @@ class User < ActiveRecord::Base
 
   def full_name
     [first_name, last_name].join(' ')
+  end
+
+  def vip_member
+    is_admin != true
   end
 
   # these states are those that Chargify considers to be safe, meaning

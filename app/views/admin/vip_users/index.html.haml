@@ -1,0 +1,21 @@
+= paginate @vip_users
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Currently subscribed
+      %th &nbsp
+  %tbody
+    - @vip_users.each do |vip_user|
+      %tr{:class => cycle("even", "odd")}
+        %td= "#{vip_user.title} #{vip_user.full_name}"
+        %td= vip_user.email
+        %td
+          - if vip_user.active?
+            Yes
+          - else
+            No
+        %td
+          = link_to 'view', admin_vip_user_path(vip_user), class: 'btn'
+= paginate @vip_users
