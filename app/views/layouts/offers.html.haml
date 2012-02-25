@@ -17,7 +17,8 @@
             %span.current Our Partners
     .clear
     %div{class: "#{@orientation}-wrapper"}
-      = yield
+      .offers-content
+        = yield
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"
