@@ -1,2 +1,20 @@
-%h1 Admin::VipUsers#show
-%p Find me in app/views/admin/vip_users/show.html.haml
+= link_to 'Back', admin_vip_users_path, class: 'button btn'
+%br
+%br
+%p
+  - if @vip_user.active?
+    This member is currently subscribing
+  - else
+    This member is currently unsubscribed
+%br
+%p= "#{@vip_user.title} #{@vip_user.full_name}"
+%p= @vip_user.date_of_birth.strftime("%d/%m/%Y")
+%br
+%p= @vip_user.house
+%p= @vip_user.town
+%p= @vip_user.post_code
+%br
+%p= @vip_user.telephone
+%p= @vip_user.mobile
+%br
+%p= @vip_user.email
