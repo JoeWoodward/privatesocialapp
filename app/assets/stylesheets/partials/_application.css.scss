@@ -29,30 +29,29 @@ body {
     bottom: 0;
   }
 
-  .your-stuff, .full-translucent {
-    position: fixed;
+  .main-content {
+    padding-top: 40px;
+    padding-left: $main-inner-spacing;
+    width: 500px;
   }
 
   .your-stuff {
+    position: fixed;
     margin-top: 90px;
     background-color: $slate-grey;
     padding-top: 40px;
     z-index: 0;
-
   }
 
-  .full-translucent {
-  }
-
-  .main-content {
+  .your-content {
     margin-left: $main-nav-width;
-    margin-top: 90px;
+    margin-top: $main-top-spacing;
     z-index: 1;
 
     .content-holder {
       position: relative;
       min-height: 300px;
-      padding-left: 70px;
+      padding-left: $main-inner-spacing;
       padding-top: 40px;
       background-color: $slate-grey;
     }
