@@ -3,7 +3,7 @@ class Admin::FaqsController < Admin::ApplicationController
   before_filter :is_admin
 
   def index
-    @faqs = Faq.all
+    @faqs = Faq.page(params[:page]).per(15)
   end
 
   def show

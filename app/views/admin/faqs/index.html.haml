@@ -2,6 +2,8 @@
 
 = link_to 'New FAQ', new_admin_faq_path, {:class=>"btn btn-primary btn-large"}
 
+= paginate @faqs
+
 %table.table.table-bordered.table-striped
   %tr
     %th Question
@@ -21,4 +23,4 @@
 
 %br
 
-
+= paginate @faqs

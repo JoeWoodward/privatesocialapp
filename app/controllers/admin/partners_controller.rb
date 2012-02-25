@@ -10,6 +10,8 @@ class Admin::PartnersController < Admin::ApplicationController
     @partner = Partner.new(params[:partner])
     if @partner.save
       redirect_to admin_partner_path(@partner), :notice => "Successfully added #{@partner.name} to the list of partners"
+    else
+      render :new
     end
   end
 
@@ -29,6 +31,8 @@ class Admin::PartnersController < Admin::ApplicationController
     @partner = Partner.find(params[:id])
     if @partner.update_attributes(params[:partner])
       redirect_to admin_partner_path(@partner), :notice => "Successfully updated the details for #{@partner.name}"
+    else
+      render :edit
     end
   end
 

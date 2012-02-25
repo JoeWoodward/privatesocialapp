@@ -1,3 +1,9 @@
+%h1 Listing Notices
+
+= link_to 'New Notice', new_admin_notice_path, {:class=>"btn btn-primary btn-large"}
+
+= paginate @notices
+
 %table.table.table-bordered.table-striped
   %tr
     %th Title
@@ -23,3 +29,7 @@
       %td
         = link_to 'view', admin_notice_path(notice), :class => 'btn'
         = link_to 'delete', admin_notice_path(notice), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+
+%br
+
+= paginate @notices

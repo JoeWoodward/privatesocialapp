@@ -3,6 +3,7 @@
 = link_to 'New Partner', new_admin_partner_path, :class => 'btn-primary btn-large'
 
 = paginate @partners
+
 %table.table.table-bordered.table-striped
   %thead
     %tr
@@ -18,5 +19,7 @@
           = link_to 'view', admin_partner_path(partner), class: 'btn'
           = link_to 'edit', edit_admin_partner_path(partner), class: 'btn btn-primary'
           = link_to 'delete', admin_partner_path(partner), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger'
-= paginate @partners
 
+%br
+
+= paginate @partners

@@ -3,7 +3,7 @@ class Admin::NoticesController < Admin::ApplicationController
   before_filter :is_admin
 
   def index
-    @notices = Notice.all
+    @notices = Notice.page(params[:page]).per(15)
   end
 
   def show
