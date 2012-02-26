@@ -14,6 +14,6 @@ class PartnerLogoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :logo do
-    process :resize_to_limit => [50, 50]
+    process :resize_to_fill => [60, 60]
   end
 end

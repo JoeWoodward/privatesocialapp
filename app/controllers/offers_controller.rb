@@ -13,5 +13,6 @@ class OffersController < ApplicationController
 
   def partners
     @partners = Partner.all
+    render layout: 'partners'
   end
 end

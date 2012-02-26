@@ -16,8 +16,9 @@
           = link_to_unless_current "Our Partners", partners_path do
             %span.current Our Partners
     .clear
-    %div{class: "#{@orientation}-wrapper"}
-      %div{class: "offers-content #{@section_style}"}
+    %div{class: "#{@orientation}-wrapper your-stuff"}
+    .your-content
+      .content-holder
         = yield
 
     -# Javascript at the bottom for fast page loading

@@ -52,19 +52,23 @@ body {
     margin-top: 90px;
     background-color: $slate-grey;
     padding-top: 40px;
+    background: $slate-grey;
     z-index: 0;
   }
 
   .your-content {
     margin-left: $main-nav-width;
     margin-top: $main-top-spacing;
+    background: $slate-grey;
     z-index: 1;
 
     .content-holder {
       position: relative;
       min-height: 300px;
+      width: 400px;
       padding-left: $main-inner-spacing;
       padding-top: 40px;
+      padding-bottom: 3em;
       background-color: $slate-grey;
     }
   }
@@ -206,6 +210,10 @@ h4 {
 h5 {
   font-size: 1.1em;
   margin-bottom: ceil($lineheight / 2);
+}
+
+p {
+  margin-bottom: 2em;
 }
 
 /*  =MISC ELEMENTS
