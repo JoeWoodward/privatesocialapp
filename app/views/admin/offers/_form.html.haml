@@ -5,4 +5,4 @@
   = f.input :active, :hint => 'currently active offer?'
   = f.input :image_cache, :as => :hidden
   .form-actions
-    = f.button :submit, :class => 'btn-primary btn-large'
+    = f.button :submit, self.controller.action_name == 'new' ? 'Create' : 'Update', :class => 'btn-primary'
