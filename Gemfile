@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.0'
 gem 'rake', '~> 0.9.1'
-gem 'sqlite3'
+gem 'pg'
 gem 'hirb'              # Better console formatting. Needs .hirbrc
 
 gem 'capistrano'        # Deployment manager
