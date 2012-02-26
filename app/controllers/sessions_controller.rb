@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   skip_before_filter :is_user_authorised
 
   def create
-    @user = login(params[:user][:email], params[:user][:password], params[:user][:remember_me])
+    @user = login(params[:user][:email], params[:user][:password], params[:remember])
     if @user
       redirect_to your_details_path, :notice => "Logged in as #{ current_user.email }"
     else
