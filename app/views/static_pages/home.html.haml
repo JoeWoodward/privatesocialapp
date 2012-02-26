@@ -1,26 +1,25 @@
 = render "layouts/flashes"
-#intro
-  %p
-    Welcome to the original private members club on London’s Harley Street. Rooted in the iconic heritage of Harley Street Skin Clinic, the 48 Club offers its members priority access to our highly qualified doctors and exclusive discounts on luxury brands and signature treatments.
-    With our 20 years of unparalleled expertise creating bespoke experiences for high profile clients, your membership guarantees you impeccable personal care, delivered with the utmost sensitivity and confidentiality.
+%p
+  Welcome to the original private members club on London’s Harley Street. Rooted in the iconic heritage of Harley Street Skin Clinic, the 48 Club offers its members priority access to our highly qualified doctors and exclusive discounts on luxury brands and signature treatments.
+  With our 20 years of unparalleled expertise creating bespoke experiences for high profile clients, your membership guarantees you impeccable personal care, delivered with the utmost sensitivity and confidentiality.
+%br
+= link_to 'Click here to join', sign_up_path, :class => "button"
+%h5 Sign in below
+
+= simple_form_for @user, url: login_path do
+  = label_tag :email, 'Email *', :class => 'email required'
+  = text_field_tag :email, params[:email], :class => 'email required string'
   %br
-  = link_to 'Click here to join', sign_up_path, :class => "button"
-  %h5 Sign in below
+  = label_tag :password, 'Password *', :class => 'password required'
+  = password_field_tag :password, params[:password], :class => 'password required'
+  %br
+  %p
+    = check_box_tag :remember_me, 1, params[:remember_me], :class => 'boolean optional'
+    %span Remember me
+  .actions
+    = submit_tag 'Log In', :class => 'button'
 
-  = form_tag login_path do
-    = label_tag :email, 'Email *', :class => 'email required'
-    = text_field_tag :email, params[:email], :class => 'email required string'
-    %br
-    = label_tag :password, 'Password *', :class => 'password required'
-    = password_field_tag :password, params[:password], :class => 'password required'
-    %br
-    %p
-      = check_box_tag :remember_me, 1, params[:remember_me], :class => 'boolean optional'
-      %span Remember me
-    .actions
-      = submit_tag 'Log In', :class => 'button'
-
-  = link_to 'Forgot your password?', new_user_password_reset_path, class: 'button'
+= link_to 'Forgot your password?', new_user_password_reset_path, class: 'button'
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/home.png");

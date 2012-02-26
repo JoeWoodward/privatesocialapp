@@ -33,6 +33,15 @@ body {
     padding-top: $main-top-spacing;
     padding-left: $main-inner-spacing;
     width: 500px;
+    z-index: 1;
+  }
+
+  .half-width-translucent {
+    position: fixed;
+    width: 700px;
+    background: $slate-grey;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
   }
 
   .offers-content {
@@ -60,6 +69,10 @@ body {
       padding-top: 40px;
       background-color: $slate-grey;
     }
+  }
+
+  .sign-up {
+    margin-top: 0;
   }
 
   .noticeboard-holder {
