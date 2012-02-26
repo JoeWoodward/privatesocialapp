@@ -18,10 +18,14 @@
     %tr
       %td= offer.name
       %td= image_tag(offer.image.thumb.url.to_s)
-      %td= offer.active
       %td
-        = link_to 'view', admin_offer_path(offer), :class=>"btn"
-        = link_to 'edit', edit_admin_offer_path(offer), {:class=>"btn btn-primary"}
-        = link_to 'delete', admin_offer_path(offer), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+        - if offer.active?
+          %span.label.label-success Yes
+        - else
+          %span.label No
+      %td
+        = link_to 'View', admin_offer_path(offer), :class=>"btn"
+        = link_to 'Edit', edit_admin_offer_path(offer), :class=>"btn btn-primary"
+        = link_to 'Delete', admin_offer_path(offer), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
 
 = paginate @offers

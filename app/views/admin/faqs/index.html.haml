@@ -1,4 +1,4 @@
-%h1 Listing FAQ's
+%h1 Listing FAQs
 
 = link_to 'New FAQ', new_admin_faq_path, :class=>"btn btn-primary pull-right"
 
@@ -18,10 +18,15 @@
     %tr
       %td= faq.question
       %td= faq.answer
-      %td= faq.active
       %td
-        = link_to 'view', admin_faq_path(faq)
-        = link_to 'edit', edit_admin_faq_path(faq)
-        = link_to 'delete', admin_faq_path(faq), :confirm => 'Are you sure?', :method => :delete
+        - if faq.active?
+          %span.label.label-success Yes
+        - else
+          %span.label No
+      %td
+        = link_to 'View', admin_faq_path(faq), :class=>"btn"
+        = link_to 'Edit', edit_admin_faq_path(faq), :class=>"btn btn-primary"
+        = link_to 'Delete', admin_faq_path(faq), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+
 
 = paginate @faqs

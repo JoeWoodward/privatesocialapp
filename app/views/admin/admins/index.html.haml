@@ -18,17 +18,17 @@
       %td= current_user.full_name
       %td= current_user.email
       %td
-        = link_to 'view', admin_account_path(current_user), class: 'btn'
-        = link_to 'edit', edit_admin_account_path(current_user), class: 'btn btn-primary'
-        = link_to 'delete', '#', class: 'btn btn-danger disabled'
+        = link_to 'View', admin_account_path(current_user), class: 'btn'
+        = link_to 'Edit', edit_admin_account_path(current_user), class: 'btn btn-primary'
+        = link_to 'Delete', '#', class: 'btn btn-danger disabled'
     - @admins.each do |admin|
       - unless admin == current_user
         %tr{:class => cycle("odd", "even")}
           %td= admin.full_name
           %td= admin.email
           %td
-            = link_to 'view', admin_account_path(admin), class: 'btn'
-            = link_to 'edit', edit_admin_account_path(admin), class: 'btn btn-primary'
-            = link_to 'delete', admin_account_path(admin), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger'
+            = link_to 'View', admin_account_path(admin), class: 'btn'
+            = link_to 'Edit', edit_admin_account_path(admin), class: 'btn btn-primary'
+            = link_to 'Delete', admin_account_path(admin), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger'
 
 = paginate @admins

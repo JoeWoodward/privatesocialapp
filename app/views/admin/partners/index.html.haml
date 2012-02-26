@@ -19,8 +19,8 @@
         %td= partner.name
         %td= partner.description.truncate(100)
         %td
-          = link_to 'view', admin_partner_path(partner), class: 'btn'
-          = link_to 'edit', edit_admin_partner_path(partner), class: 'btn btn-primary'
-          = link_to 'delete', admin_partner_path(partner), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger'
+          = link_to 'View', admin_partner_path(partner), class: 'btn'
+          = link_to 'Edit', edit_admin_partner_path(partner), class: 'btn btn-primary'
+          = link_to 'Delete', admin_partner_path(partner), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger'
 
 = paginate @partners
