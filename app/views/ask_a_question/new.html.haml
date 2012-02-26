@@ -1,14 +1,11 @@
-.main-content
-  = render 'layouts/flashes'
-  .heading
-    %h5 ASK A QUESTION
-  .content
-    = form_tag ask_a_question_path do
-      = label_tag :question, 'Question *', :class => 'question required'
-      = text_area_tag :question, params[:question], :class => 'question required string'
-      .actions
-        = submit_tag 'Submit question', :class => 'button'
-    = link_to 'Back', faqs_path, class: 'button'
+= render 'layouts/flashes'
+%h5 ask a question
+= link_to 'Back', faqs_path, class: 'button'
+.content
+  = simple_form_for @question, url: ask_a_question_path do |f|
+    = f.input :question
+    .actions
+      = submit_tag 'Submit question', :class => 'button'
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/ask_a_doctor.png");
