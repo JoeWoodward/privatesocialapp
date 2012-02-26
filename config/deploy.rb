@@ -44,7 +44,7 @@ require 'capistrano/mountaintop'
  #set :repository, "ssh://deploy@178.79.159.74/~/harley_health_vip.bare_repo.git/"
  set :repository, "git@github.com:bwwd/harley_health_vip.git"
 
- set :branch, "master"
+ set :branch, "staging"
 
  # this caused problems after switching to a different repo
  #set :repository_cache, "git_cache"
