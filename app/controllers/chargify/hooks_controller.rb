@@ -149,11 +149,7 @@ class Chargify::HooksController < ApplicationController
     end
   end
 
-  def chargify_config
-    YAML::load_file(File.join(Rails.root, 'config', 'chargify.yml'))
-  end
-
   def site_key
-    chargify_config[Rails.env]['site_key']
+    ENV['CHARGIFY_SITE_KEY']
   end
 end
