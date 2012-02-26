@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
     unless current_user
       @user = User.new
       @section_style = 'half-width-translucent'
-      @content_holder = 'your-content sign-up'
+      @content_holder = 'sign-up-content sign-up'
     else
       redirect_to offers_path
     end

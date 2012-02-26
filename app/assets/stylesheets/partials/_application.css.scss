@@ -57,6 +57,22 @@ body {
     z-index: 0;
   }
 
+  .sign-up-content {
+    margin-left: $main-nav-width;
+    margin-top: $main-top-spacing;
+    z-index: 1;
+
+    .content-holder {
+      position: relative;
+      min-height: 300px;
+      width: 400px;
+      padding-left: $main-inner-spacing;
+      padding-top: 40px;
+      padding-bottom: 3em;
+      background-color: $slate-grey;
+    }
+  }
+
   .your-content {
     margin-left: $main-nav-width;
     margin-top: $main-top-spacing;
