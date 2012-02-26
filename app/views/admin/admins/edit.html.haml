@@ -1,10 +1,20 @@
-%h1 Edit User Details
+= link_to 'Show', admin_account_path(@admin), class: 'btn'
+= link_to 'All Staff', admin_accounts_path, class: 'btn'
+%br
+%br
+- if current_user == @admin
+  %h1 Edit Your Details
+- else
+  %h1 Edit Staff Members Details
+%br
+%br
 = simple_form_for(@admin, :html => { :class => 'form-horizontal' }, :url => admin_account_path(@admin)) do |f|
   = f.input :first_name, :input_html => { :class => "span6" }
   = f.input :last_name, label: 'Surname', :input_html => { :class => "span6" }
   = f.input :email, :input_html => { :class => "span6" }
-  = f.input :password, :input_html => { :class => "span6" }
-  = f.input :password_confirmation, :input_html => { :class => "span6" }
+  - if current_user == @admin
+    = f.input :password, :input_html => { :class => "span6" }
+    = f.input :password_confirmation, :input_html => { :class => "span6" }
   = f.input :is_admin, :value => true, :as => :hidden
   .form-actions
     = f.button :submit, 'Update', :class => 'btn-primary'

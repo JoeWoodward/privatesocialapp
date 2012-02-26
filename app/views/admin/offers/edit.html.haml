@@ -1,7 +1,8 @@
-%h1 Editing offer
-
+= link_to 'Show', admin_offer_path(@offer), class: 'btn'
+= link_to 'All Offers', admin_offers_path, class: 'btn'
+%br
+%br
+%h1 Edit Offer
+%br
+%br
 = render 'form'
-
-= link_to 'Show', admin_offer_path(@offer)
-\|
-= link_to 'Back', admin_offers_path

@@ -1,7 +1,8 @@
-%h1 Editing faq
-
+= link_to 'Show', admin_faq_path(@faq), class: 'btn'
+= link_to 'All FAQs', admin_faqs_path, class: 'btn'
+%br
+%br
+%h1 Edit FAQ
+%br
+%br
 = render 'form'
-
-= link_to 'Show', admin_faq_path(@faq)
-\|
-= link_to 'Back', admin_faqs_path

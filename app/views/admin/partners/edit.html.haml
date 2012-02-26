@@ -1,4 +1,10 @@
+= link_to 'Show', admin_partner_path(@partner), class: 'btn'
+= link_to 'All Partners', admin_partners_path, class: 'btn'
+%br
+%br
 %h1 Edit Partners Details
+%br
+%br
 = simple_form_for(@partner, :html => { :class => 'form-horizontal' }, :url => admin_partner_path(@partner)) do |f|
   = f.input :name, :input_html => { :class => "span6" }
   = f.input :description, :input_html => { :class => "span6" }
