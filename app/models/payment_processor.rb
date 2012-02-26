@@ -14,16 +14,13 @@ class PaymentProcessor
 
 private
 
-  def self.chargify_config
-    YAML::load_file(File.join(Rails.root, 'config', 'chargify.yml'))
-  end
 
   def self.site_key
-    self.chargify_config[Rails.env]['site_key']
+    ENV['CHARGIFY_SITE_KEY']
   end
 
   def self.subdomain
-    self.chargify_config[Rails.env]['subdomain']
+    ENV['CHARGIFY_SUBDOMAIN']
   end
 
   def self.secure_digest(*args)
