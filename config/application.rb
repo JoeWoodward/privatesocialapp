@@ -69,5 +69,7 @@ module HarleyHealthVip
 
     # Rotate log files (10 files max at 20MB each)
     # config.logger = Logger.new(config.paths["log"].first, 10, 20 * 1000 * 1000)
+
+    config.assets.initialize_on_precompile = false
   end
 end
