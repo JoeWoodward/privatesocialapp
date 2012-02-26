@@ -1,11 +1,9 @@
 .your-notice {
   width: 250px;
   margin-bottom: 30px;
+  margin-top: 3em;
+  padding-top: 0.5em;
   border-top: 1px solid $golden;
-
-  .title {
-    text-transform: uppercase;
-  }
 }
 
 .notice-form {

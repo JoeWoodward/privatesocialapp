@@ -1,7 +1,7 @@
 .main-content
   = render 'layouts/flashes'
   .heading
-    %h2 ASK A QUESTION
+    %h5 ASK A QUESTION
   .content
     = form_tag ask_a_question_path do
       = label_tag :question, 'Question *', :class => 'question required'

@@ -1,6 +1,4 @@
 class Your::EventsController < Your::YourController
-  before_filter :orientation
-
   def index
     @events = current_user.events
   end

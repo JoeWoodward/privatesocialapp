@@ -1,6 +1,5 @@
 class Your::NoticesController < Your::YourController
   before_filter :notice_is_users, :only => [:show, :edit, :update, :destroy]
-  before_filter :orientation
 
   def index
     @notices = current_user.notices

@@ -42,11 +42,12 @@ require 'capistrano/mountaintop'
  #set :scm_username, "deploy"
 
  #set :repository, "ssh://deploy@178.79.159.74/~/harley_health_vip.bare_repo.git/"
- set :repository, "git@github.com:benwoodward/harley_health_vip.git"
+ set :repository, "git@github.com:bwwd/harley_health_vip.git"
 
  set :branch, "master"
 
- set :repository_cache, "git_cache"
+ # this caused problems after switching to a different repo
+ #set :repository_cache, "git_cache"
 
  set :deploy_via, :remote_cache
 
@@ -100,7 +101,3 @@ after 'deploy:update_code', 'bundler:bundle_new_release'
 
 # after 'deploy:update_code', 'deploy:symlink_shared'
 before 'deploy:assets:precompile', 'deploy:symlink_shared'
-
-task :ohai do
-  campfire_room.speak 'o hai'
-end
