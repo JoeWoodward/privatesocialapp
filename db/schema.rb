@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 21) do
+ActiveRecord::Schema.define(:version => 22) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(:version => 21) do
     t.string   "post_code"
     t.string   "telephone"
     t.string   "mobile"
+    t.boolean  "is_cancelling"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
