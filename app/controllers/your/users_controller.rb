@@ -61,13 +61,30 @@ class Your::UsersController < Your::YourController
 
   def cancel_subscription
     if subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i)
-      subscription.cancel
-      subscription.reload
-      current_user.state = "cancelled"
+      subscription.cancel_at_end_of_period = true
+      subscription.save
+      current_user.is_cancelling = true
       current_user.save
-      redirect_to your_details_path
+      redirect_to billing_info_path, :notice => "Your subscription will expire
+      on #{subscription.current_period_ends_at.strftime("%A
+      #{subscription.current_period_ends_at.day.ordinalize} of %B, %Y")}"
     else
-      redirect_to your_details_path, :notice => 'Sorry but something went wrong, please contact 48 Harley Street to resolve the issue'
+      redirect_to billing_info_path, :notice => 'Sorry but something went
+      wrong, please contact 48 Harley Street to resolve the issue'
+    end
+  end
+
+  def revoke_subscription_cancellation
+    if subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i)
+      subscription.cancel_at_end_of_period = false
+      subscription.save
+      current_user.is_cancelling = false
+      current_user.save
+      redirect_to billing_info_path, :notice => "You have successfully revoked
+      your cancellation"
+    else
+      redirect_to billing_info_path, :notice => 'Sorry but something went
+      wrong, please contact 48 Harley Street to resolve the issue'
     end
   end
 
@@ -75,11 +92,19 @@ class Your::UsersController < Your::YourController
     if subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i)
       subscription.reactivate
       subscription.reload
+      current_user.is_cancelling = false
       current_user.state = "pending"
       current_user.save
-      redirect_to your_details_path
+      redirect_to billing_info_path, :notice => "Congratulations, you have succesfully re-subscribed."
     else
-      redirect_to your_details_path, :notice => 'Sorry but something went wrong, please contact 48 Harley Street to resolve the issue'
+      redirect_to billing_info_path, :notice => 'Sorry but something went
+      wrong, please contact 48 Harley Street to resolve the issue'
     end
+  end
+
+  def billing_info
+    subscription = Chargify::Subscription.find(current_user.chargify_subscription_id.to_i)
+    @statements = subscription.statements
+    @current_period_ends_at = subscription.current_period_ends_at
   end
 end
