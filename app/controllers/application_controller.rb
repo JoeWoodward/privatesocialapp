@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   include WhichCssClassToUse
-  before_filter :orientation
-  before_filter :section_style
+  before_filter :css_classes_please
 
   before_filter :require_login
   before_filter :is_user_authorised
