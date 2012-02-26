@@ -1,17 +1,17 @@
-.content
-  = link_to 'All Notices', notices_path, class: 'button'
-  %br
-  %br
+= link_to 'All Notices', notices_path, class: 'button'
+.notice
   - if @notice.image
-    - if @notice.landscape?
-      = image_tag @notice.image.landscape.url
+    .image
+      - if @notice.landscape?
+        = image_tag @notice.image.landscape.url
+      - else
+        = image_tag @notice.image.portrait.url
+  .description
+    %h1= @notice.title
+    = @notice.description
+    - if @notice.contact_phone.present?
+      = @notice.contact_phone
       %br
-    - else
-      = image_tag @notice.image.portrait.url
-      %br
-  = @notice.description
-  - if @notice.contact_phone.present?
-    = @notice.contact_phone
-    %br
-  - if @notice.contact_email.present?
-    = @notice.contact_email
+    - if @notice.contact_email.present?
+      = @notice.contact_email
+  .clear

@@ -30,3 +30,17 @@
     }
   }
 }
+
+.notice {
+  width: 800px;
+  padding-bottom: 6em;
+
+  .image {
+    float: left;
+  }
+
+  .description {
+    float: left;
+    padding: 0 10px;
+  }
+}

@@ -6,9 +6,9 @@
       .notice-panel
         - if notice.image.present?
           - if notice.landscape?
-            = image_tag notice.image.landscape.url
+            = link_to(image_tag(notice.image.landscape.url), notice)
           - else
-            = image_tag notice.image.portrait.url
+            = link_to(image_tag(notice.image.portrait.url), notice)
         = notice.description.truncate(250)
         - if notice.contact_phone.present?
           = notice.contact_phone
