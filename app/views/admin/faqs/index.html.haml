@@ -8,25 +8,27 @@
 = paginate @faqs
 
 %table.table.table-bordered.table-striped
-  %tr
-    %th Question
-    %th Answer
-    %th Active
-    %th &nbsp
-
-  - @faqs.each do |faq|
+  %thead
     %tr
-      %td= faq.question
-      %td= faq.answer
-      %td
-        - if faq.active?
-          %span.label.label-success Yes
-        - else
-          %span.label No
-      %td
-        = link_to 'View', admin_faq_path(faq), :class=>"btn"
-        = link_to 'Edit', edit_admin_faq_path(faq), :class=>"btn btn-primary"
-        = link_to 'Delete', admin_faq_path(faq), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+      %th Question
+      %th Answer
+      %th Active
+      %th &nbsp
+
+  %tbody
+    - @faqs.each do |faq|
+      %tr
+        %td= faq.question
+        %td= faq.answer
+        %td
+          - if faq.active?
+            %span.label.label-success Yes
+          - else
+            %span.label No
+        %td
+          = link_to 'View', admin_faq_path(faq), :class=>"btn"
+          = link_to 'Edit', edit_admin_faq_path(faq), :class=>"btn btn-primary"
+          = link_to 'Delete', admin_faq_path(faq), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
 
 
 = paginate @faqs
