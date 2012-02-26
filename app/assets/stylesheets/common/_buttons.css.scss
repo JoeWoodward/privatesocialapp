@@ -11,7 +11,6 @@ button {
   $basecolor: $accent;
 
   display: inline-block;
-  
   text-decoration: none;
   color: #fff;
   text-align: center;
@@ -19,6 +18,7 @@ button {
   -webkit-font-smoothing: antialiased;
   text-shadow: rgba(0,0,0, 0.2) 0 1px 0;
   padding: 5px 8px;
+  margin-bottom: 2em;
 
 
   @include box-shadow(

@@ -1,6 +1,5 @@
-.heading
-  = link_to 'Back', your_notices_path, class: 'button'
-  %h5 Editing notice
+%h5 Editing notice
+= link_to 'Back', your_notices_path, class: 'button'
 .content
   = render 'form'
 - content_for :javascripts do

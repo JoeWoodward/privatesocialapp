@@ -18,3 +18,15 @@ input[type="tel"] {
     border-color: $golden;
   }
 }
+
+.simple_form {
+
+  .controls {
+    margin-bottom: 1em;
+  }
+
+  .actions {
+    min-height: 120px;
+    margin-bottom: 1em;
+  }
+}
