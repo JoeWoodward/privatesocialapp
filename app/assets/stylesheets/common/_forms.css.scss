@@ -8,7 +8,7 @@ input[type="email"],
 input[type="password"],
 input[type="tel"] {
   font-size: 97%;
-  width: 400px;
+  width: 387px;
   background-color: black;
   border: 1px solid $dimmed-white;
   color: $dimmed-white;
@@ -20,6 +20,7 @@ input[type="tel"] {
 }
 
 .simple_form {
+  width: 400px;
 
   .controls {
     margin-bottom: 1em;
@@ -28,5 +29,15 @@ input[type="tel"] {
   .actions {
     min-height: 120px;
     margin-bottom: 1em;
+    float: right;
+    text-align: right;
+  }
+}
+
+.new_user {
+  width: 300px;
+
+  textarea, input[type='text'], input[type='password'] {
+    width: 287px;
   }
 }
