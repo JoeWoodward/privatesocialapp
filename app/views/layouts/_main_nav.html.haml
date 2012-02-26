@@ -2,30 +2,34 @@
   = link_to image_tag('logo.png'), root_path, {:class => 'logo'}
   %ul.menu
     %li
-      = link_to_unless_current 'Account', your_details_path do
-        Account
+      = link_to_unless_current 'Your Account', your_details_path do
+        Your Account
     %li
       = link_to_unless_current 'VIP Offers', offers_path do
-        Offers
+        VIP Offers
     %li
       = link_to_unless_current 'Events', events_path do
         Events
     %li
       = link_to_unless_current 'Ask The Doctor', faqs_path do
-        Doctor
+        Ask The Doctor
     %li
       = link_to_unless_current 'Notice Board', notices_path do
-        Board
+        Noticeboard
   - if current_user
     %ul.logout
       %li
         = link_to 'Log Out', logout_path
-  %footer
-    .v-card
-      %p.org The Harley Street Skin Clinic
-      %p.street-address 48 Harley Street
-      %p.locality London
-      %p.postal-code W1G 9PU
+  %address
+    The Harley Street Skin Clinic
+    %br
+    48 Harley Street
+    %br
+    London
+    %br
+    W1G 9PU
+    %br
+    %br
 
     %ul
       %li= link_to 'Privacy', privacy_policy_path
