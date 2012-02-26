@@ -1,4 +1,5 @@
-= link_to '< All events', admin_events_path
+= link_to 'All Events', admin_events_path, class: 'btn'
+%br
 %br
 %p
   = @event.title
@@ -9,5 +10,5 @@
 %p
   = image_tag @event.image.large.url.to_s if @event.image?
 
-= link_to 'edit', edit_admin_event_path(@event), :class => 'btn btn-primary'
-= link_to 'delete', admin_event_path(@event), :class => 'btn btn-danger', :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Edit', edit_admin_event_path(@event), :class => 'btn btn-primary'
+= link_to 'Delete', admin_event_path(@event), :class => 'btn btn-danger', :method => :delete, :confirm => 'Are you sure?'

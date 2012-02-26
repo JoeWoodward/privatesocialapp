@@ -1,13 +1,14 @@
-%p
-  %b Question:
-  = @faq.question
-%p
-  %b Answer:
-  = @faq.answer
-%p
-  %b Active:
-  = @faq.active
+= link_to 'All FAQs', admin_faqs_path, class: 'btn'
+%br
+%br
+- if @faq.active?
+  %span.label.label-success This FAQ is currently active
+- else
+  %span.label This FAQ isn't active
+%br
+%br
+%p= @faq.question.titleize
+%p= @faq.answer
 
-= link_to 'Edit', edit_admin_faq_path(@faq)
-\|
-= link_to 'Back', admin_faqs_path
+= link_to 'Edit', edit_admin_faq_path(@faq), :class => 'btn btn-primary'
+= link_to 'Delete', admin_faq_path(@faq), :class => 'btn btn-danger', :method => :delete, :confirm => 'Are you sure?'

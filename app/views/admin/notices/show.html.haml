@@ -1,4 +1,4 @@
-= link_to '< All notices', admin_notices_path
+= link_to 'All Notices', admin_notices_path
 %br
 %br
 - if @notice.image.present?
@@ -22,4 +22,4 @@
   %p
     = @author.full_name
 
-= link_to 'delete', admin_notice_path(@notice), :class => 'btn btn-danger', :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Delete', admin_notice_path(@notice), :class => 'btn btn-danger', :method => :delete, :confirm => 'Are you sure? This notice belongs to a VIP member'
