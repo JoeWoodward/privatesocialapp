@@ -6,6 +6,7 @@ HarleyHealthVip::Application.routes.draw do
   match "updated-billing-info" => 'your/users#updated_billing_info', :as => 'updated_billing_info'
   match 'cancel-subscription' => 'your/users#cancel_subscription', :as => 'cancel_subscription'
   match 'resubscribe' => 'your/users#resubscribe', :as => 'resubscribe'
+  match 'revoke-subscription-cancellation' => 'your/users#revoke_subscription_cancellation', :as => 'revoke_subscription_cancellation'
 
   resources :user_password_resets, :path => 'password-reset'
 
@@ -46,6 +47,7 @@ HarleyHealthVip::Application.routes.draw do
   get 'your/details' => 'your/users#show', :as => 'your_details'
   put 'your/details/:id' => 'your/users#update', :as => 'your_detailss'
   get 'your/events/:id/cancel-rsvp' => 'your/events#cancel_rsvp', :as => 'cancel_your_event_rsvp'
+  get 'your/billing-info' => 'your/users#billing_info', :as => 'billing_info'
 
   namespace :your do
     root :to => redirect('/your/details')
