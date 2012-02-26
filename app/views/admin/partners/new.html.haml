@@ -1,4 +1,9 @@
-%h1 New Partner
+= link_to 'All Partners', admin_partners_path, class: 'btn'
+%br
+%br
+%h1 Create New Partner
+%br
+%br
 = simple_form_for(@partner, :html => { :class => 'form-horizontal' }, :url => admin_partner_path(@partner)) do |f|
   = f.error_notification
   = f.input :name, :input_html => { :class => "span6" }
@@ -6,4 +11,4 @@
   = f.input :logo
   = f.input :logo_cache, :as => :hidden
   .form-actions
-    = f.button :submit, 'Create Partner', :class => 'btn-primary btn-large'
+    = f.button :submit, 'Create', :class => 'btn-primary'
