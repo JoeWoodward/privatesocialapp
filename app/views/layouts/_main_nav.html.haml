@@ -2,15 +2,20 @@
   = link_to image_tag('logo.png'), root_path, {:class => 'logo'}
   %ul.menu
     %li
-      = link_to 'Account', your_details_path
+      = link_to_unless_current 'Account', your_details_path do
+        Account
     %li
-      = link_to 'VIP Offers', offers_path
+      = link_to_unless_current 'VIP Offers', offers_path do
+        Offers
     %li
-      = link_to 'Events', events_path
+      = link_to_unless_current 'Events', events_path do
+        Events
     %li
-      = link_to 'Ask The Doctor', faqs_path
+      = link_to_unless_current 'Ask The Doctor', faqs_path do
+        Doctor
     %li
-      = link_to 'Notice Board', notices_path
+      = link_to_unless_current 'Notice Board', notices_path do
+        Board
   - if current_user
     %ul.logout
       %li
