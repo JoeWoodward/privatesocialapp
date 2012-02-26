@@ -10,6 +10,7 @@
   = f.input :email
   = f.input :password
   .actions
+    = label_tag :remember, 'Remember me'
     = check_box_tag :remember
     %br
     = submit_tag 'Log In', :class => 'button'
