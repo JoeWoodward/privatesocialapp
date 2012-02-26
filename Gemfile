@@ -11,7 +11,6 @@ gem 'sorcery'
 gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'
 gem 'friendly_id'
 gem 'kaminari'
-gem 'selenium'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'capistrano-mountaintop'
@@ -56,13 +55,11 @@ end
 
 group :test do
   gem 'ruby_gntp'
-end
-
-group :cucumber do
-    gem 'capybara'
-    gem 'database_cleaner'
-    gem 'cucumber-rails'
-    gem 'cucumber'
-    gem 'launchy'
-    gem 'ramaze'
+  gem 'selenium'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'launchy'
+  gem 'ramaze'
 end
