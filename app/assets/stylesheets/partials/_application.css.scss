@@ -32,6 +32,7 @@ body {
   .main-content {
     padding-top: $main-top-spacing;
     padding-left: $main-inner-spacing;
+    padding-right: $main-inner-spacing;
     width: 500px;
     z-index: 1;
   }
