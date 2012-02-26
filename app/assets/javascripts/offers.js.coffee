@@ -3,7 +3,7 @@ window.onload = (->
     addWidths = ->
       total_width = 0
       $(".offer-image").each ->
-        $(this).imagesLoaded(width = $(this).width())
+        $('.offers-list').imagesLoaded(width = $(this).width())
         $(this).parent().css width: width + "px"
         total_width += width
 
