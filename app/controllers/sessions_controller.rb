@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     @user = login(params[:user][:email], params[:user][:password], params[:remember])
     if @user
-      redirect_to your_details_path, :notice => "Logged in as #{ current_user.email }"
+      redirect_back_or_to offers_path, :notice => "Logged in as #{ current_user.email }"
     else
       redirect_to root_path, :notice => 'Email or password was invalid'
     end
