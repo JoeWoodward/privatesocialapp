@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   skip_before_filter :require_login
   skip_before_filter :is_user_authorised
+  layout 'signup'
 
   def home
     unless current_user
