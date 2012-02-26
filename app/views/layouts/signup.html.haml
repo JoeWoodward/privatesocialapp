@@ -9,8 +9,8 @@
     = render 'layouts/main_nav'
     = yield :tabs
     %div{class: "#{@orientation}-wrapper #{@section_style}"}
-      %div{class: "main-content #{@content_holder}"}
-        = yield
+    %div{class: "main-content #{@content_holder}"}
+      = yield
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"

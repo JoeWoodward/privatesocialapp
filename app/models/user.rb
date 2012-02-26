@@ -14,7 +14,10 @@ class User < ActiveRecord::Base
   # used to format the attributes of users so any format errors are corrected
   before_save :format_attributes
 
-  attr_accessible :first_name, :last_name, :email, :password_confirmation, :password, :full_name, :is_admin, :subscription_billing_date, :title, :date_of_birth, :house, :town, :post_code, :telephone, :mobile
+  attr_accessible :first_name, :last_name, :email, :password_confirmation,
+    :password, :full_name, :is_admin, :subscription_billing_date, :title,
+    :date_of_birth, :house, :town, :post_code, :telephone, :mobile, :remember_me_token,
+    :remember_me_expires_at, :remember_me
 
   # validations for user attributes
   validates_presence_of :first_name
