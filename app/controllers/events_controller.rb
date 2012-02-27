@@ -14,6 +14,8 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @orientation = 'horizontal'
+    @content_holder = 'events-content'
+    @width = "#{(@events.count * 250) + 160}px"
   end
 
   def show

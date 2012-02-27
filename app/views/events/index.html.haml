@@ -11,3 +11,6 @@
           %p
             = event.description.truncate(250)
             = link_to 'more', event_path(event)
+- content_for :javascripts do
+  :javascript
+    $('.horizontal-wrapper').css('width', "#{@width}");
