@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.all(conditions: ["date >= ?", Date.today], order: :date)
     @orientation = 'horizontal'
     @content_holder = 'events-content'
     @width = "#{(@events.count * 250) + 160}px"

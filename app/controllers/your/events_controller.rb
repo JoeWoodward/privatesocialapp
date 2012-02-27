@@ -1,6 +1,6 @@
 class Your::EventsController < Your::YourController
   def index
-    @events = current_user.events
+    @events = current_user.events.all(conditions: ["date >= ?", Date.today], order: :date)
   end
 
   def show
