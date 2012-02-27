@@ -10,7 +10,8 @@
 %h4 Previous Charges
 %br
 - @statements.each do |statement|
-  %h6= "Billing period #{statement.opened_at.strftime("%d/%m/%Y")} - #{statement.closed_at.strftime("%d/%m/%Y")}"
+  - ended = statement.created_at + 1.year - 1.day
+  %h6= "Billing period #{statement.created_at.strftime("%d/%m/%Y")} - #{ended.strftime("%d/%m/%Y")}"
   %br
   - statement.transactions.each do |t|
     - if t.type == "Payment" && t.starting_balance_in_cents != 00
