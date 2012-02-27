@@ -21,6 +21,7 @@
     li {
       display: block;
       height: auto;
+      font-size: 13px;
       border-top: 1px solid $bodycolor;
       color: $golden;
 
@@ -50,9 +51,10 @@
         display: block;
         color: $bodycolor;
         text-decoration: none;
-        font-size: 11px;
+        line-height: 15px;
+        font-size: 9px;
         &:hover{
-          color: white;
+          color: $golden;
         }
       }
     }
@@ -61,8 +63,9 @@
   address {
     font-style: normal;
     font-size: 0.7em;
+    -webkit-font-smoothing: subpixel-antialiased;
     margin: 0 21%;
-    line-height: 15px;
+    line-height: 13px;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding-top: 15px;
   }
