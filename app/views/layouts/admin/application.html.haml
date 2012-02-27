@@ -61,10 +61,12 @@
       .container
         .flash
           - if flash[:alert]
-            .message.error
-              %p= flash[:alert]
+            .message.alert.alert-error
+              = link_to '&times;'.html_safe, '#', class: 'close', "data-dismiss" => "alert"
+              = flash[:alert]
           - if flash[:notice]
-            .message.notice
-              %p= flash[:notice]
+            .message.alert.alert-success
+              = link_to '&times;'.html_safe, '#', class: 'close', "data-dismiss" => "alert"
+              = flash[:notice]
         .content
           = yield
