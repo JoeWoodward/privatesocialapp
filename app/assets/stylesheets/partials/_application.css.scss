@@ -5,7 +5,7 @@ html {
 body {
   height: 100%;
   color: $bodycolor;
-  font: normal #{$fontsize}/#{$lineheight} $sans;
+  font: #{$fontsize}/#{$lineheight} $sans;
   background-color: $purple;
 
   .vertical-wrapper, .horizontal-wrapper {
@@ -174,9 +174,8 @@ a:hover, a:focus {
 ----------------------------------------------------------------------*/
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: $sans;
+  font-family: $sans_book;
   font-weight: normal;
-  -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
 }
 

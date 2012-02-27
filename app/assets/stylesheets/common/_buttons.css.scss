@@ -3,7 +3,37 @@
 
 // Button styling/mixins goes here
 
-.button,
+.button {
+  $basecolor: $accent;
+
+  display: inline-block;
+  text-decoration: none;
+  color: $dimmed-white;
+  text-align: center;
+  background-color: $purple;
+  text-shadow: rgba(0,0,0, 0.2) 0 1px 0;
+  padding: 2px 6px 0 6px;
+  margin-bottom: 2em;
+
+
+  @include box-shadow(
+    rgba(0,0,0, 0.1) 0 0 3px,
+    inset rgba(255,255,255, 0.1) 0 1px 0
+  );
+  border: 1px solid $dimmed-white;
+
+  &:hover {
+    background-color: lighten($purple, 10%);
+    color: #fff;
+  }
+
+  &:active {
+    background-image: none;
+    top: auto;
+    text-shadow: none;
+  }
+}
+
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
@@ -12,12 +42,11 @@ button {
 
   display: inline-block;
   text-decoration: none;
-  color: #fff;
+  color: $dimmed-white;
   text-align: center;
   background-color: $purple;
-  -webkit-font-smoothing: antialiased;
   text-shadow: rgba(0,0,0, 0.2) 0 1px 0;
-  padding: 5px 8px;
+  padding: 5px 8px 3px;
   margin-bottom: 2em;
 
 

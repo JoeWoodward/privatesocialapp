@@ -12,7 +12,8 @@ input[type="tel"] {
   background-color: black;
   border: 1px solid $dimmed-white;
   color: $dimmed-white;
-  padding: 2px 4px;
+  padding: 4px 4px 0;
+  line-height: 19px;
   &:focus{
     background-color: lighten($purple, 5%);
     border-color: $golden;
