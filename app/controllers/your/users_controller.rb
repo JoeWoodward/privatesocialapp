@@ -52,7 +52,10 @@ class Your::UsersController < Your::YourController
       initialised_user = User.init!(params[:customer_reference], params[:subscription_id])
       initialised_user.save
       @user = User.find_by_token(params[:customer_reference])
-      redirect_to your_details_path
+      redirect_to your_details_path, notice: 'Congratulations,
+      you have successfully joined the 48 Harley Street VIP Members Club'
+    else
+      redirect_to your_details_path, :notice => 'Sorry but something went wrong, please contact 48 Harley Street to fix the problem'
     end
   end
 
