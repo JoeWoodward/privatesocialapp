@@ -1,17 +1,20 @@
 = render "layouts/flashes"
-%h4 VIP Membership for £300 par annum
-%p £150 one off joining fee
+%h4 VIP MEMBERSHIP COSTS:
+%p
+  £150 joining fee (one-off)
+  %br
+  £300 annual fee
 = simple_form_for @user, :url => your_detailss_path(@user), method: :post do |f|
-  = f.input :title
+  = f.input :title, required: true
   = f.input :first_name
   = f.input :last_name, label: 'Surname'
-  = f.input :date_of_birth,:start_year => Date.today.year - 18, :end_year => Date.today.year - 100, :order => [:day, :month, :year]
-  = f.input :telephone
-  = f.input :mobile
+  = f.input :date_of_birth,:start_year => Date.today.year - 18, :end_year => Date.today.year - 100, :order => [:day, :month, :year], required: true
+  = f.input :telephone, required: true
+  = f.input :mobile, required: true
   = f.label :Address
-  = f.input :house, label: 'Street address'
-  = f.input :town, label: 'Town / City'
-  = f.input :post_code
+  = f.input :house, label: 'Street address', required: true
+  = f.input :town, label: 'Town / City', required: true
+  = f.input :post_code, required: true
   %br
   = f.input :email, label: 'Email (used to log in)'
   = f.input :password

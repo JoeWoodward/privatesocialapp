@@ -5,6 +5,9 @@ class Your::UsersController < Your::YourController
 
   def new
     @user = User.new
+    @section_style = "half-width-translucent"
+    @content_holder = "sign-up-content sign-up"
+    render :layout => 'signup'
   end
 
   def create
@@ -19,7 +22,9 @@ class Your::UsersController < Your::YourController
     end
 
   rescue ActiveRecord::RecordInvalid
-    render :new
+    @section_style = "half-width-translucent"
+    @content_holder = "sign-up-content sign-up"
+    render :new, :layout => 'signup'
   end
 
   def edit
