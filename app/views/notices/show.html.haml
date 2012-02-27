@@ -1,5 +1,5 @@
 = link_to 'All Notices', notices_path, class: 'button'
-.notice
+.a-notice
   - if @notice.image
     .image
       - if @notice.landscape?
@@ -10,8 +10,9 @@
     %h1= @notice.title
     = @notice.description
     - if @notice.contact_phone.present?
-      = @notice.contact_phone
       %br
+      = @notice.contact_phone
     - if @notice.contact_email.present?
+      %br
       = @notice.contact_email
   .clear
