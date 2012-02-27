@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password
 
-  validates_uniqueness_of :email
+  validates_uniqueness_of :email, message: 'email already in use'
 
   validates_length_of :password, :minimum => 5, :allow_blank => true
 
