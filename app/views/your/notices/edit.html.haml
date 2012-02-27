@@ -1,7 +1,18 @@
 %h5 Editing notice
 = link_to 'Back', your_notices_path, class: 'button'
 .content
-  = render 'form'
+  = simple_form_for(@notice, :html => {:multipart => true}, :url => your_notice_path(@notice)) do |f|
+    = f.error_notification
+    = f.input :title
+    = f.input :description
+    = f.input :image
+    = f.input :remove_image, as: :boolean
+    = f.input :contact_phone
+    = f.input :contact_email
+    = f.input :image_cache, :as => :hidden
+    %br
+    .actions
+      = f.button :submit, class: 'button'
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/events.png");
