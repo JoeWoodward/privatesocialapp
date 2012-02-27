@@ -1,4 +1,4 @@
-= link_to 'back', your_notices_path, class: 'button'
+= link_to 'Back', your_notices_path, class: 'button'
 .a-notice
   - if @notice.image.present?
     .image
@@ -16,8 +16,8 @@
     - if @notice.contact_email.present?
       = @notice.contact_email
       %br
-    = link_to 'edit', edit_your_notice_path(@notice), class: 'button'
-    = link_to 'delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
+    = link_to 'Edit', edit_your_notice_path(@notice), class: 'button'
+    = link_to 'Delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
   .clear
 - content_for :javascripts do
   :javascript

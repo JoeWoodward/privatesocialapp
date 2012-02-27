@@ -1,6 +1,6 @@
 = link_to 'All Notices', notices_path, class: 'button'
 .a-notice
-  - if @notice.image
+  - if @notice.image.present?
     .image
       - if @notice.landscape?
         = image_tag @notice.image.landscape.url
