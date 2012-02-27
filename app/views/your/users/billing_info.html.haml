@@ -1,7 +1,9 @@
 - unless current_user.is_cancelling?
-  = "Your next payment is due on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
+  %div.notice
+    %p= "Your next payment is due on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
 - else
-  = "Your subscription is due to expire on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
+  %div.warning
+    %p= "Your subscription is due to expire on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
 %br
 %br
 %br

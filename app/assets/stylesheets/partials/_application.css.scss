@@ -246,6 +246,13 @@ blockquote {
   font-size: 1.1em;
 }
 
+.warning {
+  width: 500px;
+  margin-bottom: 2em;
+  background-color: lighten($purple, 20%);
+  text-align: center;
+}
+
 .message, .notice {
   width: 500px;
   margin-bottom: 2em;
