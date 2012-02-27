@@ -1,8 +1,6 @@
 = render "layouts/flashes"
-%p
-  VIP Membership costs £300 par annum
-  %br
-  Sign up now to receive 50% off for the first year
+%h4 VIP Membership for £300 par annum
+%p £150 one off joining fee
 = simple_form_for @user, :url => your_detailss_path(@user), method: :post do |f|
   = f.input :title
   = f.input :first_name
