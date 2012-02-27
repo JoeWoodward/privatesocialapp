@@ -31,7 +31,7 @@ class Your::NoticesController < Your::YourController
     if @notice.update_attributes(params[:notice])
       redirect_to your_notice_path(@notice), notice: 'Notice was successfully created.'
     else
-      render edit_your_notice_path(@notice)
+      render :edit
     end
   end
 
