@@ -20,7 +20,7 @@
   = link_to 'Edit Your Details', edit_your_details_path, class: 'button'
   %br
   %br
-  - if current_user.state != nil
+  - unless current_user.state == nil
     = link_to 'Update Your Billing Info', update_billing_details_path, class: :button
   = payment_link
 - content_for :javascripts do
