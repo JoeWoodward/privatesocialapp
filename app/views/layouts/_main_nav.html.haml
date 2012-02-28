@@ -19,7 +19,8 @@
   - if current_user
     %ul.logout
       %li= link_to 'Log Out', logout_path
-      %li= link_to 'Your Billing Info', billing_info_path
+      - unless current_user.state == nil
+        %li= link_to 'Your Billing Info', billing_info_path
   %address
     The Harley Street Skin Clinic
     %br

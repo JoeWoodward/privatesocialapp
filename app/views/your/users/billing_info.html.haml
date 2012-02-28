@@ -1,31 +1,32 @@
-- unless current_user.is_cancelling?
-  %div.notice
-    %p= "Your next payment is due on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
-- else
-  %div.warning
-    %p= "Your subscription is due to expire on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
-%br
-%br
-- if current_user.state != nil
-  = link_to 'Update your billing details', update_billing_details_path, class: :button
-%br
-%br
-%h4 Previous Charges
-%br
-- @statements.each do |statement|
-  - ended = statement.created_at + 1.year - 1.day
-  %h6= "Billing period #{statement.created_at.strftime("%d/%m/%Y")} - #{ended.strftime("%d/%m/%Y")}"
+- unless current_period_ends_at.state == nil
+  - unless current_user.is_cancelling?
+    %div.notice
+      %p= "Your next payment is due on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
+  - else
+    %div.warning
+      %p= "Your subscription is due to expire on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
   %br
-  - statement.transactions.each do |t|
-    - if t.type == "Payment" && t.starting_balance_in_cents != 00
-      %p= "<b>£#{t.starting_balance_in_cents / 100}.00</b> settled on #{statement.settled_at.strftime("%A the <b>#{statement.settled_at.day.ordinalize}</b> of <b>%B, %Y")}</b>".html_safe
-      %br
-      %br
-- if current_user.active?
-  %h4 Cancellations
-  %p= "If you choose to cancel, your can still access your account until your renewal date on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}."
-  = toggle_cancel_link
-- else
-  %h4 Re-subscribing
-  %p Would you like to re-subscribe. Warning - this will charge your card £300
-  = link_to 'Re-subscribe?', resubscribe_path, :confirm => 'Are you sure, this will charge a non-refundable fee of Three Hundred GBP to you credit card'
+  %br
+  - if current_user.state != nil
+    = link_to 'Update your billing details', update_billing_details_path, class: :button
+  %br
+  %br
+  %h4 Previous Charges
+  %br
+  - @statements.each do |statement|
+    - ended = statement.created_at + 1.year - 1.day
+    %h6= "Billing period #{statement.created_at.strftime("%d/%m/%Y")} - #{ended.strftime("%d/%m/%Y")}"
+    %br
+    - statement.transactions.each do |t|
+      - if t.type == "Payment" && t.starting_balance_in_cents != 00
+        %p= "<b>£#{t.starting_balance_in_cents / 100}.00</b> settled on #{statement.settled_at.strftime("%A the <b>#{statement.settled_at.day.ordinalize}</b> of <b>%B, %Y")}</b>".html_safe
+        %br
+        %br
+  - if current_user.active?
+    %h4 Cancellations
+    %p= "If you choose to cancel, your can still access your account until your renewal date on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}."
+    = toggle_cancel_link
+  - else
+    %h4 Re-subscribing
+    %p Would you like to re-subscribe. Warning - this will charge your card £300
+    = link_to 'Re-subscribe?', resubscribe_path, :confirm => 'Are you sure, this will charge a non-refundable fee of Three Hundred GBP to you credit card'
