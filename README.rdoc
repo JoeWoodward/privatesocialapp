@@ -4,3 +4,9 @@ This will give you an initial user by the email 'admin@mail.com' and password 'p
 The email settings need to be changed to reflect the host
 
 The Chargify settings also need to be configured for a new domain
+
+heroku configs (these need to be set on heroku for the app to work)
+  ASK_A_DOCTOR_EMAIL_ADDRESS
+  CHARGIFY_SUBDOMAIN
+  CHARGIFY_SITE_KEY
+  CHARGIFY_API_KEY
