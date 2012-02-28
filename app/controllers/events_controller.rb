@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     @events = Event.all(conditions: ["date >= ?", Date.today], order: :date)
     @orientation = 'horizontal'
     @content_holder = 'events-content'
-    @width = "#{(@events.count * 250) + 160}px"
+    @width = "#{(@events.count * 250) + 160}"
   end
 
   def show

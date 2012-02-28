@@ -8,9 +8,12 @@
           %span.date
             = event.date.strftime("%d/%y")
           %br
+          %br
+          %h5= event.title
           %p
             = event.description.truncate(250)
             = link_to 'more', event_path(event)
 - content_for :javascripts do
   :javascript
-    $('.horizontal-wrapper').css('width', "#{@width}");
+    $('.horizontal-wrapper').css('width', "#{@width}px");
+    $('.notice').css('width', "#{@width.to_i - 180}px");
