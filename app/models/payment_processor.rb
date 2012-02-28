@@ -3,7 +3,7 @@ class PaymentProcessor
   def self.hosted_signup_page_for(user)
 
     #104305 is the id of the product, if there was more than one product we couldn't hardcode this!
-    "https://#{self.subdomain}.chargify.com/h/104305/subscriptions/new?first_name=#{user.first_name}&last_name=#{user.last_name}&email=#{user.email}&reference=#{user.token}"
+    "https://#{self.subdomain}.chargify.com/h/104305/subscriptions/new?first_name=#{user.first_name}&last_name=#{user.last_name}&email=#{user.email}&reference=#{user.token}&billing_zip=#{user.post_code}"
   end
 
   # used to send a user to their unique payment page in
