@@ -16,7 +16,6 @@ module Your::UsersHelper
     elsif current_user.active? && !current_user.is_cancelling?
       link_to 'Cancel your subscription?', cancel_subscription_path
     elsif current_user.active? && current_user.is_cancelling?
-      # link_to 'Update billing info', update_billing_details_path, class: 'button'
       link_to 'Revoke subscription cancellation', revoke_subscription_cancellation_path
     end
   end

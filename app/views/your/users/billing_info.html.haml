@@ -6,6 +6,9 @@
     %p= "Your subscription is due to expire on #{@current_period_ends_at.strftime("%A the #{@current_period_ends_at.day.ordinalize} of %B, %Y")}"
 %br
 %br
+- if current_user.state != nil
+  = link_to 'Update your billing details', update_billing_details_path, class: :button
+%br
 %br
 %h4 Previous Charges
 %br
