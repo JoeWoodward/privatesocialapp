@@ -5,14 +5,14 @@ class UserMailer < ActionMailer::Base
     user.is_admin? ? admin = "admin/" : admin = ""
 
     @user = user
-    @url  = "http://48harleystreetmembers.co.uk/#{admin}password-reset/#{user.reset_password_token}/edit"
+    @url  = "http://48harleystreetmembers.com/#{admin}password-reset/#{user.reset_password_token}/edit"
     mail(:to => "#{user.full_name}<#{user.email}>",
          :subject => "Password reset confirmation from 48 Harley Street")
   end
 
   def successful_registration(user)
     @user = user
-    @url  = "http://48harleystreetmembers.co.uk/your/details"
+    @url  = "http://48harleystreetmembers.com/your/details"
     mail(:to => "#{user.title} #{user.first_name} #{user.last_name} <#{user.email}>",
          :subject => "Congratulations, you are now a VIP member at 48 Harley Street")
   end
