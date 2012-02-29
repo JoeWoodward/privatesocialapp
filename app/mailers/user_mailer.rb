@@ -10,10 +10,9 @@ class UserMailer < ActionMailer::Base
          :subject => "Password reset confirmation from 48 Harley Street")
   end
 
-  def successful_registration(user, chargify)
+  def successful_registration(user)
     @user = user
-    @chargify = chargify
-    @url  = "http://48harleystreetmembers.co.uk/"
+    @url  = "http://48harleystreetmembers.co.uk/your/details"
     mail(:to => "#{user.title} #{user.first_name} #{user.last_name} <#{user.email}>",
          :subject => "Congratulations, you are now a VIP member at 48 Harley Street")
   end

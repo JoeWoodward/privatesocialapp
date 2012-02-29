@@ -16,7 +16,7 @@ class Your::UsersController < Your::YourController
     if @user.save!
       login(@user.email, params[:user][:password])
       payment_page = PaymentProcessor.hosted_signup_page_for(@user)
-      UserMailer.successful_registration(@user, payment_page).deliver
+      UserMailer.successful_registration(@user).deliver
       # redirect to chargify
       redirect_to payment_page
     end
