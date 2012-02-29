@@ -1,6 +1,6 @@
 .content
   = link_to 'Back', root_path, class: 'button'
-  = form_tag user_password_resets_path, :method => :post do
+  = form_tag user_password_resets_path, class: 'simple-form', :method => :post do
     .control-group.string.required
       = label_tag :email, 'Email', :class => 'string required'
       .controls
