@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
     user.is_admin? ? admin = "admin/" : admin = ""
 
     @user = user
-    @url  = "http://178.79.159.74/#{admin}password-reset/#{user.reset_password_token}/edit"
+    @url  = "http://48harleystreetmembers.co.uk/#{admin}password-reset/#{user.reset_password_token}/edit"
     mail(:to => "#{user.full_name}<#{user.email}>",
          :subject => "Password reset confirmation from 48 Harley Street")
   end
@@ -13,7 +13,7 @@ class UserMailer < ActionMailer::Base
   def successful_registration(user, chargify)
     @user = user
     @chargify = chargify
-    @url  = "http://178.79.159.74/"
+    @url  = "http://48harleystreetmembers.co.uk/"
     mail(:to => "#{user.full_name}<#{user.email}>",
          :subject => "Congratulations, you are now a VIP member at 48 Harley Street")
   end
