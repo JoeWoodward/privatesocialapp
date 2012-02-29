@@ -14,7 +14,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @chargify = chargify
     @url  = "http://48harleystreetmembers.co.uk/"
-    mail(:to => "#{user.full_name}<#{user.email}>",
+    mail(:to => "#{user.title} #{user.first_name} #{user.last_name} <#{user.email}>",
          :subject => "Congratulations, you are now a VIP member at 48 Harley Street")
   end
 end
