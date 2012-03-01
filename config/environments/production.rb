@@ -73,8 +73,8 @@ HarleyHealthVip::Application.configure do
     :address => 'smtp.gmail.com',
     :port => 587,
     :domain => "178.79.159.74",
-    :user_name => '48harleystreet.notifier@gmail.com',
-    :password => '678iuy678iuy',
+    :user_name => 'no-reply@48harleystreetmembers.com',
+    :password => ENV['NOTIFIER_EMAIL_PASSWORD'],
     :authentication => 'plain',
   }
 
