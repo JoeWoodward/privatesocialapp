@@ -14,8 +14,12 @@ class StaticPagesController < ApplicationController
   end
 
   def privacy
+    @section_style = 'half-width-translucent'
+    @content_holder = 'sign-up-content sign-up'
   end
 
   def terms
+    @section_style = 'half-width-translucent'
+    @content_holder = 'sign-up-content sign-up'
   end
 end
