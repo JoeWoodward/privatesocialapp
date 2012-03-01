@@ -5,12 +5,13 @@
   .partner
     .logo
       = image_tag p.logo.logo.url
-    .name
-      %h5
-        = p.name
+    .details
+      .name
+        %h5
+          = p.name
+      .description
+        = p.description
     .clear
-    .description
-      = p.description
 - content_for :javascripts do
   :javascript
     $.backstretch("/assets/events.jpeg");
