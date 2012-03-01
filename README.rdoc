@@ -10,3 +10,4 @@ heroku configs (these need to be set on heroku for the app to work)
   CHARGIFY_SUBDOMAIN
   CHARGIFY_SITE_KEY
   CHARGIFY_API_KEY
+  NOTIFIER_EMAIL_PASSWORD
