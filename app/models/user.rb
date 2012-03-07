@@ -71,12 +71,10 @@ class User < ActiveRecord::Base
   # this method will almost always be unique to the application itself,
   # but I wanted to show an example implementation just in case it's useful
   def self.init!(user_token, subscription_id, account_state = 'pending')
-    if user_token
-      user = User.find_by_token(user_token)
-      unless user.active?
-        user.state = account_state
-        user.chargify_subscription_id = subscription_id
-      end
+    user = User.find_by_token(user_token)
+    user.chargify_subscription_id = subscription_id
+    unless user.active?
+      user.state = account_state
     end
     return user
   end

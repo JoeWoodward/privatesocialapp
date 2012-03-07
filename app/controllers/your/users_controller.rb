@@ -1,6 +1,6 @@
 class Your::UsersController < Your::YourController
   skip_before_filter :require_login
-  before_filter :require_login, :except => [:new, :create]
+  before_filter :require_login, :except => [:new, :create, :complete_registration]
   skip_before_filter :is_user_authorised
 
   def new
