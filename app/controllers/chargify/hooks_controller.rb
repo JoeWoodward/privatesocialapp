@@ -30,6 +30,7 @@ class Chargify::HooksController < ApplicationController
   def signup_success
     begin
       @user = User.find_by_token(@subscription.customer.reference)
+      @user.chargigy_subscription_id = @subscription.id
       @user.state = @subscription.state
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save(:validate => false)
@@ -43,6 +44,7 @@ class Chargify::HooksController < ApplicationController
     begin
       @user = User.find_by_token(@subscription.customer.reference)
       @user.state = @subscription.state
+      @user.chargigy_subscription_id = @subscription.id
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save(:validate => false)
       render :nothing => true, :status => 200
@@ -55,6 +57,7 @@ class Chargify::HooksController < ApplicationController
     begin
       @user = User.find_by_token(@subscription.customer.reference)
       @user.state = @subscription.state
+      @user.chargigy_subscription_id = @subscription.id
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save(:validate => false)
       render :nothing => true, :status => 200
@@ -67,6 +70,7 @@ class Chargify::HooksController < ApplicationController
     begin
       @user = User.find_by_token(@subscription.customer.reference)
       @user.state = @subscription.state
+      @user.chargigy_subscription_id = @subscription.id
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save(:validate => false)
       render :nothing => true, :status => 200
@@ -79,6 +83,7 @@ class Chargify::HooksController < ApplicationController
     begin
       @user = User.find_by_token(@subscription.customer.reference)
       @user.state = @subscription.state
+      @user.chargigy_subscription_id = @subscription.id
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save(:validate => false)
       render :nothing => true, :status => 200
@@ -91,6 +96,7 @@ class Chargify::HooksController < ApplicationController
     begin
       @user = User.find_by_token(@subscription.customer.reference)
       @user.state = @subscription.state
+      @user.chargigy_subscription_id = @subscription.id
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save(:validate => false)
       render :nothing => true, :status => 200
@@ -103,6 +109,7 @@ class Chargify::HooksController < ApplicationController
     begin
       @user = User.find_by_token(@subscription.customer.reference)
       @user.state = @subscription.state
+      @user.chargigy_subscription_id = @subscription.id
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save(:validate => false)
       render :nothing => true, :status => 200
@@ -115,6 +122,7 @@ class Chargify::HooksController < ApplicationController
     begin
       @user = User.find_by_token(@subscription.customer.reference)
       @user.state = @subscription.state
+      @user.chargigy_subscription_id = @subscription.id
       @user.subscription_billing_date = @subscription.current_period_ends_at
       @user.save
       render :nothing => true, :status => 200
