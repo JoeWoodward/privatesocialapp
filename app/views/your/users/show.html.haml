@@ -23,6 +23,3 @@
   - unless current_user.state == nil
     = link_to 'Update Your Billing Info', update_billing_details_path, class: :button
   = payment_link
-- content_for :javascripts do
-  :javascript
-    $.backstretch("/assets/account.jpeg");

@@ -19,6 +19,3 @@
     = link_to 'Edit', edit_your_notice_path(@notice), class: 'button'
     = link_to 'Delete', your_notice_path(@notice), :method => :delete, :confirm => 'Are you sure?', class: 'button'
   .clear
-- content_for :javascripts do
-  :javascript
-    $.backstretch("/assets/events.jpeg");
