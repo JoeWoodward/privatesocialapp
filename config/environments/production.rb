@@ -72,7 +72,7 @@ HarleyHealthVip::Application.configure do
     :enable_starttls_auto => true,
     :address => 'smtp.gmail.com',
     :port => 587,
-    :domain => "178.79.159.74",
+    :domain => "48harleystreetmembers.com",
     :user_name => 'no-reply@48harleystreetmembers.com',
     :password => ENV['NOTIFIER_EMAIL_PASSWORD'],
     :authentication => 'plain',
