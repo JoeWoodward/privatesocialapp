@@ -1,17 +1,18 @@
 window.onload = (->
   if $('body').hasClass("offers")
-    addWidths = ->
+    addSizes = ->
+      $('.offers-list li img').height($('body').height() - 30)
       total_width = 0
       $(".offer-image").each ->
         height = $(this).height()
-        ratio = height * 0.714
+        ratio = height * 0.6923076923
         $(this).width(ratio)
         width = $(this).width()
         $(this).parent().css width: width + "px"
         total_width += width
 
-      $(".offers-list").css width: total_width + 30 + "px"
-      $(".horizontal-wrapper").css width: total_width + 30 + "px"
+      $(".offers-list").css width: total_width + "px"
+      $(".horizontal-wrapper").css width: total_width + "px"
     $(".offers-list").hide()
     $.ajax
       url: "offers/images"
@@ -20,7 +21,7 @@ window.onload = (->
         $(".offers-list").append html
         $(".offer-image").hide()
         $(".offers-list").show()
-        addWidths()
+        addSizes()
         elems = $(".offer-image")
         i = 0
         (fadePlz = ->
@@ -28,6 +29,6 @@ window.onload = (->
         )()
 
     $(window).resize ->
-      addWidths()
+      addSizes()
 )
 
