@@ -8,6 +8,7 @@
 = simple_form_for(@partner, :html => { :class => 'form-horizontal' }, :url => admin_partner_path(@partner)) do |f|
   = f.input :name, :input_html => { :class => "span6" }
   = f.input :description, :input_html => { :class => "span6" }
-  = f.input :logo
+  = f.input :logo, hint: 'logo must be square'
+  = f.input :logo_cache, :as => :hidden
   .form-actions
     = f.button :submit, 'Update', :class => 'btn-primary'
