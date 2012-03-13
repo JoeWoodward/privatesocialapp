@@ -19,7 +19,9 @@ class Your::NoticesController < Your::YourController
 
   def create
     @notice = current_user.notices.build(params[:notice])
+    @notice.activated = false
     if @notice.save
+      UserMailer.new_notice(@notice).deliver
       redirect_to your_notice_path(@notice), notice: 'Notice was successfully created.'
     else
       render :new

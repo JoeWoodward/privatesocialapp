@@ -16,4 +16,10 @@ class UserMailer < ActionMailer::Base
     mail(:to => "#{user.title} #{user.first_name} #{user.last_name} <#{user.email}>",
          :subject => "Congratulations, you are now a VIP member at 48 Harley Street")
   end
+
+  def new_notice(notice)
+    @notice_title = notice.title
+    @url = "http://48harleystreetmembers.com/admin/notices/#{notice.slug}"
+    mail(to: ENV['ASK_A_DOCTOR_EMAIL_ADDRESS'], subject: "A new notice needs your approval")
+  end
 end

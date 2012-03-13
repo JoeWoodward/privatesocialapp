@@ -34,8 +34,19 @@ h1{
   color: darken(#8bb863, 20%);
 }
 
-.go-back::before{
-  content: "↩  ";
+.notice-badge {
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: normal;
+  white-space: nowrap;
+  color: white;
+  background-color: #BD362F;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  position: absolute;
+  top: 3px;
+  right: 275px;
 }
 
 @import 'compass_twitter_bootstrap';

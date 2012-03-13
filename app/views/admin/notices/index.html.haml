@@ -1,4 +1,4 @@
-%h1 Listing Notices
+%h1 Notices Waiting for Approval
 %p (created by VIP members)
 
 %br
@@ -31,6 +31,7 @@
         %td= notice.contact_email
         %td
           = link_to 'View', admin_notice_path(notice), :class => 'btn'
+          = link_to 'Approve', admin_activate_notice_path(notice), class: 'btn btn-primary'
           = link_to 'Delete', admin_notice_path(notice), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
 
 = paginate @notices

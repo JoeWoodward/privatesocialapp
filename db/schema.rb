@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 22) do
+ActiveRecord::Schema.define(:version => 24) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(:version => 22) do
     t.string   "slug"
     t.integer  "user_id"
     t.boolean  "landscape"
+    t.boolean  "activated"
+    t.datetime "activated_at"
   end
 
   add_index "notices", ["slug"], :name => "index_notices_on_slug"

@@ -68,6 +68,7 @@ HarleyHealthVip::Application.routes.draw do
 
     #resources for admin notices
     resources :notices, :only => [:show, :index, :destroy]
+    get 'activate-notice/:id' => 'notices#activate', as: 'activate_notice'
 
     resources :events
 

@@ -1,3 +1,6 @@
+- if !@notice.activated?
+  .message
+    %p This message is waiting to be approved by the administrators
 = link_to 'Back', your_notices_path, class: 'button'
 .a-notice
   - if @notice.image.present?
