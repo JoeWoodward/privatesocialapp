@@ -8,7 +8,7 @@ class Admin::NoticesController < Admin::ApplicationController
 
   def show
     @notice = Notice.find(params[:id])
-    if @notice.activated?
+    if @notice.activated? || @notice.nil
       redirect_to admin_notices_path, notice: 'The notice you are trying to access has already been approved'
     else
       if @notice.user_id

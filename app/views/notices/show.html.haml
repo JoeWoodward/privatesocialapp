@@ -10,9 +10,9 @@
     %h1= @notice.title
     = markdown(@notice.description)
     - if @notice.contact_phone.present?
-      %br
       = @notice.contact_phone
-    - if @notice.contact_email.present?
       %br
+    - if @notice.contact_email.present?
       = @notice.contact_email
+      %br
   .clear

@@ -10,9 +10,8 @@
           %br
           %br
           %h5= event.title
-          %p
-            = markdown(event.description.truncate(250))
-            = link_to 'more', event_path(event)
+          = markdown(event.description.truncate(250))
+          = link_to 'more', event_path(event)
 - content_for :javascripts do
   :javascript
     $('.horizontal-wrapper').css('width', "#{@width}px");

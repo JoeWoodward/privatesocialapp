@@ -18,9 +18,7 @@
 
     p {
       position: relative;
-      text-align: center;
       &::before{
-        content: "!";
         position: absolute;
         display: block;
         padding: 0 5px;

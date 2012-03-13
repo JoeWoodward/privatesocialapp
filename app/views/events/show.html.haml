@@ -7,7 +7,6 @@
       = @event.date.strftime("%d/%y")
     %h5
       = @event.title
-    %p
-      = markdown(@event.description)
+    = markdown(@event.description)
     = rsvp(@event)
   .clear
