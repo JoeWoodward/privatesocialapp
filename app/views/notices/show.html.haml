@@ -8,7 +8,7 @@
         = image_tag @notice.image.portrait.url
   .description
     %h1= @notice.title
-    = @notice.description
+    = markdown(@notice.description)
     - if @notice.contact_phone.present?
       %br
       = @notice.contact_phone

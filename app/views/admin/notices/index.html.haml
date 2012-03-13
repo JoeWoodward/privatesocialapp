@@ -19,7 +19,7 @@
     - @notices.each do |notice|
       %tr
         %td= notice.title
-        %td= notice.description.truncate(50)
+        %td= markdown(notice.description.truncate(50))
         - if notice.image.present?
           - if notice.landscape?
             %td= image_tag notice.image.landscape_tiny.url

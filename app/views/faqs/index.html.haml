@@ -8,7 +8,7 @@
   - @faqs.each do |faq|
     %h6= "Q: #{faq.question}"
     %br
-    %p= "A: #{faq.answer}"
+    %p= markdown("A: #{faq.answer}")
     %br
 - content_for :javascripts do
   :javascript

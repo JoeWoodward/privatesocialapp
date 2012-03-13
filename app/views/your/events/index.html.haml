@@ -6,7 +6,7 @@
     - @events.each do |event|
       %h5
         = event.title
-      = event.description.truncate(250)
+      = markdown(event.description.truncate(250))
       = link_to 'more', your_event_path(event)
       %br
       = event.date.strftime("%d/%m/%Y")

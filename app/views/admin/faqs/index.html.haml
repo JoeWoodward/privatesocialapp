@@ -19,7 +19,7 @@
     - @faqs.each do |faq|
       %tr
         %td= faq.question
-        %td= faq.answer.truncate(50)
+        %td= markdown(faq.answer.truncate(50))
         %td
           - if faq.active?
             %span.label.label-success Yes

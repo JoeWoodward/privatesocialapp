@@ -8,6 +8,6 @@
     %h5
       = @event.title
     %p
-      = @event.description
+      = markdown(@event.description)
     = rsvp(@event)
   .clear

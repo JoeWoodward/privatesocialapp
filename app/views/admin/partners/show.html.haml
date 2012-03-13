@@ -3,7 +3,7 @@
 %br
 = @partner.name.titleize
 %br
-= @partner.description
+= markdown(@partner.description)
 %br
 = image_tag @partner.logo.logo.url
 %br

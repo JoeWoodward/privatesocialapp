@@ -11,7 +11,7 @@
           %br
           %h5= event.title
           %p
-            = event.description.truncate(250)
+            = markdown(event.description.truncate(250))
             = link_to 'more', event_path(event)
 - content_for :javascripts do
   :javascript

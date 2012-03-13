@@ -10,7 +10,7 @@
 %p
   = @notice.title
 %p
-  = @notice.description
+  = markdown(@notice.description)
 - if @notice.contact_phone.present?
   %p
     = @notice.contact_phone

@@ -17,6 +17,7 @@ gem 'capistrano-mountaintop'
 gem 'chargify_api_ares'
 gem 'formtastic'
 gem 'fog'
+gem 'redcarpet'
 
 # Gems used only for assets and not required
 # in production environments by default.
