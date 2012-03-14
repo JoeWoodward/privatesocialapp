@@ -71,5 +71,9 @@ module HarleyHealthVip
     # config.logger = Logger.new(config.paths["log"].first, 10, 20 * 1000 * 1000)
 
     config.assets.initialize_on_precompile = false
+
+    # carrierwave
+    # config.delete_tmp_file_after_storage = false
+    # config.delete_cache_id_after_storage = false
   end
 end

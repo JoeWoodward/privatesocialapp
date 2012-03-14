@@ -1,5 +1,5 @@
 class NoticeImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   storage :fog
 
@@ -13,6 +13,7 @@ class NoticeImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+
   version :landscape, :if => :landscape? do
     process :resize_to_fit => [430, 2000]
   end
@@ -32,11 +33,20 @@ class NoticeImageUploader < CarrierWave::Uploader::Base
   protected
 
   def landscape? img
-    pic = Magick::Image.read(img.path).first
-    model.landscape = pic.columns >= pic.rows
+    # pic = MiniMagick::Image.open img.path
+    # model.landscape = pic[:width] > pic[:height]
+    #
+    # Couldn't get this to work (think there's a bug in CarrierWave
+    # For now, all notice images will be landscape
+    model.landscape = true
   end
 
   def portrait? img
     return ! landscape?(img)
   end
+
+   def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
 end
+

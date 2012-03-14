@@ -1,5 +1,5 @@
 class EventImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   storage :fog
 
