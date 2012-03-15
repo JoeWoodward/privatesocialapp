@@ -8,13 +8,15 @@ class Admin::NoticesController < Admin::ApplicationController
 
   def show
     @notice = Notice.find(params[:id])
-    if @notice.activated? || !@notice
+    if @notice.activated?
       redirect_to admin_notices_path, notice: 'The notice you are trying to access has already been approved'
     else
       if @notice.user_id
         @author = User.find(@notice.user_id)
       end
     end
+  rescue
+    redirect_to admin_notices_path, notice: 'Notice no longer exists'
   end
 
   def destroy
